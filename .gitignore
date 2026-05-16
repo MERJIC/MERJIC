@@ -1,6 +1,7 @@
 conversations/
 .codepilot-uploads/
 .claude/
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+.obsidian/
+memory/
+CLAUDE.md
 .DS_Store
