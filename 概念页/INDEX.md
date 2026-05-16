@@ -1,192 +1,40 @@
-# 概念索引
-
-共 125 个概念，按学科分组。部分概念属于多个学科，会在各自分组下重复出现。
-
+---
+name: 概念知识库索引
+description: 通过寓言故事沉淀的学科概念，每概念独立页面，含互链和圆桌沉淀
+tags: [index, 寓言故事, 哲学]
 ---
 
-## 哲学（36 个）
+# 概念知识库
 
-- [二阶欲望（Second-Order Desire）](二阶欲望.md)
-- [亚临界漂移（Subcritical Drift）](亚临界漂移.md)
-- [他者性（Alterität）](他者性.md)
-- [副现象论（Epiphenomenalism）](副现象论.md)
-- [因果过度确定（Causal Overdetermination）](因果过度确定.md)
-- [实践知识（Knowing-How）](实践知识.md)
-- [审美无利害（Aesthetic Disinterestedness）](审美无利害.md)
-- [审美静滞（Aesthetic Arrest）](审美静滞.md)
-- [平庸之恶（Banality of Evil）](平庸之恶.md)
-- [序言悖论（Preface Paradox）](序言悖论.md)
-- [弱意志（Akrasia）](弱意志.md)
-- [心理距离（Psychical Distance）](心理距离.md)
-- [摩尔悖论（Moore's Paradox）](摩尔悖论.md)
-- [有趣性（The Interesting）](有趣性.md)
-- [氛围（Stimmung）](氛围.md)
-- [游戏冲动（Spieltrieb）](游戏冲动.md)
-- [盖梯尔问题（Gettier Problem）](盖梯尔问题.md)
-- [移情（Einfühlung）](移情.md)
-- [第一人称权威（First-Person Authority）](第一人称权威.md)
-- [索里特斯悖论（Sorites Paradox）](索里特斯悖论.md)
-- [结构性无知（Structural Ignorance）](结构性无知.md)
-- [能力进路（Capability Approach）](能力进路.md)
-- [艺术意志（Kunstwollen）](艺术意志.md)
-- [规则遵循悖论（Rule-Following Paradox）](规则遵循悖论.md)
-- [认知封闭性（Cognitive Closure）](认知封闭性.md)
-- [认识论不正义（Epistemic Injustice）](认识论不正义.md)
-- [证言不正义（Testimonial Injustice）](证言不正义.md)
-- [诠释不正义（Hermeneutical Injustice）](诠释不正义.md)
-- [诠释学循环（Hermeneutic Circle）](诠释学循环.md)
-- [负能力（Negative Capability）](负能力.md)
-- [迪昂-奎因论题（Duhem-Quine Thesis）](迪昂-奎因论题.md)
-- [适应性偏好（Adaptive Preference）](适应性偏好.md)
-- [道德残余（Moral Remainder）](道德残余.md)
-- [道德运气（Moral Luck）](道德运气.md)
-- [陌生化（Ostranenie）](陌生化.md)
-- [非同一性问题（Non-Identity Problem）](非同一性问题.md)
+通过 `/寓言故事` 沉淀的学科原理，每个概念一个页面。圆桌讨论结论写回各自页面的「圆桌沉淀」section。
 
----
+## 全部概念
 
-## 心理学（41 个）
+```dataview
+TABLE join(domain, ", ") as "领域"
+FROM ""
+WHERE file.name != "INDEX"
+SORT date DESC
+```
 
-- [习得性无助（Learned Helplessness）](习得性无助.md)
-- [偏好伪装（Preference Falsification）](偏好伪装.md)
-- [偏好瀑布（Preference Cascade）](偏好瀑布.md)
-- [元认知（Metacognition）](元认知.md)
-- [共同信息效应（Shared Information Bias）](共同信息效应.md)
-- [决策疲劳（Decision Fatigue）](决策疲劳.md)
-- [刻板印象威胁（Stereotype Threat）](刻板印象威胁.md)
-- [功能固着（Functional Fixedness）](功能固着.md)
-- [反应贬值（Reactive Devaluation）](反应贬值.md)
-- [团体迷思（Groupthink）](团体迷思.md)
-- [基本归因错误（Fundamental Attribution Error）](基本归因错误.md)
-- [多元无知（Pluralistic Ignorance）](多元无知.md)
-- [属性替换（Attribute Substitution）](属性替换.md)
-- [峰终定律（Peak-End Rule）](峰终定律.md)
-- [巴纳姆效应（Barnum Effect）](巴纳姆效应.md)
-- [情绪识别力（Emotional Granularity）](情绪识别力.md)
-- [晕轮效应（Halo Effect）](晕轮效应.md)
-- [最近发展区（Zone of Proximal Development）](最近发展区.md)
-- [权力悖论（Power Paradox）](权力悖论.md)
-- [框架效应（Framing Effect）](框架效应.md)
-- [概化他者（Generalized Other）](概化他者.md)
-- [流畅性错觉（Fluency Illusion）](流畅性错觉.md)
-- [测试效应（Testing Effect）](测试效应.md)
-- [满意化（Satisficing）](满意化.md)
-- [皮格马利翁效应（Pygmalion Effect）](皮格马利翁效应.md)
-- [知识诅咒（Curse of Knowledge）](知识诅咒.md)
-- [社会参照（Social Referencing）](社会参照.md)
-- [粒度轴（Granularity Axis）](粒度轴.md)
-- [群体极化（Group Polarization）](群体极化.md)
-- [聚光灯效应（Spotlight Effect）](聚光灯效应.md)
-- [范围不敏感（Scope Insensitivity）](范围不敏感.md)
-- [蔡格尼克效应（Zeigarnik Effect）](蔡格尼克效应.md)
-- [认知负荷（Cognitive Load Theory）](认知负荷.md)
-- [责任扩散（Diffusion of Responsibility）](责任扩散.md)
-- [过度理由效应（Overjustification Effect）](过度理由效应.md)
-- [过度辩护效应（Overjustification Effect）](过度辩护效应.md)
-- [邓巴数（Dunbar's Number）](邓巴数.md)
-- [间歇强化（Partial Reinforcement Effect）](间歇强化.md)
-- [间隔效应（Spacing Effect）](间隔效应.md)
-- [阿比林悖论（Abilene Paradox）](阿比林悖论.md)
-- [黑暗三角（Dark Triad）](黑暗三角.md)
+## 按领域浏览
 
----
+```dataview
+TABLE rows.file.link as "概念"
+FROM ""
+WHERE file.name != "INDEX"
+FLATTEN domain as d
+GROUP BY d
+```
 
-## 经济学（32 个）
+## 按应用场景浏览
 
-- [互套（Bilateral Hold-up）](互套.md)
-- [信号成本理论（Costly Signaling Theory）](信号成本理论.md)
-- [信息级联（Information Cascade）](信息级联.md)
-- [傲慢假说（Hubris Hypothesis）](傲慢假说.md)
-- [凡勃仑效应（Veblen Effect）](凡勃仑效应.md)
-- [双曲折现（Hyperbolic Discounting）](双曲折现.md)
-- [古德哈特定律（Goodhart's Law）](古德哈特定律.md)
-- [坎蒂隆效应（Cantillon Effect）](坎蒂隆效应.md)
-- [套牢问题（Hold-up Problem）](套牢问题.md)
-- [委托代理问题（Principal-Agent Problem）](委托代理问题.md)
-- [帝国建造（Empire Building）](帝国建造.md)
-- [托宾q（Tobin's q）](托宾q.md)
-- [承诺策略（Commitment Tactics）](承诺策略.md)
-- [李嘉图等价（Ricardian Equivalence）](李嘉图等价.md)
-- [柠檬市场（Market for Lemons）](柠檬市场.md)
-- [格雷欣法则（Gresham's Law）](格雷欣法则.md)
-- [框架效应（Framing Effect）](框架效应.md)
-- [棘轮效应（Ratchet Effect）](棘轮效应.md)
-- [模糊厌恶（Ambiguity Aversion）](模糊厌恶.md)
-- [渐进式捕获（Creeping Capture）](渐进式捕获.md)
-- [短期主义（Short-termism）](短期主义.md)
-- [禀赋效应（Endowment Effect）](禀赋效应.md)
-- [科斯定理（Coase Theorem）](科斯定理.md)
-- [网络外部性（Network Externality）](网络外部性.md)
-- [范围不敏感（Scope Insensitivity）](范围不敏感.md)
-- [董事会捕获（Board Capture）](董事会捕获.md)
-- [货币幻觉（Money Illusion）](货币幻觉.md)
-- [路径依赖（Path Dependence）](路径依赖.md)
-- [逆向选择（Adverse Selection）](逆向选择.md)
-- [道德风险（Moral Hazard）](道德风险.md)
-- [重复博弈（Repeated Game）](重复博弈.md)
-- [隧道挖掘（Tunneling）](隧道挖掘.md)
-
----
-
-## 社会学（14 个）
-
-- [亚临界漂移（Subcritical Drift）](亚临界漂移.md)
-- [仪式互动链（Interaction Ritual Chains）](仪式互动链.md)
-- [信息级联（Information Cascade）](信息级联.md)
-- [制度同形（Institutional Isomorphism）](制度同形.md)
-- [寄生社交关系（Parasocial Relationship）](寄生社交关系.md)
-- [情绪劳动（Emotional Labor）](情绪劳动.md)
-- [惯习（Habitus）](惯习.md)
-- [概化他者（Generalized Other）](概化他者.md)
-- [粒度轴（Granularity Axis）](粒度轴.md)
-- [结构洞（Structural Holes）](结构洞.md)
-- [角色退出（Role Exit）](角色退出.md)
-- [象征性暴力（Symbolic Violence）](象征性暴力.md)
-- [路径依赖（Path Dependence）](路径依赖.md)
-- [道德恐慌（Moral Panic）](道德恐慌.md)
-
----
-
-## 传播学（4 个）
-
-- [寄生社交关系（Parasocial Relationship）](寄生社交关系.md)
-- [战略性模糊（Strategic Ambiguity）](战略性模糊.md)
-- [拟态环境（Pseudo-Environment）](拟态环境.md)
-- [沉默的螺旋（Spiral of Silence）](沉默的螺旋.md)
-
----
-
-## 管理学（12 个）
-
-- [制度同形（Institutional Isomorphism）](制度同形.md)
-- [双回路学习（Double-Loop Learning）](双回路学习.md)
-- [古德哈特定律（Goodhart's Law）](古德哈特定律.md)
-- [委托代理问题（Principal-Agent Problem）](委托代理问题.md)
-- [帕金森定律（Parkinson's Law）](帕金森定律.md)
-- [彼得原理（Peter Principle）](彼得原理.md)
-- [战略漂移（Strategic Drift）](战略漂移.md)
-- [权力悖论（Power Paradox）](权力悖论.md)
-- [满意化（Satisficing）](满意化.md)
-- [阿比林悖论（Abilene Paradox）](阿比林悖论.md)
-- [领导者-成员交换理论（LMX）](领导者-成员交换理论.md)
-- [黑暗三角（Dark Triad）](黑暗三角.md)
-
----
-
-## 政治学（2 个）
-
-- [偏好伪装（Preference Falsification）](偏好伪装.md)
-- [偏好瀑布（Preference Cascade）](偏好瀑布.md)
-
----
-
-## 生物学（2 个）
-
-- [信号成本理论（Costly Signaling Theory）](信号成本理论.md)
-- [超常刺激（Supernormal Stimulus）](超常刺激.md)
-
----
-
-## 人类学（1 个）
-
-- [邓巴数（Dunbar's Number）](邓巴数.md)
+```dataview
+TABLE rows.file.link as "概念"
+FROM ""
+WHERE file.name != "INDEX"
+FLATTEN file.tags as tag
+WHERE startswith(string(tag), "#apply/")
+GROUP BY replace(string(tag), "#apply/", "") as 场景
+SORT 场景 ASC
+```
