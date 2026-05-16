@@ -2,6 +2,7 @@ conversations/
 .codepilot-uploads/
 .claude/
 .obsidian/
+**/.obsidian/
 memory/
 CLAUDE.md
 .DS_Store
