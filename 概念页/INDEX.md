@@ -65,7 +65,7 @@ tags: [index, 寓言故事, 哲学]
 - [证言不正义（Testimonial Injustice）](%E8%AF%81%E8%A8%80%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 心理学（44 个）
+### 心理学（45 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -109,6 +109,7 @@ tags: [index, 寓言故事, 哲学]
 - [晕轮效应（Halo Effect）](%E6%99%95%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [责任扩散（Diffusion of Responsibility）](%E8%B4%A3%E4%BB%BB%E6%89%A9%E6%95%A3.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
+- [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
@@ -283,7 +284,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（15 个）
+### 反转（16 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -299,6 +300,7 @@ tags: [index, 寓言故事, 哲学]
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [双回路学习（Double-Loop Learning）](%E5%8F%8C%E5%9B%9E%E8%B7%AF%E5%AD%A6%E4%B9%A0.md)
+- [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
 ### 循环（22 个）
@@ -376,7 +378,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（63 个）
+### 自我（64 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -439,6 +441,7 @@ tags: [index, 寓言故事, 哲学]
 - [游戏冲动（Spieltrieb）](%E6%B8%B8%E6%88%8F%E5%86%B2%E5%8A%A8.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
+- [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
@@ -625,7 +628,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（34 个）
+### 决策（35 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -660,6 +663,7 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [晕轮效应（Halo Effect）](%E6%99%95%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
+- [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
 ### 领导（13 个）
