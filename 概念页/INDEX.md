@@ -20,7 +20,7 @@ SORT date DESC
 ## 按领域浏览
 
 ```dataview
-TABLE rows.name as "概念"
+TABLE name as "概念", file.link as "链接"
 FROM ""
 WHERE file.name != "INDEX"
 FLATTEN domain as d
@@ -30,7 +30,7 @@ GROUP BY d
 ## 按应用场景浏览
 
 ```dataview
-TABLE rows.name as "概念"
+TABLE name as "概念", file.link as "链接"
 FROM ""
 WHERE file.name != "INDEX"
 FLATTEN file.tags as tag
