@@ -72,7 +72,7 @@ tags: [pattern/错位, apply/组织]
 | 管理学 | 帕金森定律、彼得原理、帝国建造、古德哈特定律 |
 | 政治学 | 委托代理问题、权力悖论、领导者-成员交换理论 |
 
-完整列表见 [`概念页/CATALOG.md`](概念页/CATALOG.md)。
+完整列表见 [`概念页/INDEX.md`](概念页/INDEX.md)。
 
 ---
 
@@ -122,7 +122,7 @@ tags: [pattern/错位, apply/组织]
 
 ## 使用
 
-**在 GitHub 上直接读**：打开 [`概念页/CATALOG.md`](概念页/CATALOG.md)，支持按学科、按结构模式、按应用场景三种方式浏览，全部可点击跳转。
+**在 GitHub 上直接读**：打开 [`概念页/INDEX.md`](概念页/INDEX.md)，支持按学科、按结构模式、按应用场景三种方式浏览，全部可点击跳转。
 
 **用 Obsidian 打开**（获得图谱视图和双向链接）：
 
@@ -130,7 +130,7 @@ tags: [pattern/错位, apply/组织]
 git clone https://github.com/MERJIC/noosphere.git
 ```
 
-用 Obsidian 打开克隆下来的 `概念页/` 文件夹作为 Vault，安装 Dataview 插件后索引自动生成。
+用 Obsidian 打开克隆下来的 `概念页/` 文件夹作为 Vault，可使用双向链接和关系图功能。
 
 **参与**：发现错误、有更好的入口场景、或想建议新概念，欢迎开 Issue。
 
