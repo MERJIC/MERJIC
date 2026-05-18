@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（48 个）
+### 哲学（49 个）
 
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
@@ -28,6 +28,7 @@ tags: [index, 寓言故事, 哲学]
 - [负能力（Negative Capability）](%E8%B4%9F%E8%83%BD%E5%8A%9B.md)
 - [副现象论（Epiphenomenalism）](%E5%89%AF%E7%8E%B0%E8%B1%A1%E8%AE%BA.md)
 - [盖梯尔问题（Gettier Problem）](%E7%9B%96%E6%A2%AF%E5%B0%94%E9%97%AE%E9%A2%98.md)
+- [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
 - [结构性无知（Structural Ignorance / Epistemology of Ignorance）](%E7%BB%93%E6%9E%84%E6%80%A7%E6%97%A0%E7%9F%A5.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
@@ -303,11 +304,12 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（22 个）
+### 循环（23 个）
 
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
 - [格雷欣法则（Gresham's Law）](%E6%A0%BC%E9%9B%B7%E6%AC%A3%E6%B3%95%E5%88%99.md)
+- [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
@@ -378,7 +380,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（64 个）
+### 自我（65 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -395,6 +397,7 @@ tags: [index, 寓言故事, 哲学]
 - [负能力（Negative Capability）](%E8%B4%9F%E8%83%BD%E5%8A%9B.md)
 - [副现象论（Epiphenomenalism）](%E5%89%AF%E7%8E%B0%E8%B1%A1%E8%AE%BA.md)
 - [概化他者（Generalized Other）](%E6%A6%82%E5%8C%96%E4%BB%96%E8%80%85.md)
+- [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
@@ -682,9 +685,10 @@ tags: [index, 寓言故事, 哲学]
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 教育（16 个）
+### 教育（17 个）
 
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
+- [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
