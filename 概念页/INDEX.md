@@ -151,9 +151,10 @@ tags: [index, 寓言故事, 哲学]
 - [信息级联（Information Cascade）](%E4%BF%A1%E6%81%AF%E7%BA%A7%E8%81%94.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 社会学（15 个）
+### 社会学（16 个）
 
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
+- [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [概化他者（Generalized Other）](%E6%A6%82%E5%8C%96%E4%BB%96%E8%80%85.md)
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
@@ -227,12 +228,13 @@ tags: [index, 寓言故事, 哲学]
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 盲区（34 个）
+### 盲区（35 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [道德运气（Moral Luck）](%E9%81%93%E5%BE%B7%E8%BF%90%E6%B0%94.md)
+- [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
 - [第一人称权威（First-Person Authority）](%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%9D%83%E5%A8%81.md)
@@ -454,12 +456,13 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（38 个）
+### 关系（39 个）
 
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
+- [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
 - [反应贬值（Reactive Devaluation）](%E5%8F%8D%E5%BA%94%E8%B4%AC%E5%80%BC.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
@@ -606,9 +609,10 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（31 个）
+### 组织（32 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
+- [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
 - [帝国建造（Empire Building）](%E5%B8%9D%E5%9B%BD%E5%BB%BA%E9%80%A0.md)
 - [董事会捕获（Board Capture）](%E8%91%A3%E4%BA%8B%E4%BC%9A%E6%8D%95%E8%8E%B7.md)
@@ -679,8 +683,9 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（16 个）
+### 领导（17 个）
 
+- [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [董事会捕获（Board Capture）](%E8%91%A3%E4%BA%8B%E4%BC%9A%E6%8D%95%E8%8E%B7.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
