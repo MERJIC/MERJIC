@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（55 个）
+### 哲学（56 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -51,6 +51,7 @@ tags: [index, 寓言故事, 哲学]
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
 - [慎独（Shen Du / Watchfulness in Solitude）](%E6%85%8E%E7%8B%AC.md)
+- [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [私人语言论证（Private Language Argument）](%E7%A7%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E8%AE%BA%E8%AF%81.md)
@@ -398,7 +399,7 @@ tags: [index, 寓言故事, 哲学]
 - [证言不正义（Testimonial Injustice）](%E8%AF%81%E8%A8%80%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 缺位（13 个）
+### 缺位（14 个）
 
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -411,12 +412,13 @@ tags: [index, 寓言故事, 哲学]
 - [认识论不正义（Epistemic Injustice）](%E8%AE%A4%E8%AF%86%E8%AE%BA%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认知封闭性（Cognitive Closure）](%E8%AE%A4%E7%9F%A5%E5%B0%81%E9%97%AD%E6%80%A7.md)
 - [认知负荷（Cognitive Load Theory）](%E8%AE%A4%E7%9F%A5%E8%B4%9F%E8%8D%B7.md)
+- [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [他者性（Alterität）](%E4%BB%96%E8%80%85%E6%80%A7.md)
 - [责任扩散（Diffusion of Responsibility）](%E8%B4%A3%E4%BB%BB%E6%89%A9%E6%95%A3.md)
 
 ## 按应用场景
 
-### 自我（73 个）
+### 自我（74 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -470,6 +472,7 @@ tags: [index, 寓言故事, 哲学]
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
 - [慎独（Shen Du / Watchfulness in Solitude）](%E6%85%8E%E7%8B%AC.md)
+- [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [属性替换（Attribute Substitution）](%E5%B1%9E%E6%80%A7%E6%9B%BF%E6%8D%A2.md)
@@ -492,7 +495,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（44 个）
+### 关系（45 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -522,6 +525,7 @@ tags: [index, 寓言故事, 哲学]
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [社会参照（Social Referencing）](%E7%A4%BE%E4%BC%9A%E5%8F%82%E7%85%A7.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
+- [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [属性替换（Attribute Substitution）](%E5%B1%9E%E6%80%A7%E6%9B%BF%E6%8D%A2.md)
 - [私人语言论证（Private Language Argument）](%E7%A7%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E8%AE%BA%E8%AF%81.md)
 - [索里特斯悖论（Sorites Paradox）](%E7%B4%A2%E9%87%8C%E7%89%B9%E6%96%AF%E6%82%96%E8%AE%BA.md)
@@ -704,7 +708,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（38 个）
+### 决策（39 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -732,6 +736,7 @@ tags: [index, 寓言故事, 哲学]
 - [模糊厌恶（Ambiguity Aversion）](%E6%A8%A1%E7%B3%8A%E5%8E%8C%E6%81%B6.md)
 - [情感预测失误（Affective Forecasting）](%E6%83%85%E6%84%9F%E9%A2%84%E6%B5%8B%E5%A4%B1%E8%AF%AF.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
 - [托宾q（Tobin's q）](%E6%89%98%E5%AE%BEq.md)
 - [序言悖论（Preface Paradox）](%E5%BA%8F%E8%A8%80%E6%82%96%E8%AE%BA.md)
