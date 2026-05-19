@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（53 个）
+### 哲学（54 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -68,6 +68,7 @@ tags: [index, 寓言故事, 哲学]
 - [有趣性（The Interesting）](%E6%9C%89%E8%B6%A3%E6%80%A7.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [证言不正义（Testimonial Injustice）](%E8%AF%81%E8%A8%80%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
+- [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
 ### 心理学（47 个）
@@ -220,7 +221,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按结构模式
 
-### 悖论（13 个）
+### 悖论（14 个）
 
 - [非同一性问题（Non-Identity Problem）](%E9%9D%9E%E5%90%8C%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98.md)
 - [盖梯尔问题（Gettier Problem）](%E7%9B%96%E6%A2%AF%E5%B0%94%E9%97%AE%E9%A2%98.md)
@@ -234,6 +235,7 @@ tags: [index, 寓言故事, 哲学]
 - [因果过度确定（Causal Overdetermination）](%E5%9B%A0%E6%9E%9C%E8%BF%87%E5%BA%A6%E7%A1%AE%E5%AE%9A.md)
 - [游戏冲动（Spieltrieb）](%E6%B8%B8%E6%88%8F%E5%86%B2%E5%8A%A8.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
+- [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
 ### 盲区（36 个）
@@ -404,7 +406,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（70 个）
+### 自我（71 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -473,6 +475,7 @@ tags: [index, 寓言故事, 哲学]
 - [游戏冲动（Spieltrieb）](%E6%B8%B8%E6%88%8F%E5%86%B2%E5%8A%A8.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
+- [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
@@ -678,7 +681,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（37 个）
+### 决策（38 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -715,6 +718,7 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [晕轮效应（Halo Effect）](%E6%99%95%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
+- [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
