@@ -216,8 +216,9 @@ tags: [index, 寓言故事, 哲学]
 
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
 
-### 政治学（3 个）
+### 政治学（4 个）
 
+- [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
 - [偏好瀑布（Preference Cascade）](%E5%81%8F%E5%A5%BD%E7%80%91%E5%B8%83.md)
 - [偏好伪装（Preference Falsification）](%E5%81%8F%E5%A5%BD%E4%BC%AA%E8%A3%85.md)
@@ -305,7 +306,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（23 个）
+### 反转（24 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -314,6 +315,7 @@ tags: [index, 寓言故事, 哲学]
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [凡勃仑效应（Veblen Effect）](%E5%87%A1%E5%8B%83%E4%BB%91%E6%95%88%E5%BA%94.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
+- [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
@@ -535,7 +537,7 @@ tags: [index, 寓言故事, 哲学]
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（48 个）
+### 制度（49 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
@@ -548,6 +550,7 @@ tags: [index, 寓言故事, 哲学]
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
 - [非同一性问题（Non-Identity Problem）](%E9%9D%9E%E5%90%8C%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98.md)
 - [格雷欣法则（Gresham's Law）](%E6%A0%BC%E9%9B%B7%E6%AC%A3%E6%B3%95%E5%88%99.md)
+- [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
@@ -654,7 +657,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（38 个）
+### 组织（39 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
@@ -665,6 +668,7 @@ tags: [index, 寓言故事, 哲学]
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
+- [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
@@ -736,13 +740,14 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（22 个）
+### 领导（23 个）
 
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [董事会捕获（Board Capture）](%E8%91%A3%E4%BA%8B%E4%BC%9A%E6%8D%95%E8%8E%B7.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
+- [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
