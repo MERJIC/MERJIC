@@ -14,8 +14,9 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（51 个）
+### 哲学（53 个）
 
+- [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
@@ -31,6 +32,7 @@ tags: [index, 寓言故事, 哲学]
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
 - [结构性无知（Structural Ignorance / Epistemology of Ignorance）](%E7%BB%93%E6%9E%84%E6%80%A7%E6%97%A0%E7%9F%A5.md)
+- [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
 - [陌生化（Ostranenie）](%E9%99%8C%E7%94%9F%E5%8C%96.md)
@@ -316,8 +318,9 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（25 个）
+### 循环（26 个）
 
+- [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
 - [格雷欣法则（Gresham's Law）](%E6%A0%BC%E9%9B%B7%E6%AC%A3%E6%B3%95%E5%88%99.md)
@@ -344,7 +347,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 错位（30 个）
+### 错位（31 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -354,6 +357,7 @@ tags: [index, 寓言故事, 哲学]
 - [反应贬值（Reactive Devaluation）](%E5%8F%8D%E5%BA%94%E8%B4%AC%E5%80%BC.md)
 - [副现象论（Epiphenomenalism）](%E5%89%AF%E7%8E%B0%E8%B1%A1%E8%AE%BA.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
+- [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [坎蒂隆效应（Cantillon Effect）](%E5%9D%8E%E8%92%82%E9%9A%86%E6%95%88%E5%BA%94.md)
 - [框架效应（Framing Effect）](%E6%A1%86%E6%9E%B6%E6%95%88%E5%BA%94.md)
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
@@ -394,9 +398,10 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（67 个）
+### 自我（69 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
+- [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -421,6 +426,7 @@ tags: [index, 寓言故事, 哲学]
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
 - [角色退出（Role Exit）](%E8%A7%92%E8%89%B2%E9%80%80%E5%87%BA.md)
+- [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [聚光灯效应（Spotlight Effect）](%E8%81%9A%E5%85%89%E7%81%AF%E6%95%88%E5%BA%94.md)
 - [决策疲劳（Decision Fatigue）](%E5%86%B3%E7%AD%96%E7%96%B2%E5%8A%B3.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
@@ -464,8 +470,9 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（39 个）
+### 关系（40 个）
 
+- [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
@@ -506,8 +513,9 @@ tags: [index, 寓言故事, 哲学]
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（43 个）
+### 制度（44 个）
 
+- [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [道德风险（Moral Hazard）](%E9%81%93%E5%BE%B7%E9%A3%8E%E9%99%A9.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
@@ -552,7 +560,7 @@ tags: [index, 寓言故事, 哲学]
 - [证言不正义（Testimonial Injustice）](%E8%AF%81%E8%A8%80%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 创作（23 个）
+### 创作（24 个）
 
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
@@ -561,6 +569,7 @@ tags: [index, 寓言故事, 哲学]
 - [功能固着（Functional Fixedness）](%E5%8A%9F%E8%83%BD%E5%9B%BA%E7%9D%80.md)
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
+- [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
 - [陌生化（Ostranenie）](%E9%99%8C%E7%94%9F%E5%8C%96.md)
@@ -718,7 +727,7 @@ tags: [index, 寓言故事, 哲学]
 - [意义建构（Sensemaking）](%E6%84%8F%E4%B9%89%E5%BB%BA%E6%9E%84.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 教育（17 个）
+### 教育（18 个）
 
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
@@ -726,6 +735,7 @@ tags: [index, 寓言故事, 哲学]
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
+- [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
