@@ -212,11 +212,12 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 
-### 生物学（3 个）
+### 生物学（4 个）
 
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
+- [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
 ### 人类学（1 个）
 
@@ -342,7 +343,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（27 个）
+### 循环（28 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
@@ -371,6 +372,7 @@ tags: [index, 寓言故事, 哲学]
 - [意义建构（Sensemaking）](%E6%84%8F%E4%B9%89%E5%BB%BA%E6%9E%84.md)
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
+- [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
 ### 错位（31 个）
 
@@ -426,7 +428,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（76 个）
+### 自我（77 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -500,12 +502,13 @@ tags: [index, 寓言故事, 哲学]
 - [游戏冲动（Spieltrieb）](%E6%B8%B8%E6%88%8F%E5%86%B2%E5%8A%A8.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
+- [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（47 个）
+### 关系（48 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -553,6 +556,7 @@ tags: [index, 寓言故事, 哲学]
 - [证言不正义（Testimonial Injustice）](%E8%AF%81%E8%A8%80%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
+- [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
 ### 制度（50 个）
@@ -678,7 +682,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（42 个）
+### 组织（43 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
@@ -721,6 +725,7 @@ tags: [index, 寓言故事, 哲学]
 - [责任扩散（Diffusion of Responsibility）](%E8%B4%A3%E4%BB%BB%E6%89%A9%E6%95%A3.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
+- [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
 ### 决策（42 个）
