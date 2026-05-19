@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（57 个）
+### 哲学（58 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -23,6 +23,7 @@ tags: [index, 寓言故事, 哲学]
 - [道德运气（Moral Luck）](%E9%81%93%E5%BE%B7%E8%BF%90%E6%B0%94.md)
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
 - [第一人称权威（First-Person Authority）](%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%9D%83%E5%A8%81.md)
+- [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [二阶欲望（Second-Order Desire）](%E4%BA%8C%E9%98%B6%E6%AC%B2%E6%9C%9B.md)
 - [非同一性问题（Non-Identity Problem）](%E9%9D%9E%E5%90%8C%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98.md)
 - [氛围（Stimmung）](%E6%B0%9B%E5%9B%B4.md)
@@ -230,8 +231,9 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按结构模式
 
-### 悖论（15 个）
+### 悖论（16 个）
 
+- [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [非同一性问题（Non-Identity Problem）](%E9%9D%9E%E5%90%8C%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98.md)
 - [盖梯尔问题（Gettier Problem）](%E7%9B%96%E6%A2%AF%E5%B0%94%E9%97%AE%E9%A2%98.md)
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
@@ -424,7 +426,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（75 个）
+### 自我（76 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -438,6 +440,7 @@ tags: [index, 寓言故事, 哲学]
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
 - [第一人称权威（First-Person Authority）](%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%9D%83%E5%A8%81.md)
+- [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [二阶欲望（Second-Order Desire）](%E4%BA%8C%E9%98%B6%E6%AC%B2%E6%9C%9B.md)
 - [氛围（Stimmung）](%E6%B0%9B%E5%9B%B4.md)
 - [负能力（Negative Capability）](%E8%B4%9F%E8%83%BD%E5%8A%9B.md)
@@ -502,7 +505,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（46 个）
+### 关系（47 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -511,6 +514,7 @@ tags: [index, 寓言故事, 哲学]
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
+- [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [反应贬值（Reactive Devaluation）](%E5%8F%8D%E5%BA%94%E8%B4%AC%E5%80%BC.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
@@ -674,7 +678,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（41 个）
+### 组织（42 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
@@ -683,6 +687,7 @@ tags: [index, 寓言故事, 哲学]
 - [帝国建造（Empire Building）](%E5%B8%9D%E5%9B%BD%E5%BB%BA%E9%80%A0.md)
 - [董事会捕获（Board Capture）](%E8%91%A3%E4%BA%8B%E4%BC%9A%E6%8D%95%E8%8E%B7.md)
 - [短期主义（Short-termism）](%E7%9F%AD%E6%9C%9F%E4%B8%BB%E4%B9%89.md)
+- [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
