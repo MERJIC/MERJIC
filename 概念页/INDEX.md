@@ -131,7 +131,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 经济学（34 个）
+### 经济学（35 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -157,6 +157,7 @@ tags: [index, 寓言故事, 哲学]
 - [模糊厌恶（Ambiguity Aversion）](%E6%A8%A1%E7%B3%8A%E5%8E%8C%E6%81%B6.md)
 - [逆向选择（Adverse Selection）](%E9%80%86%E5%90%91%E9%80%89%E6%8B%A9.md)
 - [柠檬市场（Market for Lemons）](%E6%9F%A0%E6%AA%AC%E5%B8%82%E5%9C%BA.md)
+- [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [双曲折现（Hyperbolic Discounting）](%E5%8F%8C%E6%9B%B2%E6%8A%98%E7%8E%B0.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [套牢问题（Hold-up Problem）](%E5%A5%97%E7%89%A2%E9%97%AE%E9%A2%98.md)
@@ -216,9 +217,10 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 
-### 生物学（4 个）
+### 生物学（5 个）
 
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
+- [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
@@ -320,7 +322,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（26 个）
+### 反转（28 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -328,6 +330,7 @@ tags: [index, 寓言故事, 哲学]
 - [承诺策略（Commitment Tactics）](%E6%89%BF%E8%AF%BA%E7%AD%96%E7%95%A5.md)
 - [道德风险（Moral Hazard）](%E9%81%93%E5%BE%B7%E9%A3%8E%E9%99%A9.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
+- [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [凡勃仑效应（Veblen Effect）](%E5%87%A1%E5%8B%83%E4%BB%91%E6%95%88%E5%BA%94.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
@@ -341,6 +344,7 @@ tags: [index, 寓言故事, 哲学]
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
+- [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [双回路学习（Double-Loop Learning）](%E5%8F%8C%E5%9B%9E%E8%B7%AF%E5%AD%A6%E4%B9%A0.md)
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
 - [无为而治（Wu Wei / Effortless Governance）](%E6%97%A0%E4%B8%BA%E8%80%8C%E6%B2%BB.md)
@@ -436,7 +440,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（81 个）
+### 自我（82 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -448,6 +452,7 @@ tags: [index, 寓言故事, 哲学]
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
+- [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
 - [第一人称权威（First-Person Authority）](%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%9D%83%E5%A8%81.md)
@@ -672,7 +677,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [有趣性（The Interesting）](%E6%9C%89%E8%B6%A3%E6%80%A7.md)
 
-### 商业（22 个）
+### 商业（23 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -689,6 +694,7 @@ tags: [index, 寓言故事, 哲学]
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
 - [逆向选择（Adverse Selection）](%E9%80%86%E5%90%91%E9%80%89%E6%8B%A9.md)
 - [柠檬市场（Market for Lemons）](%E6%9F%A0%E6%AA%AC%E5%B8%82%E5%9C%BA.md)
+- [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [双曲折现（Hyperbolic Discounting）](%E5%8F%8C%E6%9B%B2%E6%8A%98%E7%8E%B0.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [托宾q（Tobin's q）](%E6%89%98%E5%AE%BEq.md)
@@ -745,7 +751,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（45 个）
+### 决策（47 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -755,6 +761,7 @@ tags: [index, 寓言故事, 哲学]
 - [承诺策略（Commitment Tactics）](%E6%89%BF%E8%AF%BA%E7%AD%96%E7%95%A5.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
+- [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
 - [短期主义（Short-termism）](%E7%9F%AD%E6%9C%9F%E4%B8%BB%E4%B9%89.md)
 - [范围不敏感（Scope Insensitivity）](%E8%8C%83%E5%9B%B4%E4%B8%8D%E6%95%8F%E6%84%9F.md)
@@ -776,6 +783,7 @@ tags: [index, 寓言故事, 哲学]
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [情感预测失误（Affective Forecasting）](%E6%83%85%E6%84%9F%E9%A2%84%E6%B5%8B%E5%A4%B1%E8%AF%AF.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [双重束缚（Double Bind）](%E5%8F%8C%E9%87%8D%E6%9D%9F%E7%BC%9A.md)
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
