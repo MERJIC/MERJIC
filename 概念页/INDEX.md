@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（88 个）
+### 哲学（91 个）
 
 - [安全困境（Security Dilemma）](%E5%AE%89%E5%85%A8%E5%9B%B0%E5%A2%83.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -42,6 +42,7 @@ tags: [index, 寓言故事, 哲学]
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
 - [还原论（Reductionism）](%E8%BF%98%E5%8E%9F%E8%AE%BA.md)
 - [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
+- [机巧（Cleverness / Ingenuity）](%E6%9C%BA%E5%B7%A7.md)
 - [技艺（Technē / Craft）](%E6%8A%80%E8%89%BA.md)
 - [结构性无知（Structural Ignorance / Epistemology of Ignorance）](%E7%BB%93%E6%9E%84%E6%80%A7%E6%97%A0%E7%9F%A5.md)
 - [惊异（Wonder / Thaumazein）](%E6%83%8A%E5%BC%82.md)
@@ -70,6 +71,7 @@ tags: [index, 寓言故事, 哲学]
 - [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [弱意志（Akrasia）](%E5%BC%B1%E6%84%8F%E5%BF%97.md)
+- [赛博格（Cyborg）](%E8%B5%9B%E5%8D%9A%E6%A0%BC.md)
 - [丧我（Loss of Self / Sang Wo）](%E4%B8%A7%E6%88%91.md)
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
@@ -81,6 +83,7 @@ tags: [index, 寓言故事, 哲学]
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [私人语言论证（Private Language Argument）](%E7%A7%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E8%AE%BA%E8%AF%81.md)
+- [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [索里特斯悖论（Sorites Paradox）](%E7%B4%A2%E9%87%8C%E7%89%B9%E6%96%AF%E6%82%96%E8%AE%BA.md)
 - [他者性（Alterität）](%E4%BB%96%E8%80%85%E6%80%A7.md)
 - [无为而治（Wu Wei / Effortless Governance）](%E6%97%A0%E4%B8%BA%E8%80%8C%E6%B2%BB.md)
@@ -105,7 +108,7 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 心理学（59 个）
+### 心理学（58 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -126,7 +129,6 @@ tags: [index, 寓言故事, 哲学]
 - [功能固着（Functional Fixedness）](%E5%8A%9F%E8%83%BD%E5%9B%BA%E7%9D%80.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
-- [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
@@ -167,7 +169,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 经济学（46 个）
+### 经济学（47 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [霸权稳定论（Hegemonic Stability Theory）](%E9%9C%B8%E6%9D%83%E7%A8%B3%E5%AE%9A%E8%AE%BA.md)
@@ -201,6 +203,7 @@ tags: [index, 寓言故事, 哲学]
 - [柠檬市场（Market for Lemons）](%E6%9F%A0%E6%AA%AC%E5%B8%82%E5%9C%BA.md)
 - [帕累托最优（Pareto Optimality）](%E5%B8%95%E7%B4%AF%E6%89%98%E6%9C%80%E4%BC%98.md)
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
+- [数字劳动（Digital Labor）](%E6%95%B0%E5%AD%97%E5%8A%B3%E5%8A%A8.md)
 - [双曲折现（Hyperbolic Discounting）](%E5%8F%8C%E6%9B%B2%E6%8A%98%E7%8E%B0.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [套牢问题（Hold-up Problem）](%E5%A5%97%E7%89%A2%E9%97%AE%E9%A2%98.md)
@@ -216,7 +219,7 @@ tags: [index, 寓言故事, 哲学]
 - [注意力经济（Attention Economy）](%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BB%8F%E6%B5%8E.md)
 - [资源诅咒（Resource Curse）](%E8%B5%84%E6%BA%90%E8%AF%85%E5%92%92.md)
 
-### 社会学（32 个）
+### 社会学（33 个）
 
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
@@ -233,10 +236,11 @@ tags: [index, 寓言故事, 哲学]
 - [路径依赖（Path Dependence）](%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96.md)
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
 - [趣味审判（Taste as Judgment）](%E8%B6%A3%E5%91%B3%E5%AE%A1%E5%88%A4.md)
-- [权力合法化（Legitimation of Power）](%E6%9D%83%E5%8A%9B%E5%90%88%E6%B3%95%E5%8C%96.md)
 - [社交比较（Social Comparison）](%E7%A4%BE%E4%BA%A4%E6%AF%94%E8%BE%83.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
+- [数据殖民（Data Colonialism）](%E6%95%B0%E6%8D%AE%E6%AE%96%E6%B0%91.md)
 - [数字鸿沟（Digital Divide）](%E6%95%B0%E5%AD%97%E9%B8%BF%E6%B2%9F.md)
+- [数字劳动（Digital Labor）](%E6%95%B0%E5%AD%97%E5%8A%B3%E5%8A%A8.md)
 - [文化霸权（Cultural Hegemony）](%E6%96%87%E5%8C%96%E9%9C%B8%E6%9D%83.md)
 - [文化挪用（Cultural Appropriation）](%E6%96%87%E5%8C%96%E6%8C%AA%E7%94%A8.md)
 - [物化（Verdinglichung / Reification）](%E7%89%A9%E5%8C%96.md)
@@ -251,7 +255,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [制度性虚伪（Organized Hypocrisy）](%E5%88%B6%E5%BA%A6%E6%80%A7%E8%99%9A%E4%BC%AA.md)
 
-### 传播学（20 个）
+### 传播学（21 个）
 
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [错失恐惧（Fear of Missing Out / FOMO）](%E9%94%99%E5%A4%B1%E6%81%90%E6%83%A7.md)
@@ -265,6 +269,7 @@ tags: [index, 寓言故事, 哲学]
 - [迷因（Meme）](%E8%BF%B7%E5%9B%A0.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
 - [拟象（Simulacra / Simulation）](%E6%8B%9F%E8%B1%A1.md)
+- [赛博格（Cyborg）](%E8%B5%9B%E5%8D%9A%E6%A0%BC.md)
 - [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [数字鸿沟（Digital Divide）](%E6%95%B0%E5%AD%97%E9%B8%BF%E6%B2%9F.md)
 - [文化挪用（Cultural Appropriation）](%E6%96%87%E5%8C%96%E6%8C%AA%E7%94%A8.md)
@@ -315,7 +320,7 @@ tags: [index, 寓言故事, 哲学]
 - [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 - [夸富宴（Potlatch）](%E5%A4%B8%E5%AF%8C%E5%AE%B4.md)
 
-### 政治学（17 个）
+### 政治学（18 个）
 
 - [安全困境（Security Dilemma）](%E5%AE%89%E5%85%A8%E5%9B%B0%E5%A2%83.md)
 - [霸权稳定论（Hegemonic Stability Theory）](%E9%9C%B8%E6%9D%83%E7%A8%B3%E5%AE%9A%E8%AE%BA.md)
@@ -328,8 +333,9 @@ tags: [index, 寓言故事, 哲学]
 - [例外状态（State of Exception）](%E4%BE%8B%E5%A4%96%E7%8A%B6%E6%80%81.md)
 - [偏好瀑布（Preference Cascade）](%E5%81%8F%E5%A5%BD%E7%80%91%E5%B8%83.md)
 - [偏好伪装（Preference Falsification）](%E5%81%8F%E5%A5%BD%E4%BC%AA%E8%A3%85.md)
-- [权力合法化（Legitimation of Power）](%E6%9D%83%E5%8A%9B%E5%90%88%E6%B3%95%E5%8C%96.md)
 - [生命政治（Biopolitics / Biopower）](%E7%94%9F%E5%91%BD%E6%94%BF%E6%B2%BB.md)
+- [数据殖民（Data Colonialism）](%E6%95%B0%E6%8D%AE%E6%AE%96%E6%B0%91.md)
+- [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [文化霸权（Cultural Hegemony）](%E6%96%87%E5%8C%96%E9%9C%B8%E6%9D%83.md)
 - [协商民主（Deliberative Democracy）](%E5%8D%8F%E5%95%86%E6%B0%91%E4%B8%BB.md)
 - [议程设置（Agenda Setting）](%E8%AE%AE%E7%A8%8B%E8%AE%BE%E7%BD%AE.md)
@@ -422,7 +428,7 @@ tags: [index, 寓言故事, 哲学]
 - [协商民主（Deliberative Democracy）](%E5%8D%8F%E5%95%86%E6%B0%91%E4%B8%BB.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 
-### 渐变（19 个）
+### 渐变（20 个）
 
 - [崇高（The Sublime）](%E5%B4%87%E9%AB%98.md)
 - [错失恐惧（Fear of Missing Out / FOMO）](%E9%94%99%E5%A4%B1%E6%81%90%E6%83%A7.md)
@@ -436,6 +442,7 @@ tags: [index, 寓言故事, 哲学]
 - [例外状态（State of Exception）](%E4%BE%8B%E5%A4%96%E7%8A%B6%E6%80%81.md)
 - [拟象（Simulacra / Simulation）](%E6%8B%9F%E8%B1%A1.md)
 - [情绪识别力（Emotional Granularity）](%E6%83%85%E7%BB%AA%E8%AF%86%E5%88%AB%E5%8A%9B.md)
+- [赛博格（Cyborg）](%E8%B5%9B%E5%8D%9A%E6%A0%BC.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [索里特斯悖论（Sorites Paradox）](%E7%B4%A2%E9%87%8C%E7%89%B9%E6%96%AF%E6%82%96%E8%AE%BA.md)
@@ -459,7 +466,6 @@ tags: [index, 寓言故事, 哲学]
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
-- [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
 - [惊异（Wonder / Thaumazein）](%E6%83%8A%E5%BC%82.md)
@@ -474,6 +480,7 @@ tags: [index, 寓言故事, 哲学]
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [诗意栖居（Poetically Man Dwells）](%E8%AF%97%E6%84%8F%E6%A0%96%E5%B1%85.md)
 - [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
+- [数据殖民（Data Colonialism）](%E6%95%B0%E6%8D%AE%E6%AE%96%E6%B0%91.md)
 - [双回路学习（Double-Loop Learning）](%E5%8F%8C%E5%9B%9E%E8%B7%AF%E5%AD%A6%E4%B9%A0.md)
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
 - [文化霸权（Cultural Hegemony）](%E6%96%87%E5%8C%96%E9%9C%B8%E6%9D%83.md)
@@ -521,9 +528,9 @@ tags: [index, 寓言故事, 哲学]
 - [帕金森定律（Parkinson's Law）](%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B.md)
 - [皮格马利翁效应（Pygmalion Effect）](%E7%9A%AE%E6%A0%BC%E9%A9%AC%E5%88%A9%E7%BF%81%E6%95%88%E5%BA%94.md)
 - [偏好瀑布（Preference Cascade）](%E5%81%8F%E5%A5%BD%E7%80%91%E5%B8%83.md)
-- [权力合法化（Legitimation of Power）](%E6%9D%83%E5%8A%9B%E5%90%88%E6%B3%95%E5%8C%96.md)
 - [诠释学循环（Hermeneutic Circle）](%E8%AF%A0%E9%87%8A%E5%AD%A6%E5%BE%AA%E7%8E%AF.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [数字劳动（Digital Labor）](%E6%95%B0%E5%AD%97%E5%8A%B3%E5%8A%A8.md)
 - [双曲折现（Hyperbolic Discounting）](%E5%8F%8C%E6%9B%B2%E6%8A%98%E7%8E%B0.md)
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
 - [网络外部性（Network Externality）](%E7%BD%91%E7%BB%9C%E5%A4%96%E9%83%A8%E6%80%A7.md)
@@ -536,7 +543,7 @@ tags: [index, 寓言故事, 哲学]
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
-### 错位（42 个）
+### 错位（43 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -549,6 +556,7 @@ tags: [index, 寓言故事, 哲学]
 - [副现象论（Epiphenomenalism）](%E5%89%AF%E7%8E%B0%E8%B1%A1%E8%AE%BA.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
 - [规范性解离（Normative Dissociation）](%E8%A7%84%E8%8C%83%E6%80%A7%E8%A7%A3%E7%A6%BB.md)
+- [机巧（Cleverness / Ingenuity）](%E6%9C%BA%E5%B7%A7.md)
 - [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [坎蒂隆效应（Cantillon Effect）](%E5%9D%8E%E8%92%82%E9%9A%86%E6%95%88%E5%BA%94.md)
 - [框架效应（Framing Effect）](%E6%A1%86%E6%9E%B6%E6%95%88%E5%BA%94.md)
@@ -581,7 +589,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度性虚伪（Organized Hypocrisy）](%E5%88%B6%E5%BA%A6%E6%80%A7%E8%99%9A%E4%BC%AA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 缺位（21 个）
+### 缺位（22 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
@@ -602,6 +610,7 @@ tags: [index, 寓言故事, 哲学]
 - [认知负荷（Cognitive Load Theory）](%E8%AE%A4%E7%9F%A5%E8%B4%9F%E8%8D%B7.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [数字鸿沟（Digital Divide）](%E6%95%B0%E5%AD%97%E9%B8%BF%E6%B2%9F.md)
+- [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [他者性（Alterität）](%E4%BB%96%E8%80%85%E6%80%A7.md)
 - [责任扩散（Diffusion of Responsibility）](%E8%B4%A3%E4%BB%BB%E6%89%A9%E6%95%A3.md)
 
@@ -639,7 +648,6 @@ tags: [index, 寓言故事, 哲学]
 - [格式塔转换（Gestalt Shift）](%E6%A0%BC%E5%BC%8F%E5%A1%94%E8%BD%AC%E6%8D%A2.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
-- [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [还原论（Reductionism）](%E8%BF%98%E5%8E%9F%E8%AE%BA.md)
@@ -676,6 +684,7 @@ tags: [index, 寓言故事, 哲学]
 - [认知怯懦（Epistemic Cowardice）](%E8%AE%A4%E7%9F%A5%E6%80%AF%E6%87%A6.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [弱意志（Akrasia）](%E5%BC%B1%E6%84%8F%E5%BF%97.md)
+- [赛博格（Cyborg）](%E8%B5%9B%E5%8D%9A%E6%A0%BC.md)
 - [丧我（Loss of Self / Sang Wo）](%E4%B8%A7%E6%88%91.md)
 - [社交比较（Social Comparison）](%E7%A4%BE%E4%BA%A4%E6%AF%94%E8%BE%83.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
@@ -785,7 +794,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（77 个）
+### 制度（79 个）
 
 - [安全困境（Security Dilemma）](%E5%AE%89%E5%85%A8%E5%9B%B0%E5%A2%83.md)
 - [霸权稳定论（Hegemonic Stability Theory）](%E9%9C%B8%E6%9D%83%E7%A8%B3%E5%AE%9A%E8%AE%BA.md)
@@ -837,13 +846,15 @@ tags: [index, 寓言故事, 哲学]
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
-- [权力合法化（Legitimation of Power）](%E6%9D%83%E5%8A%9B%E5%90%88%E6%B3%95%E5%8C%96.md)
 - [诠释不正义（Hermeneutical Injustice）](%E8%AF%A0%E9%87%8A%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认识论不正义（Epistemic Injustice）](%E8%AE%A4%E8%AF%86%E8%AE%BA%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [生命政治（Biopolitics / Biopower）](%E7%94%9F%E5%91%BD%E6%94%BF%E6%B2%BB.md)
 - [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
+- [数据殖民（Data Colonialism）](%E6%95%B0%E6%8D%AE%E6%AE%96%E6%B0%91.md)
 - [数字鸿沟（Digital Divide）](%E6%95%B0%E5%AD%97%E9%B8%BF%E6%B2%9F.md)
+- [数字劳动（Digital Labor）](%E6%95%B0%E5%AD%97%E5%8A%B3%E5%8A%A8.md)
+- [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [索里特斯悖论（Sorites Paradox）](%E7%B4%A2%E9%87%8C%E7%89%B9%E6%96%AF%E6%82%96%E8%AE%BA.md)
 - [套牢问题（Hold-up Problem）](%E5%A5%97%E7%89%A2%E9%97%AE%E9%A2%98.md)
@@ -877,7 +888,7 @@ tags: [index, 寓言故事, 哲学]
 - [感性的分配（Distribution of the Sensible）](%E6%84%9F%E6%80%A7%E7%9A%84%E5%88%86%E9%85%8D.md)
 - [格式塔转换（Gestalt Shift）](%E6%A0%BC%E5%BC%8F%E5%A1%94%E8%BD%AC%E6%8D%A2.md)
 - [功能固着（Functional Fixedness）](%E5%8A%9F%E8%83%BD%E5%9B%BA%E7%9D%80.md)
-- [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
+- [机巧（Cleverness / Ingenuity）](%E6%9C%BA%E5%B7%A7.md)
 - [技艺（Technē / Craft）](%E6%8A%80%E8%89%BA.md)
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
 - [惊异（Wonder / Thaumazein）](%E6%83%8A%E5%BC%82.md)
@@ -909,7 +920,7 @@ tags: [index, 寓言故事, 哲学]
 - [语义外在主义（Semantic Externalism）](%E8%AF%AD%E4%B9%89%E5%A4%96%E5%9C%A8%E4%B8%BB%E4%B9%89.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 
-### 自媒体（30 个）
+### 自媒体（34 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
@@ -931,8 +942,12 @@ tags: [index, 寓言故事, 哲学]
 - [迷因（Meme）](%E8%BF%B7%E5%9B%A0.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
 - [拟象（Simulacra / Simulation）](%E6%8B%9F%E8%B1%A1.md)
+- [赛博格（Cyborg）](%E8%B5%9B%E5%8D%9A%E6%A0%BC.md)
 - [社交比较（Social Comparison）](%E7%A4%BE%E4%BA%A4%E6%AF%94%E8%BE%83.md)
 - [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
+- [数据殖民（Data Colonialism）](%E6%95%B0%E6%8D%AE%E6%AE%96%E6%B0%91.md)
+- [数字劳动（Digital Labor）](%E6%95%B0%E5%AD%97%E5%8A%B3%E5%8A%A8.md)
+- [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [稀缺性制造（Manufactured Scarcity）](%E7%A8%80%E7%BC%BA%E6%80%A7%E5%88%B6%E9%80%A0.md)
 - [象征性边界（Symbolic Boundaries）](%E8%B1%A1%E5%BE%81%E6%80%A7%E8%BE%B9%E7%95%8C.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
@@ -1042,7 +1057,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（68 个）
+### 决策（69 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [安全困境（Security Dilemma）](%E5%AE%89%E5%85%A8%E5%9B%B0%E5%A2%83.md)
@@ -1071,6 +1086,7 @@ tags: [index, 寓言故事, 哲学]
 - [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [回音室效应（Echo Chamber Effect）](%E5%9B%9E%E9%9F%B3%E5%AE%A4%E6%95%88%E5%BA%94.md)
 - [货币幻觉（Money Illusion）](%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89.md)
+- [机巧（Cleverness / Ingenuity）](%E6%9C%BA%E5%B7%A7.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
 - [决策疲劳（Decision Fatigue）](%E5%86%B3%E7%AD%96%E7%96%B2%E5%8A%B3.md)
 - [均势理论（Balance of Power）](%E5%9D%87%E5%8A%BF%E7%90%86%E8%AE%BA.md)
@@ -1113,7 +1129,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（30 个）
+### 领导（29 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
@@ -1136,7 +1152,6 @@ tags: [index, 寓言故事, 哲学]
 - [皮格马利翁效应（Pygmalion Effect）](%E7%9A%AE%E6%A0%BC%E9%A9%AC%E5%88%A9%E7%BF%81%E6%95%88%E5%BA%94.md)
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
 - [权力悖论（Power Paradox）](%E6%9D%83%E5%8A%9B%E6%82%96%E8%AE%BA.md)
-- [权力合法化（Legitimation of Power）](%E6%9D%83%E5%8A%9B%E5%90%88%E6%B3%95%E5%8C%96.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
 - [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
@@ -1173,11 +1188,3 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
-
----
-
-## ⚠️ 待整理（1 个）
-
-> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
-
-- [机巧（Cleverness / Ingenuity）](%E6%9C%BA%E5%B7%A7.md) — domain "技术科学" 不在词汇表
