@@ -204,12 +204,13 @@ tags: [index, 寓言故事, 哲学]
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 - [制度性虚伪（Organized Hypocrisy）](%E5%88%B6%E5%BA%A6%E6%80%A7%E8%99%9A%E4%BC%AA.md)
 
-### 传播学（5 个）
+### 传播学（6 个）
 
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
+- [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [战略性模糊（Strategic Ambiguity）](%E6%88%98%E7%95%A5%E6%80%A7%E6%A8%A1%E7%B3%8A.md)
 
 ### 管理学（19 个）
@@ -346,7 +347,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（29 个）
+### 反转（30 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -369,6 +370,7 @@ tags: [index, 寓言故事, 哲学]
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
+- [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [双回路学习（Double-Loop Learning）](%E5%8F%8C%E5%9B%9E%E8%B7%AF%E5%AD%A6%E4%B9%A0.md)
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
 - [无为而治（Wu Wei / Effortless Governance）](%E6%97%A0%E4%B8%BA%E8%80%8C%E6%B2%BB.md)
@@ -629,7 +631,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（54 个）
+### 制度（55 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -670,6 +672,7 @@ tags: [index, 寓言故事, 哲学]
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
 - [诠释不正义（Hermeneutical Injustice）](%E8%AF%A0%E9%87%8A%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认识论不正义（Epistemic Injustice）](%E8%AE%A4%E8%AF%86%E8%AE%BA%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
+- [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [索里特斯悖论（Sorites Paradox）](%E7%B4%A2%E9%87%8C%E7%89%B9%E6%96%AF%E6%82%96%E8%AE%BA.md)
@@ -716,7 +719,7 @@ tags: [index, 寓言故事, 哲学]
 - [语义外在主义（Semantic Externalism）](%E8%AF%AD%E4%B9%89%E5%A4%96%E5%9C%A8%E4%B8%BB%E4%B9%89.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 
-### 自媒体（17 个）
+### 自媒体（18 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
@@ -730,6 +733,7 @@ tags: [index, 寓言故事, 哲学]
 - [刻奇（Kitsch）](%E5%88%BB%E5%A5%87.md)
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
+- [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
 - [象征性边界（Symbolic Boundaries）](%E8%B1%A1%E5%BE%81%E6%80%A7%E8%BE%B9%E7%95%8C.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 - [信息级联（Information Cascade）](%E4%BF%A1%E6%81%AF%E7%BA%A7%E8%81%94.md)
