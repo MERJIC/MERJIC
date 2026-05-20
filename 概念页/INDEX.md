@@ -77,12 +77,13 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 心理学（51 个）
+### 心理学（52 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
+- [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
@@ -257,11 +258,12 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 盲区（37 个）
+### 盲区（38 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
+- [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [道德运气（Moral Luck）](%E9%81%93%E5%BE%B7%E8%BF%90%E6%B0%94.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
@@ -440,7 +442,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（82 个）
+### 自我（83 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -451,6 +453,7 @@ tags: [index, 寓言故事, 哲学]
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
+- [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [迪昂-奎因论题（Duhem-Quine Thesis）](%E8%BF%AA%E6%98%82-%E5%A5%8E%E5%9B%A0%E8%AE%BA%E9%A2%98.md)
@@ -703,11 +706,12 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（45 个）
+### 组织（46 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
+- [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
 - [帝国建造（Empire Building）](%E5%B8%9D%E5%9B%BD%E5%BB%BA%E9%80%A0.md)
@@ -751,7 +755,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（47 个）
+### 决策（48 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -760,6 +764,7 @@ tags: [index, 寓言故事, 哲学]
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [承诺策略（Commitment Tactics）](%E6%89%BF%E8%AF%BA%E7%AD%96%E7%95%A5.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
+- [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [第三人效果（Third-Person Effect）](%E7%AC%AC%E4%B8%89%E4%BA%BA%E6%95%88%E6%9E%9C.md)
