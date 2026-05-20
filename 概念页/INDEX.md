@@ -255,9 +255,10 @@ tags: [index, 寓言故事, 哲学]
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
-### 人类学（1 个）
+### 人类学（2 个）
 
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
+- [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 
 ### 政治学（4 个）
 
@@ -397,7 +398,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（36 个）
+### 循环（37 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
@@ -414,6 +415,7 @@ tags: [index, 寓言故事, 哲学]
 - [集体欢腾（Collective Effervescence）](%E9%9B%86%E4%BD%93%E6%AC%A2%E8%85%BE.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 - [李嘉图等价（Ricardian Equivalence）](%E6%9D%8E%E5%98%89%E5%9B%BE%E7%AD%89%E4%BB%B7.md)
 - [路径依赖（Path Dependence）](%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96.md)
 - [明斯基时刻（Minsky Moment）](%E6%98%8E%E6%96%AF%E5%9F%BA%E6%97%B6%E5%88%BB.md)
@@ -598,7 +600,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（59 个）
+### 关系（60 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -619,6 +621,7 @@ tags: [index, 寓言故事, 哲学]
 - [角色退出（Role Exit）](%E8%A7%92%E8%89%B2%E9%80%80%E5%87%BA.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 - [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
@@ -660,7 +663,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（58 个）
+### 制度（59 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -689,6 +692,7 @@ tags: [index, 寓言故事, 哲学]
 - [科斯定理（Coase Theorem）](%E7%A7%91%E6%96%AF%E5%AE%9A%E7%90%86.md)
 - [刻奇（Kitsch）](%E5%88%BB%E5%A5%87.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 - [李嘉图等价（Ricardian Equivalence）](%E6%9D%8E%E5%98%89%E5%9B%BE%E7%AD%89%E4%BB%B7.md)
 - [路径依赖（Path Dependence）](%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96.md)
 - [明斯基时刻（Minsky Moment）](%E6%98%8E%E6%96%AF%E5%9F%BA%E6%97%B6%E5%88%BB.md)
@@ -773,7 +777,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [有趣性（The Interesting）](%E6%9C%89%E8%B6%A3%E6%80%A7.md)
 
-### 商业（27 个）
+### 商业（28 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -788,6 +792,7 @@ tags: [index, 寓言故事, 哲学]
 - [棘轮效应（Ratchet Effect）](%E6%A3%98%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [结构洞（Structural Holes）](%E7%BB%93%E6%9E%84%E6%B4%9E.md)
 - [科斯定理（Coase Theorem）](%E7%A7%91%E6%96%AF%E5%AE%9A%E7%90%86.md)
+- [库拉圈（Kula Ring）](%E5%BA%93%E6%8B%89%E5%9C%88.md)
 - [明斯基时刻（Minsky Moment）](%E6%98%8E%E6%96%AF%E5%9F%BA%E6%97%B6%E5%88%BB.md)
 - [模糊厌恶（Ambiguity Aversion）](%E6%A8%A1%E7%B3%8A%E5%8E%8C%E6%81%B6.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
@@ -983,3 +988,13 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
+
+---
+
+## ⚠️ 待整理（3 个）
+
+> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
+
+- [不利条件原理（Handicap Principle）](%E4%B8%8D%E5%88%A9%E6%9D%A1%E4%BB%B6%E5%8E%9F%E7%90%86.md) — pattern/信号 不在词汇表
+- [诚实信号（Honest Signaling）](%E8%AF%9A%E5%AE%9E%E4%BF%A1%E5%8F%B7.md) — pattern/信号 不在词汇表
+- [夸富宴（Potlatch）](%E5%A4%B8%E5%AF%8C%E5%AE%B4.md) — pattern/竞争 不在词汇表
