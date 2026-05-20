@@ -173,7 +173,7 @@ tags: [index, 寓言故事, 哲学]
 - [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 社会学（20 个）
+### 社会学（21 个）
 
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
@@ -183,6 +183,7 @@ tags: [index, 寓言故事, 哲学]
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
 - [角色退出（Role Exit）](%E8%A7%92%E8%89%B2%E9%80%80%E5%87%BA.md)
 - [结构洞（Structural Holes）](%E7%BB%93%E6%9E%84%E6%B4%9E.md)
+- [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
 - [路径依赖（Path Dependence）](%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96.md)
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
@@ -204,7 +205,7 @@ tags: [index, 寓言故事, 哲学]
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
 - [战略性模糊（Strategic Ambiguity）](%E6%88%98%E7%95%A5%E6%80%A7%E6%A8%A1%E7%B3%8A.md)
 
-### 管理学（17 个）
+### 管理学（18 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
@@ -212,6 +213,7 @@ tags: [index, 寓言故事, 哲学]
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
+- [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
 - [领导者-成员交换理论（LMX，Leader-Member Exchange）](%E9%A2%86%E5%AF%BC%E8%80%85-%E6%88%90%E5%91%98%E4%BA%A4%E6%8D%A2%E7%90%86%E8%AE%BA.md)
 - [满意化（Satisficing）](%E6%BB%A1%E6%84%8F%E5%8C%96.md)
@@ -305,12 +307,13 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 
-### 冲突（9 个）
+### 冲突（10 个）
 
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [二阶欲望（Second-Order Desire）](%E4%BA%8C%E9%98%B6%E6%AC%B2%E6%9C%9B.md)
 - [概化他者（Generalized Other）](%E6%A6%82%E5%8C%96%E4%BB%96%E8%80%85.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
+- [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [弱意志（Akrasia）](%E5%BC%B1%E6%84%8F%E5%BF%97.md)
@@ -363,7 +366,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（29 个）
+### 循环（30 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
@@ -371,6 +374,7 @@ tags: [index, 寓言故事, 哲学]
 - [格雷欣法则（Gresham's Law）](%E6%A0%BC%E9%9B%B7%E6%AC%A3%E6%B3%95%E5%88%99.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
+- [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
@@ -454,7 +458,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（84 个）
+### 自我（85 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -491,6 +495,7 @@ tags: [index, 寓言故事, 哲学]
 - [决策疲劳（Decision Fatigue）](%E5%86%B3%E7%AD%96%E7%96%B2%E5%8A%B3.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [理性成瘾理论（Rational Addiction Theory）](%E7%90%86%E6%80%A7%E6%88%90%E7%98%BE%E7%90%86%E8%AE%BA.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
@@ -541,7 +546,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（51 个）
+### 关系（53 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -552,6 +557,7 @@ tags: [index, 寓言故事, 哲学]
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
 - [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [反应贬值（Reactive Devaluation）](%E5%8F%8D%E5%BA%94%E8%B4%AC%E5%80%BC.md)
+- [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
 - [寄生社交关系（Parasocial Relationship）](%E5%AF%84%E7%94%9F%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB.md)
@@ -559,6 +565,7 @@ tags: [index, 寓言故事, 哲学]
 - [角色退出（Role Exit）](%E8%A7%92%E8%89%B2%E9%80%80%E5%87%BA.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
@@ -725,7 +732,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（50 个）
+### 组织（52 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
@@ -746,9 +753,11 @@ tags: [index, 寓言故事, 哲学]
 - [规范性解离（Normative Dissociation）](%E8%A7%84%E8%8C%83%E6%80%A7%E8%A7%A3%E7%A6%BB.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
+- [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
 - [渐进式捕获（Creeping Capture）](%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8D%95%E8%8E%B7.md)
 - [结构洞（Structural Holes）](%E7%BB%93%E6%9E%84%E6%B4%9E.md)
+- [礼貌理论（Politeness Theory）](%E7%A4%BC%E8%B2%8C%E7%90%86%E8%AE%BA.md)
 - [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [帕金森定律（Parkinson's Law）](%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B.md)
@@ -831,7 +840,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（26 个）
+### 领导（27 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
@@ -842,6 +851,7 @@ tags: [index, 寓言故事, 哲学]
 - [寡头铁律（Iron Law of Oligarchy）](%E5%AF%A1%E5%A4%B4%E9%93%81%E5%BE%8B.md)
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
+- [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
 - [渐进式捕获（Creeping Capture）](%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8D%95%E8%8E%B7.md)
