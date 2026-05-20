@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（63 个）
+### 哲学（64 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -38,6 +38,7 @@ tags: [index, 寓言故事, 哲学]
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
 - [陌生化（Ostranenie）](%E9%99%8C%E7%94%9F%E5%8C%96.md)
+- [莫利纽问题（Molyneux's Problem）](%E8%8E%AB%E5%88%A9%E7%BA%BD%E9%97%AE%E9%A2%98.md)
 - [能力进路（Capability Approach）](%E8%83%BD%E5%8A%9B%E8%BF%9B%E8%B7%AF.md)
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
@@ -276,7 +277,7 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 盲区（40 个）
+### 盲区（41 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -302,6 +303,7 @@ tags: [index, 寓言故事, 哲学]
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
 - [模糊厌恶（Ambiguity Aversion）](%E6%A8%A1%E7%B3%8A%E5%8E%8C%E6%81%B6.md)
+- [莫利纽问题（Molyneux's Problem）](%E8%8E%AB%E5%88%A9%E7%BA%BD%E9%97%AE%E9%A2%98.md)
 - [能力进路（Capability Approach）](%E8%83%BD%E5%8A%9B%E8%BF%9B%E8%B7%AF.md)
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
@@ -478,7 +480,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（89 个）
+### 自我（90 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -521,6 +523,7 @@ tags: [index, 寓言故事, 哲学]
 - [理性成瘾理论（Rational Addiction Theory）](%E7%90%86%E6%80%A7%E6%88%90%E7%98%BE%E7%90%86%E8%AE%BA.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
+- [莫利纽问题（Molyneux's Problem）](%E8%8E%AB%E5%88%A9%E7%BA%BD%E9%97%AE%E9%A2%98.md)
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
 - [能力进路（Capability Approach）](%E8%83%BD%E5%8A%9B%E8%BF%9B%E8%B7%AF.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
@@ -918,7 +921,7 @@ tags: [index, 寓言故事, 哲学]
 - [制度性虚伪（Organized Hypocrisy）](%E5%88%B6%E5%BA%A6%E6%80%A7%E8%99%9A%E4%BC%AA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 教育（19 个）
+### 教育（20 个）
 
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
@@ -930,6 +933,7 @@ tags: [index, 寓言故事, 哲学]
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
 - [梅农悖论（Meno's Paradox）](%E6%A2%85%E5%86%9C%E6%82%96%E8%AE%BA.md)
+- [莫利纽问题（Molyneux's Problem）](%E8%8E%AB%E5%88%A9%E7%BA%BD%E9%97%AE%E9%A2%98.md)
 - [皮格马利翁效应（Pygmalion Effect）](%E7%9A%AE%E6%A0%BC%E9%A9%AC%E5%88%A9%E7%BF%81%E6%95%88%E5%BA%94.md)
 - [情绪识别力（Emotional Granularity）](%E6%83%85%E7%BB%AA%E8%AF%86%E5%88%AB%E5%8A%9B.md)
 - [认知负荷（Cognitive Load Theory）](%E8%AE%A4%E7%9F%A5%E8%B4%9F%E8%8D%B7.md)
