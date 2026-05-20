@@ -1,18 +1,9 @@
 ---
 name: 负熵（Negentropy）
-aliases: [负熵, Negentropy, negentropy]
-domain: [物理学, 信息论, 控制论]
-discipline: [热力学, 控制论, 信息论]
-tags:
-  - concept/负熵
-  - domain/物理学
-  - domain/信息论
-  - domain/控制论
-  - link/维纳
-  - link/Schrödinger
-related: [[超稳定性]], [[自创生]], [[二阶控制论]], [[必要多样性]]
-status: draft
-created: 2026-05-20
+domain: [生物学]
+date: 2026-05-20
+source: 其他
+tags: [discipline/行为生物学, pattern/循环, apply/自我, apply/创作, apply/组织]
 ---
 
 ## 核心定义

@@ -1,17 +1,9 @@
 ---
 name: 语义外在主义（Semantic Externalism）
-aliases: [语义外在主义, Semantic Externalism, semantic externalism]
-domain: [语言哲学, 心灵哲学]
-discipline: [语言哲学, 心灵哲学, 意义理论]
-tags:
-  - concept/语义外在主义
-  - domain/语言哲学
-  - domain/心灵哲学
-  - link/普特南
-  - link/伯奇
-related: [[意义理论]], [[心灵哲学]], [[语言哲学]], [[内在主义]]
-status: draft
-created: 2026-05-20
+domain: [哲学]
+date: 2026-05-20
+source: 寓言故事
+tags: [discipline/语言哲学, pattern/盲区, apply/自我, apply/关系, apply/创作]
 ---
 
 ## 核心定义
