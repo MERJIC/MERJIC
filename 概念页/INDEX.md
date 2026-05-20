@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（61 个）
+### 哲学（62 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -55,6 +55,7 @@ tags: [index, 寓言故事, 哲学]
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
 - [慎独（Shen Du / Watchfulness in Solitude）](%E6%85%8E%E7%8B%AC.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
+- [实践侵入（Pragmatic Encroachment）](%E5%AE%9E%E8%B7%B5%E4%BE%B5%E5%85%A5.md)
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [私人语言论证（Private Language Argument）](%E7%A7%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E8%AE%BA%E8%AF%81.md)
@@ -409,7 +410,7 @@ tags: [index, 寓言故事, 哲学]
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
-### 错位（36 个）
+### 错位（37 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -432,6 +433,7 @@ tags: [index, 寓言故事, 哲学]
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
 - [慎独（Shen Du / Watchfulness in Solitude）](%E6%85%8E%E7%8B%AC.md)
+- [实践侵入（Pragmatic Encroachment）](%E5%AE%9E%E8%B7%B5%E4%BE%B5%E5%85%A5.md)
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [隧道挖掘（Tunneling）](%E9%9A%A7%E9%81%93%E6%8C%96%E6%8E%98.md)
 - [托宾q（Tobin's q）](%E6%89%98%E5%AE%BEq.md)
@@ -470,7 +472,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（86 个）
+### 自我（87 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -532,6 +534,7 @@ tags: [index, 寓言故事, 哲学]
 - [审美无利害（Aesthetic Disinterestedness）](%E5%AE%A1%E7%BE%8E%E6%97%A0%E5%88%A9%E5%AE%B3.md)
 - [慎独（Shen Du / Watchfulness in Solitude）](%E6%85%8E%E7%8B%AC.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
+- [实践侵入（Pragmatic Encroachment）](%E5%AE%9E%E8%B7%B5%E4%BE%B5%E5%85%A5.md)
 - [实践知识（Knowing-How）](%E5%AE%9E%E8%B7%B5%E7%9F%A5%E8%AF%86.md)
 - [适应性偏好（Adaptive Preference）](%E9%80%82%E5%BA%94%E6%80%A7%E5%81%8F%E5%A5%BD.md)
 - [属性替换（Attribute Substitution）](%E5%B1%9E%E6%80%A7%E6%9B%BF%E6%8D%A2.md)
@@ -812,7 +815,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（52 个）
+### 决策（53 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -850,6 +853,7 @@ tags: [index, 寓言故事, 哲学]
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
+- [实践侵入（Pragmatic Encroachment）](%E5%AE%9E%E8%B7%B5%E4%BE%B5%E5%85%A5.md)
 - [双重束缚（Double Bind）](%E5%8F%8C%E9%87%8D%E6%9D%9F%E7%BC%9A.md)
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
 - [托宾q（Tobin's q）](%E6%89%98%E5%AE%BEq.md)
@@ -920,3 +924,12 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
+
+---
+
+## ⚠️ 待整理（2 个）
+
+> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
+
+- [负熵（Negentropy）](%E8%B4%9F%E7%86%B5%EF%BC%88Negentropy%EF%BC%89.md) — 无 frontmatter
+- [语义外在主义（Semantic Externalism）](%E8%AF%AD%E4%B9%89%E5%A4%96%E5%9C%A8%E4%B8%BB%E4%B9%89%EF%BC%88Semantic%20Externalism%EF%BC%89.md) — 无 frontmatter
