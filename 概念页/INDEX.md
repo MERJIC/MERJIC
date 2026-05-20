@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（60 个）
+### 哲学（61 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -47,6 +47,7 @@ tags: [index, 寓言故事, 哲学]
 - [认识论不正义（Epistemic Injustice）](%E8%AE%A4%E8%AF%86%E8%AE%BA%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认知封闭性（Cognitive Closure）](%E8%AE%A4%E7%9F%A5%E5%B0%81%E9%97%AD%E6%80%A7.md)
 - [认知怯懦（Epistemic Cowardice）](%E8%AE%A4%E7%9F%A5%E6%80%AF%E6%87%A6.md)
+- [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [弱意志（Akrasia）](%E5%BC%B1%E6%84%8F%E5%BF%97.md)
 - [丧我（Loss of Self / Sang Wo）](%E4%B8%A7%E6%88%91.md)
@@ -77,7 +78,7 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 心理学（53 个）
+### 心理学（54 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -96,6 +97,7 @@ tags: [index, 寓言故事, 哲学]
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
+- [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
@@ -208,12 +210,13 @@ tags: [index, 寓言故事, 哲学]
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
 - [战略性模糊（Strategic Ambiguity）](%E6%88%98%E7%95%A5%E6%80%A7%E6%A8%A1%E7%B3%8A.md)
 
-### 管理学（18 个）
+### 管理学（19 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
+- [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [服务型领导（Servant Leadership）](%E6%9C%8D%E5%8A%A1%E5%9E%8B%E9%A2%86%E5%AF%BC.md)
 - [古德哈特定律（Goodhart's Law）](%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B.md)
 - [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
@@ -269,7 +272,7 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 盲区（38 个）
+### 盲区（39 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -300,6 +303,7 @@ tags: [index, 寓言故事, 哲学]
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
 - [认知怯懦（Epistemic Cowardice）](%E8%AE%A4%E7%9F%A5%E6%80%AF%E6%87%A6.md)
+- [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [社会参照（Social Referencing）](%E7%A4%BE%E4%BC%9A%E5%8F%82%E7%85%A7.md)
 - [属性替换（Attribute Substitution）](%E5%B1%9E%E6%80%A7%E6%9B%BF%E6%8D%A2.md)
 - [象征性暴力（Symbolic Violence）](%E8%B1%A1%E5%BE%81%E6%80%A7%E6%9A%B4%E5%8A%9B.md)
@@ -370,10 +374,11 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（31 个）
+### 循环（32 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
+- [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [道德恐慌（Moral Panic）](%E9%81%93%E5%BE%B7%E6%81%90%E6%85%8C.md)
 - [格雷欣法则（Gresham's Law）](%E6%A0%BC%E9%9B%B7%E6%AC%A3%E6%B3%95%E5%88%99.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
@@ -443,13 +448,14 @@ tags: [index, 寓言故事, 哲学]
 - [制度性虚伪（Organized Hypocrisy）](%E5%88%B6%E5%BA%A6%E6%80%A7%E8%99%9A%E4%BC%AA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 缺位（16 个）
+### 缺位（17 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [蔡格尼克效应（Zeigarnik Effect）](%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
 - [负能力（Negative Capability）](%E8%B4%9F%E8%83%BD%E5%8A%9B.md)
+- [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [结构洞（Structural Holes）](%E7%BB%93%E6%9E%84%E6%B4%9E.md)
 - [刻奇（Kitsch）](%E5%88%BB%E5%A5%87.md)
 - [满意化（Satisficing）](%E6%BB%A1%E6%84%8F%E5%8C%96.md)
@@ -464,7 +470,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（85 个）
+### 自我（86 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -491,6 +497,7 @@ tags: [index, 寓言故事, 哲学]
 - [惯习（Habitus）](%E6%83%AF%E4%B9%A0.md)
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
+- [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [货币幻觉（Money Illusion）](%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89.md)
 - [棘轮效应（Ratchet Effect）](%E6%A3%98%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
@@ -552,7 +559,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（55 个）
+### 关系（57 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -563,6 +570,7 @@ tags: [index, 寓言故事, 哲学]
 - [多元无知（Pluralistic Ignorance）](%E5%A4%9A%E5%85%83%E6%97%A0%E7%9F%A5.md)
 - [二阶控制论（Second-Order Cybernetics）](%E4%BA%8C%E9%98%B6%E6%8E%A7%E5%88%B6%E8%AE%BA.md)
 - [反应贬值（Reactive Devaluation）](%E5%8F%8D%E5%BA%94%E8%B4%AC%E5%80%BC.md)
+- [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
@@ -584,6 +592,7 @@ tags: [index, 寓言故事, 哲学]
 - [诠释不正义（Hermeneutical Injustice）](%E8%AF%A0%E9%87%8A%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认识论不正义（Epistemic Injustice）](%E8%AE%A4%E8%AF%86%E8%AE%BA%E4%B8%8D%E6%AD%A3%E4%B9%89.md)
 - [认知怯懦（Epistemic Cowardice）](%E8%AE%A4%E7%9F%A5%E6%80%AF%E6%87%A6.md)
+- [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [社会参照（Social Referencing）](%E7%A4%BE%E4%BC%9A%E5%8F%82%E7%85%A7.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
@@ -743,12 +752,13 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（54 个）
+### 组织（57 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
+- [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [邓巴数（Dunbar's Number）](%E9%82%93%E5%B7%B4%E6%95%B0.md)
@@ -763,6 +773,7 @@ tags: [index, 寓言故事, 哲学]
 - [观察者效应（Observer Effect / Hawthorne Effect）](%E8%A7%82%E5%AF%9F%E8%80%85%E6%95%88%E5%BA%94.md)
 - [规范性解离（Normative Dissociation）](%E8%A7%84%E8%8C%83%E6%80%A7%E8%A7%A3%E7%A6%BB.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
+- [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
 - [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [集体欢腾（Collective Effervescence）](%E9%9B%86%E4%BD%93%E6%AC%A2%E8%85%BE.md)
@@ -779,6 +790,7 @@ tags: [index, 寓言故事, 哲学]
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
 - [认知负荷（Cognitive Load Theory）](%E8%AE%A4%E7%9F%A5%E8%B4%9F%E8%8D%B7.md)
+- [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
 - [双回路学习（Double-Loop Learning）](%E5%8F%8C%E5%9B%9E%E8%B7%AF%E5%AD%A6%E4%B9%A0.md)
 - [双重束缚（Double Bind）](%E5%8F%8C%E9%87%8D%E6%9D%9F%E7%BC%9A.md)
@@ -800,7 +812,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（51 个）
+### 决策（52 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -808,6 +820,7 @@ tags: [index, 寓言故事, 哲学]
 - [超稳定性（Ultrastability）](%E8%B6%85%E7%A8%B3%E5%AE%9A%E6%80%A7.md)
 - [成心（Chengxin / Preformed Mind）](%E6%88%90%E5%BF%83.md)
 - [承诺策略（Commitment Tactics）](%E6%89%BF%E8%AF%BA%E7%AD%96%E7%95%A5.md)
+- [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [道德分离（Moral Disengagement）](%E9%81%93%E5%BE%B7%E5%88%86%E7%A6%BB.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
@@ -854,9 +867,10 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（27 个）
+### 领导（29 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
+- [创始人综合征（Founder's Syndrome）](%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
 - [地位特征理论（Status Characteristics Theory）](%E5%9C%B0%E4%BD%8D%E7%89%B9%E5%BE%81%E7%90%86%E8%AE%BA.md)
 - [董事会捕获（Board Capture）](%E8%91%A3%E4%BA%8B%E4%BC%9A%E6%8D%95%E8%8E%B7.md)
@@ -877,6 +891,7 @@ tags: [index, 寓言故事, 哲学]
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
 - [权力悖论（Power Paradox）](%E6%9D%83%E5%8A%9B%E6%82%96%E8%AE%BA.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
 - [团体迷思（Groupthink）](%E5%9B%A2%E4%BD%93%E8%BF%B7%E6%80%9D.md)
 - [无为而治（Wu Wei / Effortless Governance）](%E6%97%A0%E4%B8%BA%E8%80%8C%E6%B2%BB.md)
