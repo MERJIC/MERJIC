@@ -242,12 +242,13 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [制度同形（Institutional Isomorphism）](%E5%88%B6%E5%BA%A6%E5%90%8C%E5%BD%A2.md)
 
-### 生物学（6 个）
+### 生物学（7 个）
 
 - [超常刺激（Supernormal Stimulus）](%E8%B6%85%E5%B8%B8%E5%88%BA%E6%BF%80.md)
 - [等终局性（Equifinality）](%E7%AD%89%E7%BB%88%E5%B1%80%E6%80%A7.md)
 - [负熵（Negentropy）](%E8%B4%9F%E7%86%B5.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
+- [群体智能（Swarm Intelligence）](%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
@@ -358,7 +359,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（31 个）
+### 反转（32 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -380,6 +381,7 @@ tags: [index, 寓言故事, 哲学]
 - [陌生化（Ostranenie）](%E9%99%8C%E7%94%9F%E5%8C%96.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [亲缘选择（Kin Selection）](%E4%BA%B2%E7%BC%98%E9%80%89%E6%8B%A9.md)
+- [群体智能（Swarm Intelligence）](%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD.md)
 - [审美静滞（Aesthetic Arrest）](%E5%AE%A1%E7%BE%8E%E9%9D%99%E6%BB%9E.md)
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [史翠珊效应（Streisand Effect）](%E5%8F%B2%E7%BF%A0%E7%8F%8A%E6%95%88%E5%BA%94.md)
@@ -792,7 +794,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（59 个）
+### 组织（60 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
@@ -830,6 +832,7 @@ tags: [index, 寓言故事, 哲学]
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [群体智能（Swarm Intelligence）](%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD.md)
 - [认知负荷（Cognitive Load Theory）](%E8%AE%A4%E7%9F%A5%E8%B4%9F%E8%8D%B7.md)
 - [认知权威（Epistemic Authority）](%E8%AE%A4%E7%9F%A5%E6%9D%83%E5%A8%81.md)
 - [深度表演（Deep Acting）](%E6%B7%B1%E5%BA%A6%E8%A1%A8%E6%BC%94.md)
@@ -854,7 +857,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（55 个）
+### 决策（56 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -892,6 +895,7 @@ tags: [index, 寓言故事, 哲学]
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [情感预测失误（Affective Forecasting）](%E6%83%85%E6%84%9F%E9%A2%84%E6%B5%8B%E5%A4%B1%E8%AF%AF.md)
 - [群体极化（Group Polarization）](%E7%BE%A4%E4%BD%93%E6%9E%81%E5%8C%96.md)
+- [群体智能（Swarm Intelligence）](%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD.md)
 - [胜者诅咒（Winner's Curse）](%E8%83%9C%E8%80%85%E8%AF%85%E5%92%92.md)
 - [时机（Kairos）](%E6%97%B6%E6%9C%BA.md)
 - [实践侵入（Pragmatic Encroachment）](%E5%AE%9E%E8%B7%B5%E4%BE%B5%E5%85%A5.md)
@@ -968,11 +972,3 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
-
----
-
-## ⚠️ 待整理（1 个）
-
-> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
-
-- [群体智能（Swarm Intelligence）](%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD.md) — domain "计算机科学" 不在词汇表
