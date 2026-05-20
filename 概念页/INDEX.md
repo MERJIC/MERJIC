@@ -77,7 +77,7 @@ tags: [index, 寓言故事, 哲学]
 - [自欺（Bad Faith / Mauvaise Foi）](%E8%87%AA%E6%AC%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 心理学（52 个）
+### 心理学（53 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
@@ -107,6 +107,7 @@ tags: [index, 寓言故事, 哲学]
 - [框架效应（Framing Effect）](%E6%A1%86%E6%9E%B6%E6%95%88%E5%BA%94.md)
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
 - [流畅性错觉（Fluency Illusion）](%E6%B5%81%E7%95%85%E6%80%A7%E9%94%99%E8%A7%89.md)
+- [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [满意化（Satisficing）](%E6%BB%A1%E6%84%8F%E5%8C%96.md)
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
@@ -304,12 +305,13 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 
-### 冲突（8 个）
+### 冲突（9 个）
 
 - [道德残余（Moral Remainder）](%E9%81%93%E5%BE%B7%E6%AE%8B%E4%BD%99.md)
 - [二阶欲望（Second-Order Desire）](%E4%BA%8C%E9%98%B6%E6%AC%B2%E6%9C%9B.md)
 - [概化他者（Generalized Other）](%E6%A6%82%E5%8C%96%E4%BB%96%E8%80%85.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
+- [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [认知勇气（Intellectual Courage）](%E8%AE%A4%E7%9F%A5%E5%8B%87%E6%B0%94.md)
 - [弱意志（Akrasia）](%E5%BC%B1%E6%84%8F%E5%BF%97.md)
 - [套牢问题（Hold-up Problem）](%E5%A5%97%E7%89%A2%E9%97%AE%E9%A2%98.md)
@@ -539,7 +541,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（50 个）
+### 关系（51 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -557,6 +559,7 @@ tags: [index, 寓言故事, 哲学]
 - [角色退出（Role Exit）](%E8%A7%92%E8%89%B2%E9%80%80%E5%87%BA.md)
 - [刻板印象威胁（Stereotype Threat）](%E5%88%BB%E6%9D%BF%E5%8D%B0%E8%B1%A1%E5%A8%81%E8%83%81.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
+- [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
@@ -722,7 +725,7 @@ tags: [index, 寓言故事, 哲学]
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
-### 组织（49 个）
+### 组织（50 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
@@ -746,6 +749,7 @@ tags: [index, 寓言故事, 哲学]
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
 - [渐进式捕获（Creeping Capture）](%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8D%95%E8%8E%B7.md)
 - [结构洞（Structural Holes）](%E7%BB%93%E6%9E%84%E6%B4%9E.md)
+- [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [帕金森定律（Parkinson's Law）](%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B.md)
 - [皮格马利翁效应（Pygmalion Effect）](%E7%9A%AE%E6%A0%BC%E9%A9%AC%E5%88%A9%E7%BF%81%E6%95%88%E5%BA%94.md)
@@ -827,7 +831,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 领导（25 个）
+### 领导（26 个）
 
 - [必要多样性（Requisite Variety）](%E5%BF%85%E8%A6%81%E5%A4%9A%E6%A0%B7%E6%80%A7.md)
 - [道德许可效应（Moral Licensing Effect）](%E9%81%93%E5%BE%B7%E8%AE%B8%E5%8F%AF%E6%95%88%E5%BA%94.md)
@@ -843,6 +847,7 @@ tags: [index, 寓言故事, 哲学]
 - [渐进式捕获（Creeping Capture）](%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8D%95%E8%8E%B7.md)
 - [决策疲劳（Decision Fatigue）](%E5%86%B3%E7%AD%96%E7%96%B2%E5%8A%B3.md)
 - [领导者-成员交换理论（LMX，Leader-Member Exchange）](%E9%A2%86%E5%AF%BC%E8%80%85-%E6%88%90%E5%91%98%E4%BA%A4%E6%8D%A2%E7%90%86%E8%AE%BA.md)
+- [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [皮格马利翁效应（Pygmalion Effect）](%E7%9A%AE%E6%A0%BC%E9%A9%AC%E5%88%A9%E7%BF%81%E6%95%88%E5%BA%94.md)
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
@@ -876,3 +881,11 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
+
+---
+
+## ⚠️ 待整理（1 个）
+
+> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
+
+- [帕累托最优](%E5%B8%95%E7%B4%AF%E6%89%98%E6%9C%80%E4%BC%98.md) — 无 frontmatter
