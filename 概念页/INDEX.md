@@ -2,15 +2,15 @@
 name: 概念知识库索引
 description: 通过寓言故事沉淀的学科概念，每概念独立页面，含互链和圆桌沉淀
 tags: [index, 寓言故事, 哲学]
+cssClasses: [noosphere-index]
 ---
 
 # 概念目录
 
-三种浏览方式：[按学科](#按学科) · [按结构模式](#按结构模式) · [按应用场景](#按应用场景)
-
 > 静态目录，由 Noosphere 插件自动维护。保存任一概念页即重建索引。
 
----
+<div class="noosphere-cols">
+<div>
 
 ## 按学科
 
@@ -341,6 +341,9 @@ tags: [index, 寓言故事, 哲学]
 - [议程设置（Agenda Setting）](%E8%AE%AE%E7%A8%8B%E8%AE%BE%E7%BD%AE.md)
 - [资源诅咒（Resource Curse）](%E8%B5%84%E6%BA%90%E8%AF%85%E5%92%92.md)
 
+</div>
+<div>
+
 ## 按结构模式
 
 ### 悖论（17 个）
@@ -613,6 +616,9 @@ tags: [index, 寓言故事, 哲学]
 - [算法治理术（Algorithmic Governmentality）](%E7%AE%97%E6%B3%95%E6%B2%BB%E7%90%86%E6%9C%AF.md)
 - [他者性（Alterität）](%E4%BB%96%E8%80%85%E6%80%A7.md)
 - [责任扩散（Diffusion of Responsibility）](%E8%B4%A3%E4%BB%BB%E6%89%A9%E6%95%A3.md)
+
+</div>
+<div>
 
 ## 按应用场景
 
@@ -1188,3 +1194,6 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
+
+</div>
+</div>
