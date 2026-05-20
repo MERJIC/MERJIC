@@ -132,7 +132,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 经济学（36 个）
+### 经济学（37 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [禀赋效应（Endowment Effect）](%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94.md)
@@ -169,6 +169,7 @@ tags: [index, 寓言故事, 哲学]
 - [心理账户（Mental Accounting）](%E5%BF%83%E7%90%86%E8%B4%A6%E6%88%B7.md)
 - [信号成本理论（Costly Signaling Theory）](%E4%BF%A1%E5%8F%B7%E6%88%90%E6%9C%AC%E7%90%86%E8%AE%BA.md)
 - [信息级联（Information Cascade）](%E4%BF%A1%E6%81%AF%E7%BA%A7%E8%81%94.md)
+- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
 ### 社会学（20 个）
@@ -328,7 +329,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 
-### 反转（28 个）
+### 反转（29 个）
 
 - [彼得原理（Peter Principle）](%E5%BD%BC%E5%BE%97%E5%8E%9F%E7%90%86.md)
 - [测试效应（Testing Effect）](%E6%B5%8B%E8%AF%95%E6%95%88%E5%BA%94.md)
@@ -355,6 +356,7 @@ tags: [index, 寓言故事, 哲学]
 - [透明度悖论（Transparency Paradox）](%E9%80%8F%E6%98%8E%E5%BA%A6%E6%82%96%E8%AE%BA.md)
 - [无为而治（Wu Wei / Effortless Governance）](%E6%97%A0%E4%B8%BA%E8%80%8C%E6%B2%BB.md)
 - [系统正当化理论（System Justification Theory）](%E7%B3%BB%E7%BB%9F%E6%AD%A3%E5%BD%93%E5%8C%96%E7%90%86%E8%AE%BA.md)
+- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md)
 - [涌现（Emergence）](%E6%B6%8C%E7%8E%B0.md)
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
@@ -692,7 +694,7 @@ tags: [index, 寓言故事, 哲学]
 - [亚临界漂移（Subcritical Drift）](%E4%BA%9A%E4%B8%B4%E7%95%8C%E6%BC%82%E7%A7%BB.md)
 - [有趣性（The Interesting）](%E6%9C%89%E8%B6%A3%E6%80%A7.md)
 
-### 商业（24 个）
+### 商业（25 个）
 
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -716,6 +718,7 @@ tags: [index, 寓言故事, 哲学]
 - [托宾q（Tobin's q）](%E6%89%98%E5%AE%BEq.md)
 - [网络外部性（Network Externality）](%E7%BD%91%E7%BB%9C%E5%A4%96%E9%83%A8%E6%80%A7.md)
 - [心理账户（Mental Accounting）](%E5%BF%83%E7%90%86%E8%B4%A6%E6%88%B7.md)
+- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md)
 - [战略漂移（Strategic Drift）](%E6%88%98%E7%95%A5%E6%BC%82%E7%A7%BB.md)
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 
@@ -771,7 +774,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（49 个）
+### 决策（50 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -815,6 +818,7 @@ tags: [index, 寓言故事, 哲学]
 - [悬置（Epoché）](%E6%82%AC%E7%BD%AE.md)
 - [循环因果（Circular Causality）](%E5%BE%AA%E7%8E%AF%E5%9B%A0%E6%9E%9C.md)
 - [意义建构（Sensemaking）](%E6%84%8F%E4%B9%89%E5%BB%BA%E6%9E%84.md)
+- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md)
 - [元操作（Meta-operation）](%E5%85%83%E6%93%8D%E4%BD%9C.md)
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [晕轮效应（Halo Effect）](%E6%99%95%E8%BD%AE%E6%95%88%E5%BA%94.md)
@@ -872,11 +876,3 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
-
----
-
-## ⚠️ 待整理（1 个）
-
-> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
-
-- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md) — pattern/修正 不在词汇表
