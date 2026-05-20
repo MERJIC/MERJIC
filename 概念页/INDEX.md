@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（64 个）
+### 哲学（65 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -32,6 +32,7 @@ tags: [index, 寓言故事, 哲学]
 - [盖梯尔问题（Gettier Problem）](%E7%9B%96%E6%A2%AF%E5%B0%94%E9%97%AE%E9%A2%98.md)
 - [格物致知（Gewu Zhizhi / Investigation of Things）](%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.md)
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
+- [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [结构性无知（Structural Ignorance / Epistemology of Ignorance）](%E7%BB%93%E6%9E%84%E6%80%A7%E6%97%A0%E7%9F%A5.md)
 - [具身认知（Embodied Cognition）](%E5%85%B7%E8%BA%AB%E8%AE%A4%E7%9F%A5.md)
 - [刻奇（Kitsch）](%E5%88%BB%E5%A5%87.md)
@@ -382,7 +383,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我妨碍（Self-Handicapping）](%E8%87%AA%E6%88%91%E5%A6%A8%E7%A2%8D.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 循环（33 个）
+### 循环（34 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [沉默的螺旋（Spiral of Silence）](%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B.md)
@@ -394,6 +395,7 @@ tags: [index, 寓言故事, 哲学]
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
 - [黑暗领导力（Dark Leadership）](%E9%BB%91%E6%9A%97%E9%A2%86%E5%AF%BC%E5%8A%9B.md)
 - [黑暗三角（Dark Triad）](%E9%BB%91%E6%9A%97%E4%B8%89%E8%A7%92.md)
+- [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [集体欢腾（Collective Effervescence）](%E9%9B%86%E4%BD%93%E6%AC%A2%E8%85%BE.md)
 - [间歇强化（Partial Reinforcement Effect）](%E9%97%B4%E6%AD%87%E5%BC%BA%E5%8C%96.md)
 - [恐惧管理理论（Terror Management Theory）](%E6%81%90%E6%83%A7%E7%AE%A1%E7%90%86%E7%90%86%E8%AE%BA.md)
@@ -480,7 +482,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（90 个）
+### 自我（91 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -509,6 +511,7 @@ tags: [index, 寓言故事, 哲学]
 - [过度辩护效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E8%BE%A9%E6%8A%A4%E6%95%88%E5%BA%94.md)
 - [过度理由效应（Overjustification Effect）](%E8%BF%87%E5%BA%A6%E7%90%86%E7%94%B1%E6%95%88%E5%BA%94.md)
 - [过渡性客体（Transitional Object）](%E8%BF%87%E6%B8%A1%E6%80%A7%E5%AE%A2%E4%BD%93.md)
+- [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [货币幻觉（Money Illusion）](%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89.md)
 - [棘轮效应（Ratchet Effect）](%E6%A3%98%E8%BD%AE%E6%95%88%E5%BA%94.md)
 - [间隔效应（Spacing Effect）](%E9%97%B4%E9%9A%94%E6%95%88%E5%BA%94.md)
@@ -634,7 +637,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 
-### 制度（55 个）
+### 制度（56 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -655,6 +658,7 @@ tags: [index, 寓言故事, 哲学]
 - [规则遵循悖论（Rule-Following Paradox）](%E8%A7%84%E5%88%99%E9%81%B5%E5%BE%AA%E6%82%96%E8%AE%BA.md)
 - [合法性理论（Legitimacy Theory）](%E5%90%88%E6%B3%95%E6%80%A7%E7%90%86%E8%AE%BA.md)
 - [互套（Bilateral Hold-up）](%E4%BA%92%E5%A5%97.md)
+- [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [渐进式捕获（Creeping Capture）](%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8D%95%E8%8E%B7.md)
 - [结构性无知（Structural Ignorance / Epistemology of Ignorance）](%E7%BB%93%E6%9E%84%E6%80%A7%E6%97%A0%E7%9F%A5.md)
 - [坎蒂隆效应（Cantillon Effect）](%E5%9D%8E%E8%92%82%E9%9A%86%E6%95%88%E5%BA%94.md)
@@ -833,7 +837,7 @@ tags: [index, 寓言故事, 哲学]
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
 
-### 决策（53 个）
+### 决策（54 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [傲慢假说（Hubris Hypothesis）](%E5%82%B2%E6%85%A2%E5%81%87%E8%AF%B4.md)
@@ -853,6 +857,7 @@ tags: [index, 寓言故事, 哲学]
 - [功能固着（Functional Fixedness）](%E5%8A%9F%E8%83%BD%E5%9B%BA%E7%9D%80.md)
 - [共同信息效应（Shared Information Bias）](%E5%85%B1%E5%90%8C%E4%BF%A1%E6%81%AF%E6%95%88%E5%BA%94.md)
 - [规范性解离（Normative Dissociation）](%E8%A7%84%E8%8C%83%E6%80%A7%E8%A7%A3%E7%A6%BB.md)
+- [话语权力（Power/Knowledge, Foucault）](%E8%AF%9D%E8%AF%AD%E6%9D%83%E5%8A%9B.md)
 - [货币幻觉（Money Illusion）](%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89.md)
 - [基本归因错误（Fundamental Attribution Error）](%E5%9F%BA%E6%9C%AC%E5%BD%92%E5%9B%A0%E9%94%99%E8%AF%AF.md)
 - [决策疲劳（Decision Fatigue）](%E5%86%B3%E7%AD%96%E7%96%B2%E5%8A%B3.md)
