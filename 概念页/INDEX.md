@@ -848,3 +848,11 @@ tags: [index, 寓言故事, 哲学]
 - [元认知（Metacognition）](%E5%85%83%E8%AE%A4%E7%9F%A5.md)
 - [知识诅咒（Curse of Knowledge）](%E7%9F%A5%E8%AF%86%E8%AF%85%E5%92%92.md)
 - [最近发展区（Zone of Proximal Development）](%E6%9C%80%E8%BF%91%E5%8F%91%E5%B1%95%E5%8C%BA.md)
+
+---
+
+## ⚠️ 待整理（1 个）
+
+> 以下概念页 frontmatter 不规范，未进入主分类。修正后保存即自动归类。
+
+- [赢家折扣（Winner's Discount）](%E8%B5%A2%E5%AE%B6%E6%8A%98%E6%89%A3.md) — pattern/修正 不在词汇表
