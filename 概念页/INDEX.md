@@ -14,7 +14,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按学科
 
-### 哲学（65 个）
+### 哲学（66 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -41,6 +41,7 @@ tags: [index, 寓言故事, 哲学]
 - [陌生化（Ostranenie）](%E9%99%8C%E7%94%9F%E5%8C%96.md)
 - [莫利纽问题（Molyneux's Problem）](%E8%8E%AB%E5%88%A9%E7%BA%BD%E9%97%AE%E9%A2%98.md)
 - [能力进路（Capability Approach）](%E8%83%BD%E5%8A%9B%E8%BF%9B%E8%B7%AF.md)
+- [凝视（The Gaze / Le Regard）](%E5%87%9D%E8%A7%86.md)
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [平庸之恶（Banality of Evil）](%E5%B9%B3%E5%BA%B8%E4%B9%8B%E6%81%B6.md)
 - [全景监狱（Panopticon）](%E5%85%A8%E6%99%AF%E7%9B%91%E7%8B%B1.md)
@@ -420,7 +421,7 @@ tags: [index, 寓言故事, 哲学]
 - [重复博弈（Repeated Game）](%E9%87%8D%E5%A4%8D%E5%8D%9A%E5%BC%88.md)
 - [自创生（Autopoiesis）](%E8%87%AA%E5%88%9B%E7%94%9F.md)
 
-### 错位（37 个）
+### 错位（38 个）
 
 - [阿比林悖论（Abilene Paradox）](%E9%98%BF%E6%AF%94%E6%9E%97%E6%82%96%E8%AE%BA.md)
 - [表演性合规（Performative Compliance）](%E8%A1%A8%E6%BC%94%E6%80%A7%E5%90%88%E8%A7%84.md)
@@ -438,6 +439,7 @@ tags: [index, 寓言故事, 哲学]
 - [粒度轴（Granularity Axis）](%E7%B2%92%E5%BA%A6%E8%BD%B4.md)
 - [领导者-成员交换理论（LMX，Leader-Member Exchange）](%E9%A2%86%E5%AF%BC%E8%80%85-%E6%88%90%E5%91%98%E4%BA%A4%E6%8D%A2%E7%90%86%E8%AE%BA.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
+- [凝视（The Gaze / Le Regard）](%E5%87%9D%E8%A7%86.md)
 - [偏好伪装（Preference Falsification）](%E5%81%8F%E5%A5%BD%E4%BC%AA%E8%A3%85.md)
 - [情感预测失误（Affective Forecasting）](%E6%83%85%E6%84%9F%E9%A2%84%E6%B5%8B%E5%A4%B1%E8%AF%AF.md)
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
@@ -482,7 +484,7 @@ tags: [index, 寓言故事, 哲学]
 
 ## 按应用场景
 
-### 自我（91 个）
+### 自我（92 个）
 
 - [巴纳姆效应（Barnum Effect）](%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94.md)
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
@@ -530,6 +532,7 @@ tags: [index, 寓言故事, 哲学]
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
 - [能力进路（Capability Approach）](%E8%83%BD%E5%8A%9B%E8%BF%9B%E8%B7%AF.md)
 - [拟态环境（Pseudo-Environment）](%E6%8B%9F%E6%80%81%E7%8E%AF%E5%A2%83.md)
+- [凝视（The Gaze / Le Regard）](%E5%87%9D%E8%A7%86.md)
 - [抛入性（Geworfenheit）](%E6%8A%9B%E5%85%A5%E6%80%A7.md)
 - [情感预测失误（Affective Forecasting）](%E6%83%85%E6%84%9F%E9%A2%84%E6%B5%8B%E5%A4%B1%E8%AF%AF.md)
 - [情绪劳动（Emotional Labor）](%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8.md)
@@ -576,7 +579,7 @@ tags: [index, 寓言故事, 哲学]
 - [自我知觉理论（Self-Perception Theory）](%E8%87%AA%E6%88%91%E7%9F%A5%E8%A7%89%E7%90%86%E8%AE%BA.md)
 - [自我指涉（Self-reference）](%E8%87%AA%E6%88%91%E6%8C%87%E6%B6%89.md)
 
-### 关系（58 个）
+### 关系（59 个）
 
 - [表演性（Performativity）](%E8%A1%A8%E6%BC%94%E6%80%A7.md)
 - [超当值（Supererogation）](%E8%B6%85%E5%BD%93%E5%80%BC.md)
@@ -601,6 +604,7 @@ tags: [index, 寓言故事, 哲学]
 - [马基雅维利主义（Machiavellianism）](%E9%A9%AC%E5%9F%BA%E9%9B%85%E7%BB%B4%E5%88%A9%E4%B8%BB%E4%B9%89.md)
 - [摩尔悖论（Moore's Paradox）](%E6%91%A9%E5%B0%94%E6%82%96%E8%AE%BA.md)
 - [内化压迫（Internalized Oppression）](%E5%86%85%E5%8C%96%E5%8E%8B%E8%BF%AB.md)
+- [凝视（The Gaze / Le Regard）](%E5%87%9D%E8%A7%86.md)
 - [女王蜂综合征（Queen Bee Syndrome）](%E5%A5%B3%E7%8E%8B%E8%9C%82%E7%BB%BC%E5%90%88%E5%BE%81.md)
 - [偏好瀑布（Preference Cascade）](%E5%81%8F%E5%A5%BD%E7%80%91%E5%B8%83.md)
 - [偏好伪装（Preference Falsification）](%E5%81%8F%E5%A5%BD%E4%BC%AA%E8%A3%85.md)
