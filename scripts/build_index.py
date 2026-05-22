@@ -416,6 +416,25 @@ def load_clusters_from_relations(relations_path: str) -> List[dict]:
     lines = content.split('\n')
     current_cluster = None
     current_members_raw = []
+    members_parsed = False  # 标记成员是否已解析
+
+    def _parse_members(raw_lines):
+        """从收集的行中解析成员概念名。"""
+        text = '\n'.join(raw_lines)
+        members = re.findall(r'`([^`]+)`', text)
+        if not members:
+            members = [w.strip() for w in text.split() if w.strip()]
+        return members
+
+    def _finalize_cluster(cluster, raw_lines):
+        """解析成员并保存集群。"""
+        if cluster and not cluster.get("_finalized"):
+            if raw_lines and not cluster["members"]:
+                cluster["members"] = _parse_members(raw_lines)
+            cluster["_finalized"] = True
+            # 去掉内部标记
+            cluster.pop("_finalized", None)
+            clusters.append(cluster)
 
     for line in lines:
         # 匹配集群标题行: ### A · 集体意见动力学 ✅
@@ -424,12 +443,7 @@ def load_clusters_from_relations(relations_path: str) -> List[dict]:
         )
         if header_match:
             # 保存上一个集群
-            if current_cluster:
-                members = re.findall(r'`([^`]+)`', '\n'.join(current_members_raw))
-                if not members:
-                    members = [w.strip() for w in ' '.join(current_members_raw).split() if w.strip()]
-                current_cluster["members"] = members
-                clusters.append(current_cluster)
+            _finalize_cluster(current_cluster, current_members_raw)
 
             cluster_id = header_match.group(1)
             cluster_name = header_match.group(2).strip()
@@ -440,23 +454,25 @@ def load_clusters_from_relations(relations_path: str) -> List[dict]:
                 "description": "",
             }
             current_members_raw = []
+            members_parsed = False
             continue
 
-        # 如果在集群内，收集成员行直到遇到空行、引用块、或下一个标题
+        # 如果在集群内
         if current_cluster is not None:
             stripped = line.strip()
+
             if not stripped:
-                # 空行结束成员收集
-                if current_members_raw:
-                    members = re.findall(r'`([^`]+)`', '\n'.join(current_members_raw))
-                    if not members:
-                        members = [w.strip() for w in ' '.join(current_members_raw).split() if w.strip()]
-                    current_cluster["members"] = members
-                    current_members_raw = []  # 清空，后续行不再追加
+                # 空行：如果成员还没解析，现在解析
+                if current_members_raw and not members_parsed:
+                    current_cluster["members"] = _parse_members(current_members_raw)
+                    members_parsed = True
                 continue
 
             if stripped.startswith('>'):
-                # 引用块是描述
+                # 引用块是描述。先解析成员（如果还没解析）
+                if current_members_raw and not members_parsed:
+                    current_cluster["members"] = _parse_members(current_members_raw)
+                    members_parsed = True
                 desc = stripped.lstrip('> ').strip()
                 if current_cluster["description"]:
                     current_cluster["description"] += " " + desc
@@ -466,31 +482,18 @@ def load_clusters_from_relations(relations_path: str) -> List[dict]:
 
             if stripped.startswith('#') or stripped.startswith('---'):
                 # 新章节或分隔线，结束当前集群
-                if current_cluster and not current_cluster["members"] and current_members_raw:
-                    members = re.findall(r'`([^`]+)`', '\n'.join(current_members_raw))
-                    if not members:
-                        members = [w.strip() for w in ' '.join(current_members_raw).split() if w.strip()]
-                    current_cluster["members"] = members
-                if current_cluster:
-                    clusters.append(current_cluster)
-                    current_cluster = None
-                    current_members_raw = []
+                _finalize_cluster(current_cluster, current_members_raw)
+                current_cluster = None
+                current_members_raw = []
+                members_parsed = False
                 continue
 
             # 成员行（含反引号概念名或纯文本）
-            if not current_cluster.get("members"):
-                # 还没解析过成员
+            if not members_parsed:
                 current_members_raw.append(stripped)
-            # 如果已经解析过成员（空行后），跳过后续行
 
     # 文件结尾，保存最后一个集群
-    if current_cluster:
-        if not current_cluster["members"] and current_members_raw:
-            members = re.findall(r'`([^`]+)`', '\n'.join(current_members_raw))
-            if not members:
-                members = [w.strip() for w in ' '.join(current_members_raw).split() if w.strip()]
-            current_cluster["members"] = members
-        clusters.append(current_cluster)
+    _finalize_cluster(current_cluster, current_members_raw)
 
     return clusters
 
