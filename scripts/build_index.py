@@ -7,7 +7,9 @@
   python3 scripts/build_index.py --incremental  只处理变动文件，重算派生数据
   python3 scripts/build_index.py --check        校验 frontmatter 词汇表合规
 
-输出：memory/concept_index.json
+输出：memory/concept_lite.json   — 轻量索引（查重+分类，各模块日常使用）
+      memory/concept_graph.json  — 图结构索引（关联分析专用）
+      memory/concept_meta.json   — 管理元数据（文件路径/来源/日期）
 依赖：纯 Python 标准库，无需 pip install
 """
 
@@ -26,7 +28,10 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LIB_ROOT = os.path.dirname(SCRIPT_DIR)  # 概念库/
 CONCEPT_DIR = os.path.join(LIB_ROOT, "概念页")
 MEMORY_DIR = os.path.join(LIB_ROOT, "memory")
-INDEX_PATH = os.path.join(MEMORY_DIR, "concept_index.json")
+INDEX_PATH = os.path.join(MEMORY_DIR, "concept_index.json")  # 旧格式（过渡期保留）
+LITE_PATH = os.path.join(MEMORY_DIR, "concept_lite.json")
+GRAPH_PATH = os.path.join(MEMORY_DIR, "concept_graph.json")
+META_PATH = os.path.join(MEMORY_DIR, "concept_meta.json")
 ALIASES_PATH = os.path.join(MEMORY_DIR, "name_aliases.json")
 RELATIONS_PATH = os.path.join(MEMORY_DIR, "concept_relations.md")
 
@@ -291,6 +296,23 @@ def compute_inverted_index(nodes: dict, field: str) -> Dict[str, List[str]]:
     # 排序
     for k in index:
         index[k].sort()
+    return dict(sorted(index.items()))
+
+
+def compute_name_en_index(nodes: dict) -> Dict[str, str]:
+    """构建英文名倒排索引: name_en.lower() -> 中文名。
+    冲突时用 ' | ' 连接多个中文名（如同一概念的不同翻译）。
+    """
+    index = {}
+    for name, node in nodes.items():
+        en = node.get("name_en")
+        if en:
+            en_lower = en.lower()
+            if en_lower in index:
+                print(f"  ⚠️ 英文名冲突: '{en}' → {index[en_lower]} 和 {name}")
+                index[en_lower] = index[en_lower] + " | " + name
+            else:
+                index[en_lower] = name
     return dict(sorted(index.items()))
 
 
@@ -681,12 +703,10 @@ def build_full_index() -> dict:
 
 def build_incremental_index() -> dict:
     """增量更新：只重扫变动文件，但重算所有派生数据。"""
-    if not os.path.exists(INDEX_PATH):
+    existing = load_existing_shards()
+    if existing is None:
         print("索引文件不存在，回退到全量构建")
         return build_full_index()
-
-    with open(INDEX_PATH, 'r', encoding='utf-8') as f:
-        existing = json.load(f)
 
     last_built_str = existing.get("meta", {}).get("last_built", "")
     if not last_built_str:
@@ -842,15 +862,92 @@ def run_check() -> None:
 
 # ── 原子写入 ──────────────────────────────────────────────
 
-def write_index(index: dict) -> None:
-    """原子写入索引文件。"""
-    os.makedirs(MEMORY_DIR, exist_ok=True)
-
-    tmp_path = INDEX_PATH + ".tmp"
+def _atomic_write(path: str, data: dict, compact: bool = False) -> None:
+    """原子写入 JSON 文件。compact=True 时使用无缩进格式。"""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp_path = path + ".tmp"
     with open(tmp_path, 'w', encoding='utf-8') as f:
-        json.dump(index, f, ensure_ascii=False, indent=2)
+        if compact:
+            json.dump(data, f, ensure_ascii=False, separators=(',', ':'))
+        else:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, path)
 
-    os.replace(tmp_path, INDEX_PATH)
+
+def write_shards(index: dict) -> None:
+    """将索引拆分为 3 个分片文件写入。过渡期同时写入旧格式。"""
+    nodes = index["nodes"]
+    meta = index["meta"]
+
+    # ── 1. concept_lite.json ──
+    names = sorted(nodes.keys())
+    nodes_lite = {}
+    for n, data in nodes.items():
+        nodes_lite[n] = {
+            "name": data["name"],
+            "name_en": data.get("name_en"),
+            "domain": data.get("domain", []),
+            "discipline": data.get("discipline", []),
+            "pattern": data.get("pattern"),
+            "apply": data.get("apply", []),
+        }
+
+    lite = {
+        "meta": {**meta, "shard": "lite"},
+        "names": names,
+        "name_en_index": compute_name_en_index(nodes),
+        "nodes_lite": dict(sorted(nodes_lite.items())),
+        "apply_index": index["apply_index"],
+        "domain_index": index["domain_index"],
+        "discipline_index": index["discipline_index"],
+        "pattern_index": index["pattern_index"],
+        "name_aliases": index["name_aliases"],
+        "orphan_nodes": index["orphan_nodes"],
+        "vocabulary": index["vocabulary"],
+    }
+
+    # ── 2. concept_graph.json ──
+    nodes_graph = {}
+    for n, data in nodes.items():
+        nodes_graph[n] = {
+            "out_links": data["out_links"],
+            "in_links": data["in_links"],
+            "out_degree": data["out_degree"],
+            "in_degree": data["in_degree"],
+        }
+
+    graph = {
+        "meta": {**meta, "shard": "graph"},
+        "nodes_graph": dict(sorted(nodes_graph.items())),
+        "edges": index["edges"],
+        "broken_links": index["broken_links"],
+        "clusters": index["clusters"],
+        "potential_duplicates": index["potential_duplicates"],
+    }
+
+    # ── 3. concept_meta.json ──
+    nodes_meta = {}
+    for n, data in nodes.items():
+        nodes_meta[n] = {
+            "file": data["file"],
+            "source": data.get("source", ""),
+            "date": data.get("date", ""),
+        }
+
+    meta_shard = {
+        "meta": {**meta, "shard": "meta"},
+        "nodes_meta": dict(sorted(nodes_meta.items())),
+    }
+
+    # 原子写入（compact 格式）
+    _atomic_write(LITE_PATH, lite, compact=True)
+    _atomic_write(GRAPH_PATH, graph, compact=True)
+    _atomic_write(META_PATH, meta_shard, compact=True)
+
+    # 过渡期：同时写入旧格式（标记 deprecated）
+    deprecated_index = dict(index)
+    deprecated_index["meta"]["deprecated"] = True
+    _atomic_write(INDEX_PATH, deprecated_index, compact=False)
 
 
 # ── 自洽性检查 ────────────────────────────────────────────
@@ -890,6 +987,95 @@ def self_check(index: dict) -> List[str]:
     return warnings
 
 
+def self_check_shards() -> List[str]:
+    """验证 3 个分片文件间的一致性。"""
+    warnings = []
+
+    if not all(os.path.exists(p) for p in [LITE_PATH, GRAPH_PATH, META_PATH]):
+        warnings.append("分片文件不完整，缺少部分文件")
+        return warnings
+
+    with open(LITE_PATH, 'r', encoding='utf-8') as f:
+        lite = json.load(f)
+    with open(GRAPH_PATH, 'r', encoding='utf-8') as f:
+        graph = json.load(f)
+    with open(META_PATH, 'r', encoding='utf-8') as f:
+        meta_shard = json.load(f)
+
+    # 概念数一致
+    n1 = len(lite.get("names", []))
+    n2 = len(graph.get("nodes_graph", {}))
+    n3 = len(meta_shard.get("nodes_meta", {}))
+    if not (n1 == n2 == n3):
+        warnings.append(f"分片概念数不一致: lite={n1}, graph={n2}, meta={n3}")
+
+    # name_en_index 完整性（允许冲突合并）
+    en_count = sum(1 for n in lite.get("nodes_lite", {})
+                   if lite["nodes_lite"][n].get("name_en"))
+    en_index_count = len(lite.get("name_en_index", {}))
+    # 冲突合并时 en_index_count < en_count 是正常的
+    if en_index_count > en_count:
+        warnings.append(
+            f"name_en_index 条目数 {en_index_count} "
+            f"> 有英文名的概念数 {en_count}（不应发生）"
+        )
+
+    # 边数一致
+    total_out = sum(n["out_degree"] for n in graph.get("nodes_graph", {}).values())
+    if total_out != len(graph.get("edges", [])):
+        warnings.append(
+            f"edges 数量 {len(graph.get('edges', []))} ≠ sum(out_degree) {total_out}"
+        )
+
+    return warnings
+
+
+def load_existing_shards() -> Optional[dict]:
+    """加载现有分片数据，合并为完整 nodes。兼容旧格式。"""
+    # 优先从分片加载
+    if os.path.exists(LITE_PATH) and os.path.exists(GRAPH_PATH):
+        with open(LITE_PATH, 'r', encoding='utf-8') as f:
+            lite = json.load(f)
+        with open(GRAPH_PATH, 'r', encoding='utf-8') as f:
+            graph = json.load(f)
+
+        meta_shard = {}
+        if os.path.exists(META_PATH):
+            with open(META_PATH, 'r', encoding='utf-8') as f:
+                meta_shard = json.load(f)
+
+        # 合并为完整 nodes
+        nodes = {}
+        for name in lite.get("names", []):
+            lite_node = lite.get("nodes_lite", {}).get(name, {})
+            graph_node = graph.get("nodes_graph", {}).get(name, {})
+            meta_node = meta_shard.get("nodes_meta", {}).get(name, {})
+            nodes[name] = {**lite_node, **graph_node, **meta_node}
+
+        return {
+            "meta": lite.get("meta", {}),
+            "nodes": nodes,
+            "edges": graph.get("edges", []),
+            "orphan_nodes": lite.get("orphan_nodes", {}),
+            "broken_links": graph.get("broken_links", []),
+            "clusters": graph.get("clusters", []),
+            "apply_index": lite.get("apply_index", {}),
+            "domain_index": lite.get("domain_index", {}),
+            "discipline_index": lite.get("discipline_index", {}),
+            "pattern_index": lite.get("pattern_index", {}),
+            "name_aliases": lite.get("name_aliases", {}),
+            "potential_duplicates": graph.get("potential_duplicates", []),
+            "vocabulary": lite.get("vocabulary", {}),
+        }
+
+    # 回退到旧格式
+    if os.path.exists(INDEX_PATH):
+        with open(INDEX_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    return None
+
+
 # ── main ──────────────────────────────────────────────────
 
 def main():
@@ -911,7 +1097,6 @@ def main():
         return
 
     print(f"概念页目录: {CONCEPT_DIR}")
-    print(f"索引输出: {INDEX_PATH}")
 
     if args.incremental:
         print("模式: 增量")
@@ -920,7 +1105,7 @@ def main():
         print("模式: 全量")
         index = build_full_index()
 
-    # 自洽性检查
+    # 自洽性检查（全量索引）
     warnings = self_check(index)
     if warnings:
         print("\n⚠️ 自洽性警告：")
@@ -929,8 +1114,17 @@ def main():
     else:
         print("\n✅ 自洽性检查通过")
 
-    # 写入
-    write_index(index)
+    # 写入分片
+    write_shards(index)
+
+    # 分片自检
+    shard_warnings = self_check_shards()
+    if shard_warnings:
+        print("\n⚠️ 分片一致性警告：")
+        for w in shard_warnings:
+            print(f"  - {w}")
+    else:
+        print("✅ 分片一致性检查通过")
 
     # 输出摘要
     meta = index["meta"]
@@ -943,6 +1137,12 @@ def main():
     print(f"  集群: {len(index['clusters'])} 个")
     print(f"  潜在重复: {len(index['potential_duplicates'])} 对")
     print(f"  耗时: {meta['scan_stats']['build_duration_seconds']}s")
+
+    # 分片文件大小
+    for path, label in [(LITE_PATH, "lite"), (GRAPH_PATH, "graph"), (META_PATH, "meta")]:
+        if os.path.exists(path):
+            size = os.path.getsize(path)
+            print(f"  分片 {label}: {size / 1024:.1f} KB")
 
 
 if __name__ == "__main__":
