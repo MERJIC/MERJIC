@@ -2,11 +2,11 @@
 """
 统一概念页中的学者名为「中文名（英文名）」，仅首次出现时标注英文。
 
-修复点 v2:
-1. 处理 "First Last" 全英文名（如 Carl Schmitt → 卡尔·施密特）
-2. 修复替换后多余空格问题
-3. 正确判断首次出现：原文中文名已存在时，不重复标注
-4. INDEX.md 特殊处理：只处理正文中的英文名，不碰链接格式里的
+策略：两趟扫描。
+1. 先扫描每个文件，找到所有需要替换的英文人名及其位置
+2. 按位置从后往前替换，避免位置偏移
+3. 每个学者首次出现用「中文名（英文原名）」，后续只用「中文名」
+4. 如果正文中文名已经出现在英文名之前，则只替换英文→中文，不加标注
 """
 
 import os
@@ -14,500 +14,362 @@ import re
 
 CONCEPT_DIR = "/Users/myke/Documents/MERJIC/概念库/概念页"
 
-# ── 第一层：全名替换（优先匹配）──
-# "First Last" → "中文名"
-# 先匹配长的，再匹配短的
-FULL_NAME_MAP = [
-    # Long-form names (First + Last)
-    ("Carl Schmitt", "卡尔·施密特"),
-    ("Carl Schmitt", "卡尔·施密特"),
-    ("Michel Foucault", "福柯"),
-    ("Giorgio Agamben", "阿甘本"),
-    ("Byung-Chul Han", "韩炳哲"),
-    ("Byung-chul Han", "韩炳哲"),
-    ("Merleau-Ponty", "梅洛-庞蒂"),
-    ("Lévi-Strauss", "列维-施特劳斯"),
-    ("Evans-Pritchard", "埃文斯-普里查德"),
-    ("Simone de Beauvoir", "波伏娃"),
-    ("Guy Debord", "德波"),
-    ("Mary Douglas", "道格拉斯"),
-    ("Herbert Simon", "赫伯特·西蒙"),
-    ("Amartya Sen", "阿马蒂亚·森"),
-    ("Adam Smith", "亚当·斯密"),
-    ("Victor Turner", "维克多·特纳"),
-    ("David Hume", "休谟"),
-    ("Immanuel Kant", "康德"),
-    ("Friedrich Nietzsche", "尼采"),
-    ("Martin Heidegger", "海德格尔"),
-    ("Karl Marx", "马克思"),
-    ("Max Weber", "韦伯"),
-    ("Émile Durkheim", "涂尔干"),
-    ("Jürgen Habermas", "哈贝马斯"),
-    ("Hannah Arendt", "阿伦特"),
-    ("Walter Benjamin", "本雅明"),
-    ("Theodor Adorno", "阿多诺"),
-    ("Jacques Derrida", "德里达"),
-    ("Gilles Deleuze", "德勒兹"),
-    ("Félix Guattari", "加塔利"),
-    ("Jacques Lacan", "拉康"),
-    ("Edmund Husserl", "胡塞尔"),
-    ("Jean-Paul Sartre", "萨特"),
-    ("Albert Camus", "加缪"),
-    ("Mikhail Bakhtin", "巴赫金"),
-    ("Julia Kristeva", "克里斯蒂娃"),
-    ("Pierre Bourdieu", "布迪厄"),
-    ("Erving Goffman", "戈夫曼"),
-    ("Antonio Gramsci", "葛兰西"),
-    ("Georg Wilhelm Friedrich Hegel", "黑格尔"),
-    ("John Rawls", "罗尔斯"),
-    ("John Locke", "洛克"),
-    ("Thomas Hobbes", "霍布斯"),
-    ("Jean-Jacques Rousseau", "卢梭"),
-    ("Noam Chomsky", "乔姆斯基"),
-    ("Ludwig Wittgenstein", "维特根斯坦"),
-    ("Sigmund Freud", "弗洛伊德"),
-    ("Daniel Kahneman", "卡尼曼"),
-    ("Amos Tversky", "特沃斯基"),
-    ("Karl Popper", "卡尔·波普尔"),
-    ("Thomas Kuhn", "库恩"),
-    ("Thomas S. Kuhn", "库恩"),
-    ("Niklas Luhmann", "卢曼"),
-    ("Peter Sloterdijk", "斯洛特戴克"),
-    ("Roberto Esposito", "埃斯波西托"),
-    ("Antonio Negri", "奈格里"),
-    ("Chantal Mouffe", "墨菲"),
-    ("Ernesto Laclau", "拉克劳"),
-    ("Giorgio Agamben", "阿甘本"),
-    ("Slavoj Žižek", "齐泽克"),
-    ("Slavoj Zizek", "齐泽克"),
-    ("Alain Badiou", "巴迪欧"),
-    ("Jacques Rancière", "朗西埃"),
-    ("Jacques Ranciere", "朗西埃"),
-    ("Hartmut Rosa", "罗萨"),
-    ("William James", "威廉·詹姆斯"),
-    ("John Dewey", "杜威"),
-    ("Charles Sanders Peirce", "皮尔士"),
-    ("Bertrand Russell", "罗素"),
-    ("W. V. O. Quine", "蒯因"),
-    ("Willard Van Orman Quine", "蒯因"),
-    ("Saul Kripke", "克里普克"),
-    ("J. L. Austin", "奥斯汀"),
-    ("John Searle", "塞尔"),
-    ("Imre Lakatos", "拉卡托斯"),
-    ("Paul Feyerabend", "费耶阿本德"),
-    ("Michael Polanyi", "波兰尼"),
-    ("Thorstein Veblen", "凡勃伦"),
-    ("John Maynard Keynes", "凯恩斯"),
-    ("Friedrich Hayek", "哈耶克"),
-    ("Joseph Schumpeter", "熊彼特"),
-    ("Ronald Coase", "科斯"),
-    ("Oliver Williamson", "威廉姆森"),
-    ("Douglass North", "道格拉斯·诺斯"),
-    ("Herbert Simon", "赫伯特·西蒙"),
-    ("Nassim Nicholas Taleb", "塔勒布"),
-    ("Georg Simmel", "齐美尔"),
-    ("Talcott Parsons", "帕森斯"),
-    ("Robert K. Merton", "默顿"),
-    ("Norbert Elias", "埃利亚斯"),
-    ("Clifford Geertz", "格尔茨"),
-    ("Bronisław Malinowski", "马林诺夫斯基"),
-    ("Marcel Mauss", "莫斯"),
-    ("Jean Baudrillard", "鲍德里亚"),
-    ("Jean-François Lyotard", "利奥塔"),
-    ("Bruno Latour", "拉图尔"),
-    ("Donna Haraway", "哈拉维"),
-    ("Michel Foucault", "福柯"),
-    ("Martin Heidegger", "海德格尔"),
-    ("Max Weber", "韦伯"),
-    ("Karl Marx", "马克思"),
-    ("Friedrich Nietzsche", "尼采"),
-    ("Edmund Husserl", "胡塞尔"),
-    ("Maurice Merleau-Ponty", "梅洛-庞蒂"),
-    ("Emmanuel Levinas", "列维纳斯"),
-    ("Hans-Georg Gadamer", "伽达默尔"),
-    ("Paul Ricœur", "利科"),
-    ("Søren Kierkegaard", "克尔凯郭尔"),
-    ("Karl Jaspers", "雅斯贝尔斯"),
-    ("Martin Buber", "布伯"),
-    ("Jürgen Habermas", "哈贝马斯"),
-    ("Theodor W. Adorno", "阿多诺"),
-    ("Max Horkheimer", "霍克海默"),
-    ("Herbert Marcuse", "马尔库塞"),
-    ("Louis Althusser", "阿尔都塞"),
-    ("György Lukács", "卢卡奇"),
-    ("Georg Lukács", "卢卡奇"),
-    ("Benedict Anderson", "本尼迪克特·安德森"),
-    ("Edward Said", "萨义德"),
-    ("Gayatri Spivak", "斯皮瓦克"),
-    ("Frantz Fanon", "法农"),
-    ("Judith Butler", "巴特勒"),
-    ("Michael Walzer", "沃尔泽"),
-    ("Alasdair MacIntyre", "麦金太尔"),
-    ("Michael Sandel", "桑德尔"),
-    ("Charles Taylor", "泰勒"),
-    ("Isaiah Berlin", "伯林"),
-    ("Martha Nussbaum", "努斯鲍姆"),
-    ("Amartya Sen", "阿马蒂亚·森"),
-    ("Hilary Putnam", "普特南"),
-    ("Richard Rorty", "罗蒂"),
-    ("Carl Schmitt", "卡尔·施密特"),
-    ("Leo Strauss", "施特劳斯"),
-    ("Niccolò Machiavelli", "马基雅维利"),
-    ("Montesquieu", "孟德斯鸠"),
-    ("Alexis de Tocqueville", "托克维尔"),
-    ("Ronald Coase", "科斯"),
-    ("Oliver Williamson", "威廉姆森"),
-    ("Albert O. Hirschman", "赫希曼"),
-    ("Mancur Olson", "奥尔森"),
-    ("James Buchanan", "布坎南"),
-    ("Anthony Giddens", "吉登斯"),
-    ("Ulrich Beck", "贝克"),
-    ("Zygmunt Bauman", "鲍曼"),
-    ("Niklas Luhmann", "卢曼"),
-    ("Pierre Bourdieu", "布迪厄"),
-    ("Jean Baudrillard", "鲍德里亚"),
-    ("Guy Debord", "德波"),
-    ("Roland Barthes", "巴特"),
-    ("Michel de Certeau", "德·塞尔托"),
-    ("Gilles Deleuze", "德勒兹"),
-    ("Félix Guattari", "加塔利"),
-    ("Jacques Derrida", "德里达"),
-    ("Jean-François Lyotard", "利奥塔"),
-    ("Slavoj Žižek", "齐泽克"),
-    ("Alain Badiou", "巴迪欧"),
-    ("Jacques Rancière", "朗西埃"),
-    ("Jacques Ranciere", "朗西埃"),
-    ("Giorgio Agamben", "阿甘本"),
-    ("Roberto Esposito", "埃斯波西托"),
-    ("Antonio Negri", "奈格里"),
-    ("Michael Hardt", "哈特"),
-    ("Chantal Mouffe", "墨菲"),
-    ("Ernesto Laclau", "拉克劳"),
-    ("Hartmut Rosa", "罗萨"),
-    ("Peter Sloterdijk", "斯洛特戴克"),
-    ("Byung-Chul Han", "韩炳哲"),
-    ("Bakhtin", "巴赫金"),
-]
-
-# ── 第二层：姓氏替换（如文件中只有 "Foucault" 没有 "Michel Foucault"）──
-LAST_NAME_MAP = [
-    ("Agamben", "阿甘本"),
-    ("Althusser", "阿尔都塞"),
-    ("Arendt", "阿伦特"),
-    ("Badiou", "巴迪欧"),
-    ("Bakhtin", "巴赫金"),
-    ("Barthes", "巴特"),
-    ("Baudrillard", "鲍德里亚"),
-    ("Bauman", "鲍曼"),
-    ("Beauvoir", "波伏娃"),
-    ("Benjamin", "本雅明"),
-    ("Berger", "伯格"),
-    ("Bourdieu", "布迪厄"),
-    ("Butler", "巴特勒"),
-    ("Camus", "加缪"),
-    ("Coase", "科斯"),
-    ("Debord", "德波"),
-    ("Deleuze", "德勒兹"),
-    ("Derrida", "德里达"),
-    ("Dilthey", "狄尔泰"),
-    ("Durkheim", "涂尔干"),
-    ("Elias", "埃利亚斯"),
-    ("Esposito", "埃斯波西托"),
-    ("Fanon", "法农"),
-    ("Foucault", "福柯"),
-    ("Freud", "弗洛伊德"),
-    ("Gadamer", "伽达默尔"),
-    ("Geertz", "格尔茨"),
-    ("Giddens", "吉登斯"),
-    ("Goffman", "戈夫曼"),
-    ("Gramsci", "葛兰西"),
-    ("Guattari", "加塔利"),
-    ("Habermas", "哈贝马斯"),
-    ("Haraway", "哈拉维"),
-    ("Hayek", "哈耶克"),
-    ("Hegel", "黑格尔"),
-    ("Heidegger", "海德格尔"),
-    ("Hobbes", "霍布斯"),
-    ("Horkheimer", "霍克海默"),
-    ("Hume", "休谟"),
-    ("Husserl", "胡塞尔"),
-    ("Jaspers", "雅斯贝尔斯"),
-    ("Jung", "荣格"),
-    ("Kahneman", "卡尼曼"),
-    ("Kant", "康德"),
-    ("Kierkegaard", "克尔凯郭尔"),
-    ("Kristeva", "克里斯蒂娃"),
-    ("Kripke", "克里普克"),
-    ("Kuhn", "库恩"),
-    ("Lacan", "拉康"),
-    ("Laclau", "拉克劳"),
-    ("Latour", "拉图尔"),
-    ("Levinas", "列维纳斯"),
-    ("Locke", "洛克"),
-    ("Luhmann", "卢曼"),
-    ("Lukács", "卢卡奇"),
-    ("Lukacs", "卢卡奇"),
-    ("Lyotard", "利奥塔"),
-    ("MacIntyre", "麦金太尔"),
-    ("Malinowski", "马林诺夫斯基"),
-    ("Marcuse", "马尔库塞"),
-    ("Marx", "马克思"),
-    ("Mauss", "莫斯"),
-    ("Merton", "默顿"),
-    ("Mouffe", "墨菲"),
-    ("Negri", "奈格里"),
-    ("Nietzsche", "尼采"),
-    ("Nussbaum", "努斯鲍姆"),
-    ("Parsons", "帕森斯"),
-    ("Piaget", "皮亚杰"),
-    ("Plato", "柏拉图"),
-    ("Polanyi", "波兰尼"),
-    ("Popper", "波普尔"),
-    ("Putnam", "普特南"),
-    ("Quine", "蒯因"),
-    ("Rancière", "朗西埃"),
-    ("Ranciere", "朗西埃"),
-    ("Rawls", "罗尔斯"),
-    ("Ricoeur", "利科"),
-    ("Rogers", "罗杰斯"),
-    ("Rousseau", "卢梭"),
-    ("Said", "萨义德"),
-    ("Sandel", "桑德尔"),
-    ("Schmitt", "施密特"),
-    ("Schumpeter", "熊彼特"),
-    ("Searle", "塞尔"),
-    ("Simmel", "齐美尔"),
-    ("Sloterdijk", "斯洛特戴克"),
-    ("Spivak", "斯皮瓦克"),
-    ("Taleb", "塔勒布"),
-    ("Thaler", "泰勒"),
-    ("Tocqueville", "托克维尔"),
-    ("Tversky", "特沃斯基"),
-    ("Veblen", "凡勃伦"),
-    ("Vygotsky", "维果茨基"),
-    ("Walzer", "沃尔泽"),
-    ("Weber", "韦伯"),
-    ("Williamson", "威廉姆森"),
-    ("Wittgenstein", "维特根斯坦"),
-    ("Žižek", "齐泽克"),
-    ("Zizek", "齐泽克"),
-    # Second pass additions
-    ("Montesquieu", "孟德斯鸠"),
-    ("Chomsky", "乔姆斯基"),
-    ("Machiavelli", "马基雅维利"),
-    ("Newton", "牛顿"),
-    ("Turing", "图灵"),
-    ("Skinner", "斯金纳"),
-    ("Lakatos", "拉卡托斯"),
-    ("Becker", "贝克尔"),
-    ("Bandura", "班杜拉"),
-    ("Dewey", "杜威"),
-    ("Russell", "罗素"),
-    ("Gödel", "哥德尔"),
-    ("Godel", "哥德尔"),
-    ("Peirce", "皮尔士"),
-    ("Austin", "奥斯汀"),
-    ("Hardt", "哈特"),
-    ("Berlin", "伯林"),
-    ("Rorty", "罗蒂"),
-    ("Hirschman", "赫希曼"),
-    ("Olson", "奥尔森"),
-    ("Buchanan", "布坎南"),
-    ("Beck", "贝克"),
-]
-
-# Ambiguous names - skip in last-name-only matching
-SKIP_LAST_NAMES = {
-    "Han", "Taylor", "James", "Sen", "Smith", "Turner",
-    "Douglas", "Simon", "North", "Rosa", "Strauss",
+# 全名映射（长名优先匹配）
+FULL_NAMES = {
+    "carl schmitt": ("卡尔·施密特", "Carl Schmitt"),
+    "michel foucault": ("福柯", "Michel Foucault"),
+    "giorgio agamben": ("阿甘本", "Giorgio Agamben"),
+    "byung-chul han": ("韩炳哲", "Byung-Chul Han"),
+    "byung-chul han": ("韩炳哲", "Byung-chul Han"),
+    "merleau-ponty": ("梅洛-庞蒂", "Merleau-Ponty"),
+    "lévi-strauss": ("列维-施特劳斯", "Lévi-Strauss"),
+    "evans-pritchard": ("埃文斯-普里查德", "Evans-Pritchard"),
+    "simone de beauvoir": ("波伏娃", "Simone de Beauvoir"),
+    "guy debord": ("德波", "Guy Debord"),
+    "herbert simon": ("赫伯特·西蒙", "Herbert Simon"),
+    "amartya sen": ("阿马蒂亚·森", "Amartya Sen"),
+    "adam smith": ("亚当·斯密", "Adam Smith"),
+    "victor turner": ("维克多·特纳", "Victor Turner"),
+    "david hume": ("休谟", "David Hume"),
+    "immanuel kant": ("康德", "Immanuel Kant"),
+    "friedrich nietzsche": ("尼采", "Friedrich Nietzsche"),
+    "martin heidegger": ("海德格尔", "Martin Heidegger"),
+    "karl marx": ("马克思", "Karl Marx"),
+    "max weber": ("韦伯", "Max Weber"),
+    "émile durkheim": ("涂尔干", "Émile Durkheim"),
+    "jürgen habermas": ("哈贝马斯", "Jürgen Habermas"),
+    "hannah arendt": ("阿伦特", "Hannah Arendt"),
+    "walter benjamin": ("本雅明", "Walter Benjamin"),
+    "theodor adorno": ("阿多诺", "Theodor Adorno"),
+    "jacques derrida": ("德里达", "Jacques Derrida"),
+    "gilles deleuze": ("德勒兹", "Gilles Deleuze"),
+    "félix guattari": ("加塔利", "Félix Guattari"),
+    "jacques lacan": ("拉康", "Jacques Lacan"),
+    "edmund husserl": ("胡塞尔", "Edmund Husserl"),
+    "jean-paul sartre": ("萨特", "Jean-Paul Sartre"),
+    "albert camus": ("加缪", "Albert Camus"),
+    "mikhail bakhtin": ("巴赫金", "Mikhail Bakhtin"),
+    "julia kristeva": ("克里斯蒂娃", "Julia Kristeva"),
+    "pierre bourdieu": ("布迪厄", "Pierre Bourdieu"),
+    "erving goffman": ("戈夫曼", "Erving Goffman"),
+    "antonio gramsci": ("葛兰西", "Antonio Gramsci"),
+    "john rawls": ("罗尔斯", "John Rawls"),
+    "john locke": ("洛克", "John Locke"),
+    "thomas hobbes": ("霍布斯", "Thomas Hobbes"),
+    "jean-jacques rousseau": ("卢梭", "Jean-Jacques Rousseau"),
+    "ludwig wittgenstein": ("维特根斯坦", "Ludwig Wittgenstein"),
+    "sigmund freud": ("弗洛伊德", "Sigmund Freud"),
+    "daniel kahneman": ("卡尼曼", "Daniel Kahneman"),
+    "amos tversky": ("特沃斯基", "Amos Tversky"),
+    "thomas kuhn": ("库恩", "Thomas Kuhn"),
+    "niklas luhmann": ("卢曼", "Niklas Luhmann"),
+    "peter sloterdijk": ("斯洛特戴克", "Peter Sloterdijk"),
+    "roberto esposito": ("埃斯波西托", "Roberto Esposito"),
+    "slavoj žižek": ("齐泽克", "Slavoj Žižek"),
+    "slavoj zizek": ("齐泽克", "Slavoj Zizek"),
+    "alain badiou": ("巴迪欧", "Alain Badiou"),
+    "jacques rancière": ("朗西埃", "Jacques Rancière"),
+    "jacques ranciere": ("朗西埃", "Jacques Ranciere"),
+    "hartmut rosa": ("罗萨", "Hartmut Rosa"),
+    "william james": ("威廉·詹姆斯", "William James"),
+    "john dewey": ("杜威", "John Dewey"),
+    "bertrand russell": ("罗素", "Bertrand Russell"),
+    "imre lakatos": ("拉卡托斯", "Imre Lakatos"),
+    "michael polanyi": ("波兰尼", "Michael Polanyi"),
+    "thorstein veblen": ("凡勃伦", "Thorstein Veblen"),
+    "john maynard keynes": ("凯恩斯", "John Maynard Keynes"),
+    "friedrich hayek": ("哈耶克", "Friedrich Hayek"),
+    "joseph schumpeter": ("熊彼特", "Joseph Schumpeter"),
+    "ronald coase": ("科斯", "Ronald Coase"),
+    "oliver williamson": ("威廉姆森", "Oliver Williamson"),
+    "douglass north": ("道格拉斯·诺斯", "Douglass North"),
+    "nassim nicholas taleb": ("塔勒布", "Nassim Nicholas Taleb"),
+    "georg simmel": ("齐美尔", "Georg Simmel"),
+    "talcott parsons": ("帕森斯", "Talcott Parsons"),
+    "robert k. merton": ("默顿", "Robert K. Merton"),
+    "norbert elias": ("埃利亚斯", "Norbert Elias"),
+    "clifford geertz": ("格尔茨", "Clifford Geertz"),
+    "bronisław malinowski": ("马林诺夫斯基", "Bronisław Malinowski"),
+    "marcel mauss": ("莫斯", "Marcel Mauss"),
+    "jean baudrillard": ("鲍德里亚", "Jean Baudrillard"),
+    "jean-françois lyotard": ("利奥塔", "Jean-François Lyotard"),
+    "bruno latour": ("拉图尔", "Bruno Latour"),
+    "donna haraway": ("哈拉维", "Donna Haraway"),
+    "maurice merleau-ponty": ("梅洛-庞蒂", "Maurice Merleau-Ponty"),
+    "emmanuel levinas": ("列维纳斯", "Emmanuel Levinas"),
+    "hans-georg gadamer": ("伽达默尔", "Hans-Georg Gadamer"),
+    "søren kierkegaard": ("克尔凯郭尔", "Søren Kierkegaard"),
+    "karl jaspers": ("雅斯贝尔斯", "Karl Jaspers"),
+    "martin buber": ("布伯", "Martin Buber"),
+    "max horkheimer": ("霍克海默", "Max Horkheimer"),
+    "herbert marcuse": ("马尔库塞", "Herbert Marcuse"),
+    "louis althusser": ("阿尔都塞", "Louis Althusser"),
+    "györgy lukács": ("卢卡奇", "György Lukács"),
+    "edward said": ("萨义德", "Edward Said"),
+    "gayatri spivak": ("斯皮瓦克", "Gayatri Spivak"),
+    "frantz fanon": ("法农", "Frantz Fanon"),
+    "judith butler": ("巴特勒", "Judith Butler"),
+    "michael walzer": ("沃尔泽", "Michael Walzer"),
+    "alasdair macintyre": ("麦金太尔", "Alasdair MacIntyre"),
+    "michael sandel": ("桑德尔", "Michael Sandel"),
+    "charles taylor": ("泰勒", "Charles Taylor"),
+    "isaiah berlin": ("伯林", "Isaiah Berlin"),
+    "martha nussbaum": ("努斯鲍姆", "Martha Nussbaum"),
+    "hilary putnam": ("普特南", "Hilary Putnam"),
+    "niccolò machiavelli": ("马基雅维利", "Niccolò Machiavelli"),
+    "alexis de tocqueville": ("托克维尔", "Alexis de Tocqueville"),
+    "antoine de saint-exupéry": ("圣埃克苏佩里", "Antoine de Saint-Exupéry"),
+    "carl schmitt": ("卡尔·施密特", "Carl Schmitt"),
+    "leo strauss": ("施特劳斯", "Leo Strauss"),
+    "mary douglas": ("道格拉斯", "Mary Douglas"),
 }
 
-# Build deduplicated lookup
-def build_lookups():
-    """Build (english, chinese) lists, deduplicated, sorted by length desc."""
-    # Full names: already in (eng, chn) format
-    full = {}
-    for eng, chn in FULL_NAME_MAP:
-        if isinstance(chn, str):  # skip the broken tuple
-            full[eng] = chn
+# 姓氏映射（仅在不是全名匹配时使用）
+LAST_NAMES = {
+    "agamben": ("阿甘本", "Agamben"),
+    "althusser": ("阿尔都塞", "Althusser"),
+    "arendt": ("阿伦特", "Arendt"),
+    "badiou": ("巴迪欧", "Badiou"),
+    "bakhtin": ("巴赫金", "Bakhtin"),
+    "baudrillard": ("鲍德里亚", "Baudrillard"),
+    "bauman": ("鲍曼", "Bauman"),
+    "benjamin": ("本雅明", "Benjamin"),
+    "berger": ("伯格", "Berger"),
+    "bourdieu": ("布迪厄", "Bourdieu"),
+    "butler": ("巴特勒", "Butler"),
+    "camus": ("加缪", "Camus"),
+    "coase": ("科斯", "Coase"),
+    "debord": ("德波", "Debord"),
+    "deleuze": ("德勒兹", "Deleuze"),
+    "derrida": ("德里达", "Derrida"),
+    "durkheim": ("涂尔干", "Durkheim"),
+    "elias": ("埃利亚斯", "Elias"),
+    "esposito": ("埃斯波西托", "Esposito"),
+    "fanon": ("法农", "Fanon"),
+    "foucault": ("福柯", "Foucault"),
+    "freud": ("弗洛伊德", "Freud"),
+    "gadamer": ("伽达默尔", "Gadamer"),
+    "geertz": ("格尔茨", "Geertz"),
+    "giddens": ("吉登斯", "Giddens"),
+    "goffman": ("戈夫曼", "Goffman"),
+    "gramsci": ("葛兰西", "Gramsci"),
+    "guattari": ("加塔利", "Guattari"),
+    "habermas": ("哈贝马斯", "Habermas"),
+    "haraway": ("哈拉维", "Haraway"),
+    "hayek": ("哈耶克", "Hayek"),
+    "hegel": ("黑格尔", "Hegel"),
+    "heidegger": ("海德格尔", "Heidegger"),
+    "hobbes": ("霍布斯", "Hobbes"),
+    "horkheimer": ("霍克海默", "Horkheimer"),
+    "husserl": ("胡塞尔", "Husserl"),
+    "jaspers": ("雅斯贝尔斯", "Jaspers"),
+    "kahneman": ("卡尼曼", "Kahneman"),
+    "kant": ("康德", "Kant"),
+    "kierkegaard": ("克尔凯郭尔", "Kierkegaard"),
+    "kristeva": ("克里斯蒂娃", "Kristeva"),
+    "kuhn": ("库恩", "Kuhn"),
+    "lacan": ("拉康", "Lacan"),
+    "laclau": ("拉克劳", "Laclau"),
+    "latour": ("拉图尔", "Latour"),
+    "levinas": ("列维纳斯", "Levinas"),
+    "locke": ("洛克", "Locke"),
+    "luhmann": ("卢曼", "Luhmann"),
+    "lukács": ("卢卡奇", "Lukács"),
+    "lukacs": ("卢卡奇", "Lukacs"),
+    "lyotard": ("利奥塔", "Lyotard"),
+    "macintyre": ("麦金太尔", "MacIntyre"),
+    "malinowski": ("马林诺夫斯基", "Malinowski"),
+    "marcuse": ("马尔库塞", "Marcuse"),
+    "marx": ("马克思", "Marx"),
+    "mauss": ("莫斯", "Mauss"),
+    "merton": ("默顿", "Merton"),
+    "mouffe": ("墨菲", "Mouffe"),
+    "negri": ("奈格里", "Negri"),
+    "nietzsche": ("尼采", "Nietzsche"),
+    "nussbaum": ("努斯鲍姆", "Nussbaum"),
+    "parsons": ("帕森斯", "Parsons"),
+    "piaget": ("皮亚杰", "Piaget"),
+    "plato": ("柏拉图", "Plato"),
+    "polanyi": ("波兰尼", "Polanyi"),
+    "popper": ("波普尔", "Popper"),
+    "putnam": ("普特南", "Putnam"),
+    "quine": ("蒯因", "Quine"),
+    "rawls": ("罗尔斯", "Rawls"),
+    "ricoeur": ("利科", "Ricoeur"),
+    "rogers": ("罗杰斯", "Rogers"),
+    "rousseau": ("卢梭", "Rousseau"),
+    "said": ("萨义德", "Said"),
+    "sandel": ("桑德尔", "Sandel"),
+    "schmitt": ("施密特", "Schmitt"),
+    "schumpeter": ("熊彼特", "Schumpeter"),
+    "searle": ("塞尔", "Searle"),
+    "simmel": ("齐美尔", "Simmel"),
+    "sloterdijk": ("斯洛特戴克", "Sloterdijk"),
+    "spivak": ("斯皮瓦克", "Spivak"),
+    "taleb": ("塔勒布", "Taleb"),
+    "thaler": ("泰勒", "Thaler"),
+    "tocqueville": ("托克维尔", "Tocqueville"),
+    "tversky": ("特沃斯基", "Tversky"),
+    "veblen": ("凡勃伦", "Veblen"),
+    "vygotsky": ("维果茨基", "Vygotsky"),
+    "walzer": ("沃尔泽", "Walzer"),
+    "weber": ("韦伯", "Weber"),
+    "williamson": ("威廉姆森", "Williamson"),
+    "wittgenstein": ("维特根斯坦", "Wittgenstein"),
+    "žižek": ("齐泽克", "Žižek"),
+    "zizek": ("齐泽克", "Zizek"),
+    # Second-tier
+    "montesquieu": ("孟德斯鸠", "Montesquieu"),
+    "machiavelli": ("马基雅维利", "Machiavelli"),
+    "chomsky": ("乔姆斯基", "Chomsky"),
+    "skinner": ("斯金纳", "Skinner"),
+    "lakatos": ("拉卡托斯", "Lakatos"),
+    "dewey": ("杜威", "Dewey"),
+    "russell": ("罗素", "Russell"),
+    "lukacs": ("卢卡奇", "Lukacs"),
+}
 
-    # Last names: only those not in SKIP
-    last = {}
-    for eng, chn in LAST_NAME_MAP:
-        if eng in SKIP_LAST_NAMES:
-            continue
-        if eng not in full:  # don't override full names
-            last[eng] = chn
 
-    # Sort by length desc for matching priority
-    full_sorted = sorted(full.items(), key=lambda x: -len(x[0]))
-    last_sorted = sorted(last.items(), key=lambda x: -len(x[0]))
+def find_all_matches(body):
+    """Find all scholar name occurrences in body text.
+    Returns list of (start, end, chn_name, eng_name_original, chn_name_key) sorted by position.
+    """
+    matches = []
 
-    return full_sorted, last_sorted
+    # 1. Full names (case-insensitive, longer matches first)
+    for full_lower, (chn, eng_orig) in sorted(FULL_NAMES.items(), key=lambda x: -len(x[0])):
+        # Case-insensitive search in body
+        body_lower = body.lower()
+        idx = 0
+        while True:
+            pos = body_lower.find(full_lower, idx)
+            if pos == -1:
+                break
+            # Verify word boundaries
+            before_ok = pos == 0 or not body[pos-1].isalpha()
+            after_end = pos + len(full_lower)
+            after_ok = after_end >= len(body) or not body[after_end].isalpha()
+            if before_ok and after_ok:
+                # Check it's not inside [[]] link text or frontmatter
+                matches.append((pos, after_end, chn, eng_orig, chn))
+            idx = pos + 1
+
+    # 2. Last names (only if not already covered by a full name at same position)
+    for last_lower, (chn, eng_orig) in sorted(LAST_NAMES.items(), key=lambda x: -len(x[0])):
+        body_lower = body.lower()
+        idx = 0
+        while True:
+            pos = body_lower.find(last_lower, idx)
+            if pos == -1:
+                break
+            before_ok = pos == 0 or not body[pos-1].isalpha()
+            after_end = pos + len(last_lower)
+            after_ok = after_end >= len(body) or not body[after_end].isalpha()
+            if before_ok and after_ok:
+                # Check not already covered by a full name match
+                covered = False
+                for ms, me, _, _, _ in matches:
+                    if ms <= pos and me >= after_end:
+                        covered = True
+                        break
+                if not covered:
+                    matches.append((pos, after_end, chn, eng_orig, chn))
+            idx = pos + 1
+
+    # Sort by position, remove overlapping (keep earlier/longer)
+    matches.sort(key=lambda x: (x[0], -(x[1] - x[0])))
+    filtered = []
+    last_end = -1
+    for m in matches:
+        if m[0] >= last_end:
+            filtered.append(m)
+            last_end = m[1]
+
+    return filtered
 
 
-def split_frontmatter(content):
-    if content.startswith("---"):
-        end = content.find("---", 3)
-        if end != -1:
-            return content[:end+3], content[end+3:]
-    return "", content
-
-
-def has_chinese_name_in_body(body, chn_name):
-    """Check if the Chinese name already exists in the body."""
-    return chn_name in body
-
-
-def clean_spaces_around(text, pos, inserted_len):
-    """Remove double spaces around a replacement region."""
-    # This is handled inline
-    pass
-
-
-def process_file(filepath, full_sorted, last_sorted):
+def process_file(filepath):
     with open(filepath, 'r') as f:
         content = f.read()
 
     original = content
-    fm, body = split_frontmatter(content)
 
-    # Track which scholars have been introduced (first occurrence annotated)
-    # Key: Chinese name, Value: True
-    introduced = {}
+    # Split frontmatter
+    if content.startswith("---"):
+        end = content.find("---", 3)
+        if end != -1:
+            fm = content[:end+3]
+            body = content[end+3:]
+        else:
+            fm = ""
+            body = content
+    else:
+        fm = ""
+        body = content
 
-    # First: check if any 中文名（EngName） patterns already exist
-    # This means the scholar was already introduced, so future English names
-    # should just become Chinese name
-    for _, chn in full_sorted + last_sorted:
-        if chn in introduced:
-            continue
-        # Check for pattern like 福柯（Foucault）or 福柯(Foucault)
-        for eng, _ in full_sorted:
-            if re.search(re.escape(chn) + r'\s*[（(]\s*' + re.escape(eng) + r'\s*[）)]', body):
-                introduced[chn] = True
+    matches = find_all_matches(body)
+    if not matches:
+        return original, False
+
+    # Determine which scholars are already introduced
+    # A scholar is "already introduced" if their Chinese name appears in the body
+    # before their first English match
+    first_eng_pos = {}  # chn_name → first English position
+    for start, end, chn, eng_orig, key in matches:
+        if key not in first_eng_pos or start < first_eng_pos[key]:
+            first_eng_pos[key] = start
+
+    already_has_chinese = {}  # chn_name → True if Chinese name exists before English
+    for key, eng_pos in first_eng_pos.items():
+        chn_pos = body.find(key)
+        if chn_pos != -1 and chn_pos < eng_pos:
+            already_has_chinese[key] = True
+        else:
+            already_has_chinese[key] = False
+
+    # Check for existing 中文名（EngName）pattern
+    for key in first_eng_pos:
+        for _, (chn, eng_orig) in FULL_NAMES.items():
+            if chn == key:
+                if re.search(re.escape(chn) + r'\s*[（(]\s*' + re.escape(eng_orig) + r'\s*[）)]', body):
+                    already_has_chinese[key] = True
                 break
-        if chn not in introduced:
-            for eng, _ in last_sorted:
-                if re.search(re.escape(chn) + r'\s*[（(]\s*' + re.escape(eng) + r'\s*[）)]', body):
-                    introduced[chn] = True
+        else:
+            for last_k, (chn, eng_orig) in LAST_NAMES.items():
+                if chn == key:
+                    if re.search(re.escape(chn) + r'\s*[（(]\s*' + re.escape(eng_orig) + r'\s*[）)]', body):
+                        already_has_chinese[key] = True
                     break
 
-    # Also check if Chinese name appears before any English name
-    # (e.g., if "福柯" appears in body but "Foucault" also appears, the Chinese name
-    # came first and no annotation is needed — just replace English → Chinese)
-    for eng, chn in full_sorted + last_sorted:
-        if chn in introduced:
-            continue
-        chn_pos = body.find(chn)
-        if chn_pos != -1:
-            # Chinese name exists, check if English name exists
-            eng_pattern = r'(?<![\w])' + re.escape(eng) + r'(?![\w])'
-            eng_match = re.search(eng_pattern, body)
-            if eng_match:
-                # Chinese appears before English, or they're on different lines
-                # Just replace English → Chinese, no annotation needed
-                introduced[chn] = True
+    # Track which scholars we've introduced (first occurrence with annotation)
+    introduced = set()
 
-    def do_replacement(body_text, eng_name, chn_name, all_eng_names):
-        """Replace one English name in body. Returns (new_body, did_change)."""
-        # Skip if inside markdown link syntax like [text](url)
-        # Match whole word
-        pattern = r'(?<![\w/\[（(])(' + re.escape(eng_name) + r')(?![\w/\]）)])'
+    # Apply replacements from last to first
+    for start, end, chn, eng_orig, key in reversed(matches):
+        eng_in_text = body[start:end]
 
-        matches = list(re.finditer(pattern, body_text))
-        if not matches:
-            return body_text, False
+        # Check if this match is inside an already-existing 中文名（EngName）pattern
+        before = body[max(0, start-30):start]
+        if re.search(re.escape(chn) + r'\s*[（(]\s*$', before):
+            continue  # Already annotated, skip
 
-        changed = False
+        if already_has_chinese.get(key, False) or key in introduced:
+            # Just replace English → Chinese
+            body = body[:start] + chn + body[end:]
+        else:
+            # First occurrence: 中文名（EngName）
+            body = body[:start] + f"{chn}（{eng_in_text}）" + body[end:]
+            introduced.add(key)
 
-        # Process from last to first to preserve positions
-        for match in reversed(matches):
-            start, end = match.start(), match.end()
-
-            # Skip if inside a markdown link [text](url) — check if surrounded by ](
-            line_start = body_text.rfind('\n', 0, start) + 1
-            line = body_text[line_start:start] + body_text[start:end] + body_text[end:body_text.find('\n', end) if '\n' in body_text[end:] else len(body_text)]
-            if '](' in line and body_text[end:end+1] in (')', '）', '', '\n'):
-                # Check if it's in a URL-like context
-                context = body_text[max(0, start-30):end+30]
-                if '](' in context:
-                    continue
-
-            # Skip if already part of 中文名（EngName）pattern
-            before = body_text[max(0, start-30):start]
-            if re.search(re.escape(chn_name) + r'\s*[（(]\s*$', before):
-                continue
-
-            # Determine replacement
-            if chn_name in introduced and introduced[chn_name]:
-                # Already introduced → just Chinese name
-                replacement = chn_name
-            else:
-                # First occurrence → 中文名（EngName）
-                replacement = f"{chn_name}（{eng_name}）"
-                introduced[chn_name] = True
-
-            # Do replacement
-            body_text = body_text[:start] + replacement + body_text[end:]
-            changed = True
-
-            # Clean up double spaces around the replacement
-            # Look at char before replacement and char after
-            check_start = start
-            check_end = start + len(replacement)
-            # We don't need to clean if we handle it in the replacement context
-
-        # Post-pass: clean double spaces near scholar names
-        # Pattern: space + 中文名 or 中文名 + space where the space is redundant
-        for name in set(chn_name for _, chn_name in (full_sorted + last_sorted)):
-            if not name:
-                continue
-            # 中文名 followed by Chinese char with space → remove space
-            body_text = re.sub(
-                re.escape(name) + r'(?=[一-鿿])',
-                name,
-                body_text
-            )
-            # 中文名 preceded by Chinese char with space → remove space
-            body_text = re.sub(
-                r'(?<=[一-鿿（)])\s+' + re.escape(name),
-                name,
-                body_text
-            )
-            # 中文名（Eng）followed by Chinese char with space → remove space
-            body_text = re.sub(
-                re.escape(name) + r'[（(][^）)]+[）)]\s+(?=[一-鿿])',
-                lambda m: re.sub(r'\s+$', '', m.group(0)),
-                body_text
-            )
-
-        return body_text, changed
-
-    # Process all full names first (longer matches first)
-    for eng, chn in full_sorted:
-        body, changed = do_replacement(body, eng, chn, full_sorted)
-
-    # Then process last names
-    for eng, chn in last_sorted:
-        body, changed = do_replacement(body, eng, chn, last_sorted)
-
-    # Final cleanup: remove double spaces
-    # But preserve intentional double spaces (unlikely in Chinese text)
-    # Only clean spaces adjacent to Chinese characters
-    body = re.sub(r'(?<=[一-鿿）)]) +(?=[一-鿿（])', '', body)
-    body = re.sub(r'(?<=[一-鿿）)]) +(?=\S)', lambda m: '' if len(m.group(0)) > 1 else m.group(0), body)
+    # Clean up double spaces (only around Chinese characters)
+    # Pattern: Chinese char + space + Chinese char → remove space
+    body = re.sub(r'(?<=[一-鿿）)]) +(?=[一-鿿（【])', '', body)
 
     result = fm + body
-
-    if result != original:
-        return result, True
-    return original, False
+    return result, result != original
 
 
 def main():
-    full_sorted, last_sorted = build_lookups()
-
     changed_files = []
     skipped_files = []
     error_files = []
@@ -518,7 +380,7 @@ def main():
         filepath = os.path.join(CONCEPT_DIR, f)
 
         try:
-            result, changed = process_file(filepath, full_sorted, last_sorted)
+            result, changed = process_file(filepath)
             if changed:
                 with open(filepath, 'w') as fh:
                     fh.write(result)
