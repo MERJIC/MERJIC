@@ -211,6 +211,15 @@ def scan_file(filepath: str) -> Optional[dict]:
     # date
     date = fm.get('date', '')
 
+    # person 标签
+    persons = []
+    raw_tags = fm.get('tags', [])
+    if isinstance(raw_tags, str):
+        raw_tags = [raw_tags]
+    for tag in raw_tags:
+        if tag.startswith("person/"):
+            persons.append(tag[len("person/"):])
+
     # 出链
     out_links = extract_wikilinks(content)
 
@@ -222,6 +231,7 @@ def scan_file(filepath: str) -> Optional[dict]:
         "discipline": tags["discipline"],
         "pattern": tags["pattern"],
         "apply": tags["apply"],
+        "persons": persons,
         "source": source,
         "date": date,
         "out_links": out_links,
@@ -761,6 +771,16 @@ def build_incremental_index() -> dict:
             name_cn = fname[:-3]
             nodes[name_cn] = node
 
+    # 回填新增字段：旧节点可能缺少 persons 等字段
+    for fname in current_files - to_scan:
+        name_cn = fname[:-3]
+        node = nodes.get(name_cn)
+        if node and "persons" not in node:
+            filepath = os.path.join(CONCEPT_DIR, fname)
+            fresh = scan_file(filepath)
+            if fresh and "persons" in fresh:
+                node["persons"] = fresh["persons"]
+
     # 删除已不存在的文件
     removed_names = []
     for name, node in nodes.items():
@@ -1078,6 +1098,54 @@ def load_existing_shards() -> Optional[dict]:
     return None
 
 
+# ── person 标签频次统计 ────────────────────────────────────
+
+# person 标签准入门槛
+PERSON_THRESHOLD = 5
+# 当前白名单（与 page-spec.md 保持同步）
+PERSON_WHITELIST = [
+    "维特根斯坦", "康德", "庄子", "海德格尔", "弗洛伊德",
+    "卡尼曼", "布迪厄", "福柯", "胡塞尔", "阿伦特",
+]
+
+
+def check_person_tags(nodes: dict) -> None:
+    """统计 person 标签频次，检测是否有人跨过准入门槛。"""
+    from collections import Counter
+
+    freq = Counter()
+    for name, node in nodes.items():
+        for p in node.get("persons", []):
+            freq[p] += 1
+
+    if not freq:
+        return
+
+    # 检测：非白名单学者频次 >= 阈值 → 建议加入白名单
+    new_candidates = []
+    for scholar, count in freq.most_common():
+        if count >= PERSON_THRESHOLD and scholar not in PERSON_WHITELIST:
+            new_candidates.append((scholar, count))
+
+    if new_candidates:
+        print("\n📢 person 标签门槛检测：")
+        for scholar, count in new_candidates:
+            print(f"  ⬆️ {scholar} 出现 {count} 次，已达准入门槛（≥{PERSON_THRESHOLD}），建议加入 page-spec 白名单")
+        print("  → 请更新 skills/concept-studio/modules/page-spec.md 中的白名单")
+
+    # 检测：白名单中学者频次 < 阈值 → 建议移出
+    low_freq = []
+    for scholar in PERSON_WHITELIST:
+        if freq.get(scholar, 0) < PERSON_THRESHOLD:
+            low_freq.append((scholar, freq.get(scholar, 0)))
+
+    if low_freq:
+        if not new_candidates:
+            print("\n📢 person 标签门槛检测：")
+        for scholar, count in low_freq:
+            print(f"  ⬇️ {scholar} 仅出现 {count} 次，低于门槛（≥{PERSON_THRESHOLD}），建议从白名单移除")
+
+
 # ── main ──────────────────────────────────────────────────
 
 def main():
@@ -1145,6 +1213,9 @@ def main():
         if os.path.exists(path):
             size = os.path.getsize(path)
             print(f"  分片 {label}: {size / 1024:.1f} KB")
+
+    # person 标签门槛检测
+    check_person_tags(index["nodes"])
 
 
 if __name__ == "__main__":
