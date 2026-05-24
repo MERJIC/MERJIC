@@ -912,6 +912,7 @@ def write_shards(index: dict) -> None:
             "discipline": data.get("discipline", []),
             "pattern": data.get("pattern"),
             "apply": data.get("apply", []),
+            "persons": data.get("persons", []),
         }
 
     lite = {
