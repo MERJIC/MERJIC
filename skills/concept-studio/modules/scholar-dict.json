@@ -858,5 +858,21 @@
   "Wenger": {
     "full": "埃蒂安·温格",
     "en": "Etienne Wenger"
+  },
+  "Henderson": {
+    "full": "布鲁斯·亨德森",
+    "en": "Bruce Henderson"
+  },
+  "Christensen": {
+    "full": "克莱顿·克里斯坦森",
+    "en": "Clayton Christensen"
+  },
+  "Teece": {
+    "full": "大卫·蒂斯",
+    "en": "David Teece"
+  },
+  "Myers": {
+    "full": "斯图尔特·迈尔斯",
+    "en": "Stewart Myers"
   }
 }
