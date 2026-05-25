@@ -906,5 +906,29 @@
   "McAdams": {
     "full": "丹·麦克亚当斯",
     "en": "Dan McAdams"
+  },
+  "Shapiro": {
+    "full": "卡尔·夏皮罗",
+    "en": "Carl Shapiro"
+  },
+  "Varian": {
+    "full": "哈尔·瓦里安",
+    "en": "Hal Varian"
+  },
+  "Tirole": {
+    "full": "让·梯若尔",
+    "en": "Jean Tirole"
+  },
+  "Rochet": {
+    "full": "马克·罗切特",
+    "en": "Marc Rochet"
+  },
+  "McAfee": {
+    "full": "安德鲁·麦卡菲",
+    "en": "Andrew McAfee"
+  },
+  "Brynjolfsson": {
+    "full": "埃里克·布林约尔松",
+    "en": "Erik Brynjolfsson"
   }
 }
