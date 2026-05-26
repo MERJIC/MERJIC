@@ -1,17 +1,13 @@
 /*
- * MERJIC 瑞士风·黑橙白 知识卡片版式系统
- * 适用于：圆桌讨论 / 多人对话 / 知识传播
- * 比例：375×500px（3:4，小红书标准）
+ * MERJIC 知识卡片版式系统 v1.0
+ * 2026-05-27 · 基于「个体权力的本质」圆桌卡片沉淀
  *
- * 配色：黑(#0A0A0A) + 白(#FAFAF8) + 橘(#E0620A) 三色
- * 底色规则：dark ↔ paper 严格交替，综述位用 accent(橘)，首尾 dark
+ * 比例：375×500px（3:4，小红书标准）
+ * 底色：dark(#0A0A0A) / paper(#FAFAF8) / accent(#E0620A)
  * 字重：hero/xl=200, body=300, 品牌=ZY LOYALTY
  * 直角无阴影无圆角无渐变
  *
- * 人物颜色系统：
- *   每位参与者分配固定颜色，贯穿所有出现位置：
- *   圆点(speaker-dot) + 引言竖线(quote-block) + 正文高亮(accent-text)
- *   dark 底上自动提亮，accent(橘)底上降级为白色（对比度不够）
+ * 设计原则见 cards.md（P1-P8），本文件是实现层
  */
 
 /* ─── FONTS ─────────────────────────────────── */
@@ -353,11 +349,9 @@ body {
 .card.dark .brand-mark { color: rgba(255,255,255,0.35); }
 .card.accent .brand-mark { color: rgba(255,255,255,0.6); }
 
-/* ─── html2canvas 颜色修复 ─────────────────────── */
-/* html2canvas 无法可靠解析 CSS 后代选择器（如 .card.dark .t-body），
-   导致 dark/accent 卡上的白色文字被渲染为黑色。
-   解决方案：在 captureCard() 中，截图前用 JS 把计算样式强制写入
-   inline style，截图后还原。具体代码见 cards.md 的 HTML 骨架模板。 */
+/* ─── 导出说明 ─────────────────────────────────── */
+/* 不使用 html2canvas（深色背景上白色文字渲染为黑色的不可修复 bug）。
+   导出统一用浏览器原生 window.print() + @media print CSS。 */
 
 /* ─── EXPORT UI ─────────────────────────────── */
 .hint {
