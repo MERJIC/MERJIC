@@ -236,7 +236,7 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 - [ ] 专业术语首次出现有解释
 - [ ] 相邻卡片逻辑关系清晰
 - [ ] 结尾有开放性问题
-- [ ] html2canvas 导出颜色正确——`forceInlineColors()` 函数已包含在 `<script>` 中，截图前会自动把 dark/accent 卡的计算样式写入 inline style，截图后还原。如果导出图片中 dark 卡文字为黑（黑底看不见），说明此函数未生效或选择器遗漏
+- [ ] `@media print` CSS 规则已包含——`@page { size: 375px 500px; margin: 0 }`、`.card { page-break-after: always; print-color-adjust: exact }`、隐藏非卡片元素
 
 **视觉格式专项（`merjic-swiss` 风格）：**
 - [ ] 页脚 `brand-mark` 只写 `MERJIC`，字体 `ZY LOYALTY`，无其他文字（禁止「知识系列」「XXX系列」等系列标识，禁止日期）
@@ -347,5 +347,7 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 - 如果缓存被清空，在剪映中重新使用该字体效果即可恢复缓存
 
 告知用户：
-- 浏览器打开，点「导出图片」导出 PNG 图片 ZIP 包（无损，颜色精确，不要用 JPEG——有损压缩对纯色背景偏色严重）
-- 或点「导出 PDF」导出多页 PDF（每卡一页，所见即所得，走 html2canvas 截图而非浏览器打印）
+- 浏览器打开 HTML 文件
+- 点「导出 PDF」→ 浏览器打印对话框弹出 → 选择「另存为 PDF」→ 保存
+- 打印时纸张大小会自动适配 375×500px（每卡一页）
+- 颜色、字体、间距与屏幕所见完全一致（浏览器原生渲染，不走 html2canvas）
