@@ -126,7 +126,7 @@
 /* ─── Speaker ───────────────────────────────── */
 .speaker-name {
   font-family: var(--sans); font-size: 12px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.8px;
+  letter-spacing: 0.8px;
   color: var(--ink-muted-48); margin-bottom: 14px;
 }
 .tile.dark .speaker-name, .tile.dark-alt .speaker-name, .tile.black .speaker-name { color: rgba(255,255,255,0.35); }
@@ -139,8 +139,14 @@
 
 /* ─── Footer ────────────────────────────────── */
 .tile-footer {
-  margin-top: auto; padding: 0 32px 18px;
-  display: flex; align-items: center; justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .brand-mark {
   font-family: 'ZY Loyalty', var(--mono); font-size: 9px;
