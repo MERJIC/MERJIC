@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>个体权力的本质 · 圆桌讨论</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'ZY LOYALTY';
+      src: url('file:///Users/myke/Movies/JianyingPro/User%20Data/Cache/effect/66322554/1e9b242443a9943a43ccf30604243978/ZY%20Loyalty.ttf') format('truetype');
+    }
+
+    :root {
+      --black:    #0A0A0A;
+      --white:    #FAFAF8;
+      --orange:   #E85D1C;
+      --orange-l: #FF8A50;
+      --orange-d: #C44A12;
+      --dim:      #666;
+      --dim-w:    #999;
+      --ink:      #E8E8E8;
+      --header-h: 38px;
+      --footer-h: 34px;
+      --pad-x:    32px;
+      --pad-top:  24px;
+      --pad-bot:  18px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px 60px;
+      gap: 16px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      color: var(--dim-w);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .stack { display: flex; flex-direction: column; gap: 14px; }
+
+    /* ─── CARD ─────────────────────────────── */
+    .card {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3 / 4;
+      position: relative;
+      overflow: hidden;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .card-dark  { background: var(--black); color: var(--ink); }
+    .card-white { background: var(--white); color: var(--black); }
+    .card-acc   { background: var(--orange); color: #fff; }
+
+    /* ─── FIXED A: header ──────────────────── */
+    .fixed-header {
+      position: absolute;
+      top: var(--pad-top);
+      left: var(--pad-x);
+      right: var(--pad-x);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border: 1px solid currentColor;
+      opacity: 0.6;
+    }
+    .card-dark .tag { color: var(--orange); border-color: var(--orange); }
+    .card-white .tag { color: var(--orange); border-color: var(--orange); }
+    .card-acc .tag { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ─── FIXED B: sig ─────────────────────── */
+    .fixed-sig {
+      position: absolute;
+      bottom: var(--pad-bot);
+      right: var(--pad-x);
+      font-family: 'ZY LOYALTY', 'Helvetica Neue', sans-serif;
+      font-size: 9px;
+      letter-spacing: 5px;
+      opacity: 0.15;
+      line-height: 1;
+    }
+    .card-dark .fixed-sig,
+    .card-white .fixed-sig { color: var(--black); }
+    .card-acc .fixed-sig { color: #fff; }
+
+    /* ─── FIXED C: pgnum ───────────────────── */
+    .fixed-pgnum {
+      position: absolute;
+      bottom: var(--pad-bot);
+      left: var(--pad-x);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+    .card-dark .fixed-pgnum { color: var(--dim); }
+    .card-white .fixed-pgnum { color: var(--dim); }
+    .card-acc .fixed-pgnum { color: rgba(255,255,255,0.45); }
+
+    /* ─── CONTENT ZONE ─────────────────────── */
+    .content-zone {
+      position: absolute;
+      top: calc(var(--pad-top) + var(--header-h));
+      bottom: calc(var(--pad-bot) + var(--footer-h));
+      left: var(--pad-x);
+      right: var(--pad-x);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Cover layout */
+    .cover-layout {
+      justify-content: center;
+      gap: 16px;
+    }
+    .cover-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .cover-title {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .card-dark .cover-title { color: #fff; }
+    .card-white .cover-title { color: var(--black); }
+    .card-acc .cover-title { color: #fff; }
+    .cover-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+    .cover-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      opacity: 0.35;
+      margin-top: 8px;
+    }
+
+    /* Body layout */
+    .body-layout {
+      justify-content: flex-start;
+      gap: 8px;
+    }
+    .body-h {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+    .card-dark .body-h { color: #fff; }
+    .card-white .body-h { color: var(--black); }
+    .card-acc .body-h { color: #fff; }
+    .body-speaker {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      opacity: 0.45;
+      margin-top: -2px;
+      line-height: 1.5;
+    }
+    .body-text {
+      font-size: 12.5px;
+      line-height: 2;
+      letter-spacing: 0.03em;
+    }
+    .card-dark .body-text { color: #ccc; }
+    .card-white .body-text { color: #333; }
+    .card-acc .body-text { color: rgba(255,255,255,0.9); }
+    .body-quote {
+      border-left: 2px solid var(--orange);
+      padding-left: 14px;
+    }
+    .card-dark .body-quote { color: #ddd; }
+    .card-white .body-quote { color: #222; }
+
+    /* Summary */
+    .body-summary {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      line-height: 1.6;
+    }
+    .card-dark .body-summary { border-color: rgba(255,255,255,0.1); color: var(--dim); }
+    .card-white .body-summary { border-color: rgba(0,0,0,0.1); color: var(--dim); }
+    .card-acc .body-summary { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); }
+    .summary-val {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      margin-top: 4px;
+      line-height: 1.7;
+    }
+    .card-dark .summary-val { color: #fff; }
+    .card-white .summary-val { color: var(--black); }
+    .card-acc .summary-val { color: #fff; }
+
+    /* ─── diagram / frame ──────────────────── */
+    .frame-box {
+      border: 1px solid var(--orange);
+      padding: 12px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      white-space: pre;
+      overflow: hidden;
+    }
+    .card-dark .frame-box { color: var(--dim-w); border-color: var(--orange); }
+    .card-white .frame-box { color: #555; border-color: var(--orange); }
+
+    /* Roster grid */
+    .roster {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .roster-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .roster-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .roster-name {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .roster-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      opacity: 0.4;
+    }
+    .roster-stance {
+      font-size: 10px;
+      line-height: 1.6;
+      opacity: 0.7;
+      margin-top: 1px;
+    }
+
+    /* Dialogue pair */
+    .dialogue-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dialogue-turn {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .dialogue-who {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+    }
+    .card-dark .dialogue-who { color: var(--orange); }
+    .card-white .dialogue-who { color: var(--orange); }
+    .dialogue-body {
+      font-size: 11.5px;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+    }
+    .card-dark .dialogue-body { color: #bbb; }
+    .card-white .dialogue-body { color: #333; }
+
+    /* Accent highlight */
+    .hi { color: var(--orange); font-weight: 700; }
+    .card-dark .hi { color: var(--orange); }
+    .card-white .hi { color: var(--orange-d); }
+    .card-acc .hi { color: #fff; }
+
+    /* Ending */
+    .ending-q {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+    .card-dark .ending-q { color: #fff; }
+    .card-white .ending-q { color: var(--black); }
+
+    /* ─── EXPORT ───────────────────────────── */
+    .hint {
+      color: var(--dim-w);
+      font-size: 11px;
+      text-align: center;
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+    .export-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .btn {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 13px;
+      padding: 8px 20px;
+      border: none;
+      cursor: pointer;
+      background: var(--orange);
+      color: #fff;
+    }
+    .btn-o {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 13px;
+      padding: 8px 20px;
+      border: 1px solid var(--orange);
+      cursor: pointer;
+      background: transparent;
+      color: var(--orange);
+    }
+    .export-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--dim-w);
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">个体权力的本质 · 圆桌讨论 · 共 18 张</div>
+
+<div class="stack">
+
+<!-- ==================== 01 封面 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">01 / 18</div>
+  <div class="content-zone cover-layout">
+    <div class="cover-label">Roundtable · Power</div>
+    <div class="cover-title">个体权力<br>的本质</div>
+    <div class="cover-sub">一个人在社会中拥有的权力，<br>到底意味着什么？</div>
+    <div class="cover-meta">韦伯 · 尼采 · Harari · Naval · 森</div>
+  </div>
+</div>
+
+<!-- ==================== 02 概念引入 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">02 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">从「拥有」这个词开始</div>
+    <div class="body-text">
+      日常语言里，「权力」极度含混。一个人说他有权力，可能指他能让人听话，也可能指他有资源，还可能指他社会地位高。
+    </div>
+    <div class="body-text" style="margin-top:4px;">
+      今天的讨论锁定一个操作定义作为起点——也作为靶子：
+    </div>
+    <div class="body-quote" style="margin-top:8px;">
+      个体权力 = 一个体在社会关系中，能够按照自身意志改变他人行为或结果的能力。
+    </div>
+    <div class="body-text" style="margin-top:8px;">
+      这个定义刻意留下了模糊地带：「能力」是属性还是关系？「改变他人」是结果还是过程？五位来自不同领域的代表人物，将对这个定义表态——接受、修正、或拒绝。
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 03 人物阵容 ==================== -->
+<div class="card card-acc">
+  <div class="fixed-header"><div class="tag" style="color:#fff;border-color:rgba(255,255,255,0.5);">圆桌讨论 · 人物</div></div>
+  <div class="fixed-sig" style="color:#fff;">MERJIC</div>
+  <div class="fixed-pgnum" style="color:rgba(255,255,255,0.45);">03 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="roster" style="gap:14px;">
+      <div class="roster-item">
+        <div class="roster-dot" style="background:#fff;"></div>
+        <div>
+          <div class="roster-name">马克斯·韦伯 Max Weber</div>
+          <div class="roster-role">社会学家</div>
+          <div class="roster-stance">权力是关系中的概率——你的意志能对抗阻力而贯彻的可能性</div>
+        </div>
+      </div>
+      <div class="roster-item">
+        <div class="roster-dot" style="background:#fff;"></div>
+        <div>
+          <div class="roster-name">弗里德里希·尼采 Friedrich Nietzsche</div>
+          <div class="roster-role">哲学家</div>
+          <div class="roster-stance">权力意志是生命根本冲动——人就是权力意志的流动形式</div>
+        </div>
+      </div>
+      <div class="roster-item">
+        <div class="roster-dot" style="background:#fff;"></div>
+        <div>
+          <div class="roster-name">Yuval Noah Harari</div>
+          <div class="roster-role">历史学家</div>
+          <div class="roster-stance">权力来自共同虚构——谁能主导叙事谁就有权力</div>
+        </div>
+      </div>
+      <div class="roster-item">
+        <div class="roster-dot" style="background:#fff;"></div>
+        <div>
+          <div class="roster-name">Naval Ravikant</div>
+          <div class="roster-role">科技投资人</div>
+          <div class="roster-stance">权力是杠杆——无需许可的杠杆是个体权力的倍增器</div>
+        </div>
+      </div>
+      <div class="roster-item">
+        <div class="roster-dot" style="background:#fff;"></div>
+        <div>
+          <div class="roster-name">阿马蒂亚·森 Amartya Sen</div>
+          <div class="roster-role">经济学家 / 哲学家</div>
+          <div class="roster-stance">权力是可行能力——一个人能选择的实质自由的范围</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 04 韦伯 ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第一轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">04 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">马克斯·韦伯</div>
+    <div class="body-speaker">Max Weber · 社会学家</div>
+    <div class="body-quote">
+      「权力是某种社会关系内部，一个人的意志即使遇到抵抗也能贯彻的概率。」
+    </div>
+    <div class="body-text" style="margin-top:6px;">
+      操作定义里用了「能力」这个词，太静态了，暗示权力是个人携带的资产——像口袋里的钥匙。
+    </div>
+    <div class="body-text">
+      权力应该是<span class="hi">概率</span>和<span class="hi">社会关系内部</span>。同一个CEO，在董事会上权力很高，在家里的餐桌上可能很低。离开了具体的社会关系，讨论个体权力毫无意义。
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">权力是关系中的概率，不是个人携带的资产。</div>
+  </div>
+</div>
+
+<!-- ==================== 05 尼采 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第一轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">05 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">弗里德里希·尼采</div>
+    <div class="body-speaker">Friedrich Nietzsche · 哲学家</div>
+    <div class="body-text">
+      韦伯把权力降格为「社会关系中的概率」，这恰好把权力最核心的东西阉割掉了。
+    </div>
+    <div class="body-text">
+      权力意志（Wille zur Macht）是生命本身的根本冲动。每一种活着的事物都在努力扩展自身的力量、克服阻力、向外伸展。
+    </div>
+    <div class="body-text">
+      「个体权力的本质」这个提问本身就预设了一个脱离了权力意志的「个体」，然后再问他拥有多少「权力」。这个框架是错的。<span class="hi">人不是拥有权力，人就是权力的流动形式。</span>
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">权力不是社会关系的属性，人本身就是权力意志的具现。</div>
+  </div>
+</div>
+
+<!-- ==================== 06 Harari ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第一轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">06 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">Yuval Noah Harari</div>
+    <div class="body-speaker">历史学家 ·《人类简史》作者</div>
+    <div class="body-text">
+      智人统治地球靠的不是个体层面的力量——跑不过猎豹，打不过猩猩。靠的是<span class="hi">共同虚构</span>（shared fictions）。
+    </div>
+    <div class="body-text">
+      国家、货币、法律、公司、人权，这些东西只存在于集体想象中，但恰恰是这些想象赋予了个体权力。一个CEO的权力不来自个人力量，也不来自某个关系中的概率——来自足够多的人<span class="hi">相信</span>他坐在那个位置上。
+    </div>
+    <div class="body-text">
+      你个人再强大，如果你被排除在叙事之外，你就没有权力。反过来，一个普通人如果能掌握叙事——比如通过社交媒体——他可以拥有远超其社会地位的权力。
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">权力来自共同虚构的叙事，谁能掌控叙事谁就拥有权力。</div>
+  </div>
+</div>
+
+<!-- ==================== 07 Naval ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第一轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">07 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">Naval Ravikant</div>
+    <div class="body-speaker">科技投资人 ·《The Almanack of Naval Ravikant》</div>
+    <div class="body-text">
+      Harari 说叙事是放大器，对。但他的视角太宏观了——像从卫星上看地面，看得到河流但看不到水泵。
+    </div>
+    <div class="body-text">
+      个体权力可以拆解为具体的框架：<span class="hi">杠杆</span>（leverage）。
+    </div>
+    <div class="body-text">
+      四种杠杆，逐级递增：劳动力、资本、代码/媒体、AI。前两种需要别人的许可（permissioned），后两种不需要（permissionless）。
+    </div>
+    <div class="body-text">
+      一个程序员写出的开源工具被百万人使用——他不需要任何人的批准就拥有了巨大的影响力。叙事是土壤，<span class="hi">杠杆才是工具</span>。
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">权力是杠杆——无需许可的杠杆是个体权力的倍增器。</div>
+  </div>
+</div>
+
+<!-- ==================== 08 森 ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第一轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">08 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">阿马蒂亚·森</div>
+    <div class="body-speaker">Amartya Sen · 经济学家 / 诺贝尔奖得主</div>
+    <div class="body-text">
+      在座的四位都在讨论权力的「来源」——权力从哪里来。但没人问一个更根本的问题：权力是为了什么？
+    </div>
+    <div class="body-text">
+      真正的个体权力是<span class="hi">可行能力</span>（capability）——一个人有实质的自由去实现他珍视的生存方式。
+    </div>
+    <div class="body-text">
+      一个独裁者可能拥有巨大的「影响他人的能力」——韦伯的概率很高，Naval的杠杆很大——但如果他的臣民连基本的温饱、教育、健康都没有，那些臣民就是无权力的。
+    </div>
+    <div class="body-text">
+      你们的定义都指向「向外施加影响的能力」。我要指出另一个方向：权力是「向内实现自我的自由」。
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">权力的本质是可行能力——一个人能选择的实质自由的范围。</div>
+  </div>
+</div>
+
+<!-- ==================== 09 第一轮综述 ==================== -->
+<div class="card card-acc">
+  <div class="fixed-header"><div class="tag" style="color:#fff;border-color:rgba(255,255,255,0.5);">第一轮综述</div></div>
+  <div class="fixed-sig" style="color:#fff;">MERJIC</div>
+  <div class="fixed-pgnum" style="color:rgba(255,255,255,0.45);">09 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-text" style="font-size:13px;line-height:2;">
+      第一轮暴露了一个关键的结构性分歧：<span style="color:#fff;font-weight:700;">「向外」vs「向内」</span>。
+    </div>
+    <div class="body-text" style="margin-top:6px;font-size:12px;line-height:1.9;">
+      向外阵营——韦伯、尼采、Harari、Naval——权力是你对他者的影响能力。区别只在来源：关系概率、生命冲动、共同叙事、杠杆工具。
+    </div>
+    <div class="body-text" style="font-size:12px;line-height:1.9;">
+      向内阵营——森——权力是你实现自身目标的能力，与你影响他人无关。
+    </div>
+    <div class="body-text" style="margin-top:10px;font-size:11px;line-height:1.8;opacity:0.7;">
+      更深层的裂缝出现在尼采和Harari之间：尼采说权力先于社会存在——它是生命的基本冲动；Harari说权力是文化建构的——没有集体虚构就没有权力。如果尼采是对的，权力是「自然」的；如果Harari是对的，权力是「文化」的。
+    </div>
+    <div class="body-text" style="margin-top:auto;font-size:11px;opacity:0.6;">
+      → 冲动要变成权力，中间的接口是什么？
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 10 韦伯+Naval ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第二轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">10 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="dialogue-pair">
+      <div class="dialogue-turn">
+        <div class="dialogue-who">韦伯：合法性是接口</div>
+        <div class="dialogue-body">
+          单纯的「想要」不会自动转化为权力。冲动要变成权力，中间必须经过合法性——他人承认你有权这样做。传统型（一直都是这样的）、魅力型（这个人本身非凡）、法理型（规则赋予的职位）。合法性不是静态叙事，它是持续的验证过程。
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;">
+        <div class="dialogue-turn">
+          <div class="dialogue-who">Naval：代码不需要被承认</div>
+          <div class="dialogue-body">
+            一个开源程序员，不认识用户，用户也没有「承认」他有权做什么。但他的代码决定了百万人如何工作。在无需许可的世界里，<span class="hi">创造物的传播本身就是权力</span>，不需要合法性背书。韦伯的框架解释不了这个。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 11 尼采+Harari ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第二轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">11 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="dialogue-pair">
+      <div class="dialogue-turn">
+        <div class="dialogue-who">尼采：权力意志驱动一切创造</div>
+        <div class="dialogue-body">
+          程序员写代码的冲动从何而来？正是权力意志。创造、超越自我、把意志灌注进作品——这些都是权力意志的表现。合法性只是权力意志被群畜道德驯化后的产物。顺序是：<span class="hi">权力意志驱动创造，社会事后追认合法性</span>。
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(0,0,0,0.08);padding-top:10px;">
+        <div class="dialogue-turn">
+          <div class="dialogue-who">Harari：代码站在叙事地基上</div>
+          <div class="dialogue-body">
+            「权力意志驱动了一切」——什么都能解释，也就什么都没解释。看似无需许可的代码，依赖巨大的叙事基础设施：互联网协议是叙事，开源运动是叙事，编程语言是叙事。没有这些前置信念，<span class="hi">一段代码就是无意义的字符</span>。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 12 森的挑战 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第二轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">12 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">森的挑战</div>
+    <div class="body-speaker">从无权者的视角重新提问</div>
+    <div class="body-text">
+      这整个讨论都在预设权力的主体是一个「想要影响他人」的行动者。但世界上大多数人不「想要」影响他人——农民想收成，母亲想孩子上学，病人想治好病。
+    </div>
+    <div class="body-text" style="margin-top:4px;">
+      把权力定义为「影响他人的能力」，本身是精英视角——它只描述了已经拥有权力的人如何理解权力，无法描述被剥夺权力的人缺少什么。
+    </div>
+    <div class="body-text">
+      韦伯谈合法性——但合法性是给掌权者准备的框架。Naval谈杠杆——但拥有杠杆的前提是有资本、有教育。Harari谈叙事——但叙事是谁编的？<span class="hi">尼采谈权力意志——但贫困和压迫可以碾碎最强烈的意志。</span>
+    </div>
+    <div class="body-summary">简言之</div>
+    <div class="summary-val">你们讨论的是掌权者的自我理解——大多数人的权力问题是「如何拥有选择自己生活的自由」。</div>
+  </div>
+</div>
+
+<!-- ==================== 13 第二轮综述 ==================== -->
+<div class="card card-acc">
+  <div class="fixed-header"><div class="tag" style="color:#fff;border-color:rgba(255,255,255,0.5);">第二轮综述</div></div>
+  <div class="fixed-sig" style="color:#fff;">MERJIC</div>
+  <div class="fixed-pgnum" style="color:rgba(255,255,255,0.45);">13 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-text" style="font-size:12.5px;line-height:2;">
+      讨论从「权力的来源」推进到「权力的接口」，但森的介入撕裂了底层假设。
+    </div>
+    <div class="body-text" style="margin-top:6px;font-size:12px;line-height:1.9;">
+      外层对话争论的是「冲动如何变成被承认的力量」。内层对话质疑的是讨论的前提：影响他人的能力本身就是一个狭隘的权力定义。
+    </div>
+    <div class="frame-box" style="margin-top:12px;">
+  个体权力的本质
+      │
+  ┌───┴───┐
+  ↓       ↓
+掌权者    无权者
+「如何    「如何拥有
+影响他人」  选择权」
+  │       │
+  └───┬───┘
+  森：两者之间
+  存在结构性断裂</div>
+    <div class="body-text" style="margin-top:auto;font-size:11px;opacity:0.6;">
+      → 自由和权力，到底能不能分开？
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 14 Naval + Harari ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第三轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">14 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="dialogue-pair">
+      <div class="dialogue-turn">
+        <div class="dialogue-who">Naval：自由不等于权力</div>
+        <div class="dialogue-body">
+          一个独居农夫——种自己的地，吃自己的粮食，几乎不与外界来往。他有很高的「可行能力」和实质自由，但几乎零权力。反过来，一个被囚禁的黑帮头目拥有巨大权力。<span class="hi">自由是你自己的事，权力是别人的事。</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(0,0,0,0.08);padding-top:10px;">
+        <div class="dialogue-turn">
+          <div class="dialogue-who">Harari：农夫不存在于历史中</div>
+          <div class="dialogue-body">
+            没有任何个体能完全脱离社会网络生存——种子谁造的？农具哪来的？更关键的是：「选择自己的生活方式」这个想法本身就是启蒙运动发明出来的叙事。<span class="hi">你一旦选择了，就已经在影响他人</span>——你在示范一种生活方式。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 15 韦伯 + 尼采 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第三轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">15 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="dialogue-pair">
+      <div class="dialogue-turn">
+        <div class="dialogue-who">韦伯：自由是权力的前提，但不是权力</div>
+        <div class="dialogue-body">
+          自由是不受阻碍地行动的能力——负面的。权力是在遇到阻力时依然能贯彻意志——正面的。自由是权力的必要条件但不是充分条件。森的「可行能力」实际上是自由的扩展，不是权力的扩展。一个社会可以给所有人最大程度的自由，但权力依然会高度集中。
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;">
+        <div class="dialogue-turn">
+          <div class="dialogue-who">尼采：争论可分不可分是伪问题</div>
+          <div class="dialogue-body">
+            你们预设有一个「个体」先存在，然后他选择行使「自由」还是「权力」。但<span class="hi">权力意志就是你</span>。农夫种地是贯彻意志对抗自然——这就是权力。森的「想要选择」的冲动本身，就是权力意志。五位之间的对立是假的——底层驱动力是同一个。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 16 森的收束 ==================== -->
+<div class="card card-white">
+  <div class="fixed-header"><div class="tag">圆桌讨论 · 第三轮</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">16 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-h">森的收束</div>
+    <div class="body-speaker">表层与深层</div>
+    <div class="body-text">
+      尼采说「想要选择」就是权力意志——这是同义反复。把所有人类行为都叫做权力意志，就像说「原子理论解释了爱情」。
+    </div>
+    <div class="body-text" style="margin-top:4px;">
+      影响他人的能力和选择自己生活的自由，在经验上经常分离：暴君拥有巨大的影响力但可行能力可能很低——被恐惧和偏执支配。社区工作者几乎无法影响政策，但她帮助的人获得了选择生活的实质自由。
+    </div>
+    <div class="body-text" style="margin-top:4px;">
+      我把两者的关系重新定义为：<span class="hi">影响他人的能力是个体权力的表层现象，可行能力是个体权力的深层基础。</span>一个社会如果只关注表层而不关注深层，它对权力的理解就是畸形的。
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 17 第三轮综述 ==================== -->
+<div class="card card-acc">
+  <div class="fixed-header"><div class="tag" style="color:#fff;border-color:rgba(255,255,255,0.5);">第三轮综述</div></div>
+  <div class="fixed-sig" style="color:#fff;">MERJIC</div>
+  <div class="fixed-pgnum" style="color:rgba(255,255,255,0.45);">17 / 18</div>
+  <div class="content-zone body-layout">
+    <div class="body-text" style="font-size:12.5px;line-height:2;">
+      三轮讨论之后，最深的裂缝出现在<span style="color:#fff;font-weight:700;">分析层次</span>上——五位回答的可能不是同一个问题。
+    </div>
+    <div class="frame-box" style="margin-top:10px;">
+    「权力的本质」
+         │
+  ┌──┬──┼──┬──┐
+  ↓  ↓  ↓  ↓  ↓
+本体 经验 认知 操作 规范
+尼采 韦伯 Harari Naval 森
+  │  │  │  │  │
+  └──┴──┴──┴──┘
+        ↓
+  如果一个人获得杠杆
+  （Naval），他同时在
+  塑造叙事（Harari）、
+  改变关系概率（韦伯）、
+  影响他人可行能力（森）
+
+  → 权力是一个多层次
+    的运作系统</div>
+  </div>
+</div>
+
+<!-- ==================== 18 结尾 ==================== -->
+<div class="card card-dark">
+  <div class="fixed-header"><div class="tag">尾声</div></div>
+  <div class="fixed-sig">MERJIC</div>
+  <div class="fixed-pgnum">18 / 18</div>
+  <div class="content-zone body-layout" style="justify-content:flex-end;gap:16px;">
+    <div class="body-text" style="font-size:12px;line-height:1.9;">
+      三轮讨论没有得出一个统一的答案。但五位在一点上形成了隐性的基础共识：
+    </div>
+    <div class="ending-q">
+      个体权力不是一个<br>静态的「拥有物」。<br><br>它是一个在关系、叙事、<br>技术条件、制度结构中<br>持续流动的过程。<br><br>追问权力的本质，<br>不如追问：<br>在这个流动中，<br>你站在哪里。
+    </div>
+    <div class="body-text" style="font-size:10px;opacity:0.4;margin-top:12px;">
+      韦伯 · 尼采 · Harari · Naval · 森
+    </div>
+  </div>
+</div>
+
+</div><!-- end stack -->
+
+<div class="hint">浏览器打开，点「导出图片」逐张保存 JPG<br>或点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）</div>
+<div class="export-bar">
+  <button class="btn-o" onclick="exportPDF()">导出 PDF</button>
+  <button class="btn" onclick="exportAll()">导出图片</button>
+  <span class="export-status" id="status"></span>
+</div>
+
+<script>
+function wrapBrackets(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+  nodes.forEach(node => {
+    if (!/[「」]/.test(node.textContent)) return;
+    const frag = document.createDocumentFragment();
+    node.textContent.split(/(「|」)/).forEach(part => {
+      if (part === '「' || part === '」') {
+        const s = document.createElement('span');
+        s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
+        s.textContent = part;
+        frag.appendChild(s);
+      } else if (part) {
+        frag.appendChild(document.createTextNode(part));
+      }
+    });
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+
+async function captureCard(card) {
+  const saved = card.innerHTML;
+  wrapBrackets(card);
+  await new Promise(r => requestAnimationFrame(r));
+  const canvas = await html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null });
+  card.innerHTML = saved;
+  return canvas;
+}
+
+async function exportPDF() {
+  const { jsPDF } = window.jspdf;
+  const cards = document.querySelectorAll('.card');
+  const status = document.getElementById('status');
+  status.textContent = '生成中…';
+  const pw = 180, ph = 240;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
+  for (let i = 0; i < cards.length; i++) {
+    status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
+    const canvas = await captureCard(cards[i]);
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    if (i > 0) doc.addPage([pw, ph]);
+    doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
+  }
+  doc.save('个体权力的本质-麦橘知识卡片.pdf');
+  status.textContent = '完成 ✓';
+  setTimeout(() => { status.textContent = ''; }, 3000);
+}
+
+async function exportAll() {
+  const cards = document.querySelectorAll('.card');
+  const status = document.getElementById('status');
+  status.textContent = '生成中…';
+  const zip = new JSZip();
+  for (let i = 0; i < cards.length; i++) {
+    status.textContent = (i + 1) + ' / ' + cards.length;
+    const canvas = await captureCard(cards[i]);
+    const base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
+    zip.file(String(i + 1).padStart(2, '0') + '.jpg', base64, { base64: true });
+  }
+  status.textContent = '打包中…';
+  const blob = await zip.generateAsync({ type: 'blob' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = '个体权力的本质-麦橘知识卡片.zip';
+  link.click();
+  status.textContent = '完成 ✓';
+  setTimeout(() => { status.textContent = ''; }, 3000);
+}
+</script>
+
+</body>
+</html>
