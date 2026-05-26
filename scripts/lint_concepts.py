@@ -609,7 +609,7 @@ def fix_issue(content: str, issue: dict) -> str:
             rest = match.group(3)    # 冒号前的内容
             colon = match.group(4)   # ：或:
             after = match.group(5)   # 冒号后的内容
-            return f"{indent}{prefix} **{rest.strip()}**{colon}{after}"
+            return f"{indent}{prefix}**{rest.strip()}**{colon}{after}"
 
         # 只处理现实锚点 section
         anchor_match = re.search(
