@@ -161,13 +161,35 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 
 将选定设计系统的 CSS **内联到 `<style>` 标签**（不用外链，保证离线可用和截图完整）。
 
-**PDF 导出必须用 html2canvas + jsPDF，不能用 `window.print()`。** 浏览器打印引擎和屏幕渲染引擎不同，颜色、字体、间距都会偏移，只有截图方式才能做到所见即所得。
+**PDF 导出使用浏览器原生 `window.print()`。**
 
-**html2canvas 颜色精度要求：**
-- `backgroundColor` 必须设为 `undefined`（不是 `null`）——null 会导致背景不渲染，undefined 让 html2canvas 自动读取 CSS 值
-- 导出格式用 **PNG**（不是 JPEG）——JPEG 有损压缩对纯色背景（黑/白/橘）偏色严重，PNG 无损精确
-- 加 `allowTaint: true` 避免跨域字体导致渲染失败
-- 标准参数：`{ scale: 3, useCORS: true, allowTaint: true, backgroundColor: undefined, logging: false }`
+**为什么不用 html2canvas：** html2canvas 在深色背景卡片上无法正确渲染白色文字（已验证为不可修复的 bug——即使在 onclone 中强制写入 inline style，渲染结果仍然是黑色文字）。浏览器原生打印走的是 Chrome 自身渲染引擎，颜色和字体 100% 精确，所见即所得。
+
+**必须添加 `@media print` CSS 规则：**
+
+```css
+@media print {
+  @page {
+    size: 375px 500px;  /* 与卡片宽高一致 */
+    margin: 0;
+  }
+  body { margin: 0; padding: 0; background: none; }
+  .page-header, .hint, .export-bar { display: none !important; }
+  .stack { gap: 0 !important; padding: 0 !important; }
+  .card {
+    page-break-after: always;
+    break-after: page;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .card:last-child { page-break-after: avoid; break-after: avoid; }
+}
+```
+
+**`.card` 上必须有 `print-color-adjust: exact; -webkit-print-color-adjust: exact`，否则打印时背景色会消失。**
 
 标准 HTML 骨架：
 
@@ -178,13 +200,10 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>[主题] · 图文系列</title>
-  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Noto+Sans+SC:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     /* 内联设计系统 CSS */
-    /* 必须在 .card 上加：print-color-adjust: exact; -webkit-print-color-adjust: exact; */
+    /* 必须包含 @media print 规则 */
   </style>
 </head>
 <body>
@@ -192,150 +211,14 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
   <div class="stack">
     <!-- 卡片列表，每张 <div class="card"> -->
   </div>
-  <div class="hint">点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）<br>或点「导出图片」逐张保存 PNG</div>
+  <div class="hint">点「导出 PDF」用浏览器打印功能保存（每卡一页，所见即所得）<br>打印对话框中选「另存为 PDF」，纸张大小会自动适配</div>
   <div class="export-bar">
     <button class="btn btn-o" onclick="exportPDF()">导出 PDF</button>
-    <button class="btn" onclick="exportAll()">导出图片</button>
     <span class="export-status" id="status"></span>
   </div>
   <script>
-  // 截图前把「」包进带 padding 的 span，强制 layout 引擎撑开间距
-  // 截图后还原 innerHTML，不影响页面显示
-  // 原因：html2canvas 渲染 canvas 文字时，CJK 字体的内置 kern 规则会把「」压紧
-  // letterRendering: true 对全角括号无效；只有 DOM 层的物理间距才可靠
-  function wrapBrackets(root) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-    const nodes = [];
-    let n;
-    while ((n = walker.nextNode())) nodes.push(n);
-    nodes.forEach(node => {
-      if (!/[「」]/.test(node.textContent)) return;
-      const frag = document.createDocumentFragment();
-      node.textContent.split(/(「|」)/).forEach(part => {
-        if (part === '「' || part === '」') {
-          const s = document.createElement('span');
-          s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
-          s.textContent = part;
-          frag.appendChild(s);
-        } else if (part) {
-          frag.appendChild(document.createTextNode(part));
-        }
-      });
-      node.parentNode.replaceChild(frag, node);
-    });
-  }
-
-  // html2canvas 无法可靠解析 CSS 后代选择器（如 .card.dark .t-body），
-  // 导致 dark/accent 卡上的白色文字被渲染为黑色。
-  // 解决方案：截图前把计算样式强制写入 inline style，截图后还原。
-  function forceInlineColors(card) {
-    const isDark = card.classList.contains('dark');
-    const isAccent = card.classList.contains('accent');
-    if (!isDark && !isAccent) return null;
-
-    const selectors = '.t-body,.t-body-sm,.t-hero,.t-hero-sm,.t-xl,.t-meta,.speaker-name,.speaker-role,.card-tag,.card-num,.brand-mark,.point-mark,.hr-accent,.quote-block,.dialogue-divider,.accent-text,.text-weber,.text-nietzsche,.text-harari,.text-naval,.text-sen,.participant-name,.participant-desc,.speaker-dot';
-    const elements = card.querySelectorAll(selectors);
-    const originals = [];
-
-    elements.forEach(el => {
-      const cs = getComputedStyle(el);
-      const color = cs.color;
-      if (color) {
-        originals.push({ el, prop: 'color', old: el.style.color });
-        el.style.color = color;
-      }
-      if (el.classList.contains('hr-accent') || el.classList.contains('point-mark') || el.classList.contains('speaker-dot')) {
-        const bg = cs.backgroundColor;
-        if (bg && bg !== 'rgba(0, 0, 0, 0)') {
-          originals.push({ el, prop: 'backgroundColor', old: el.style.backgroundColor });
-          el.style.backgroundColor = bg;
-        }
-      }
-      if (el.classList.contains('quote-block')) {
-        const blc = cs.borderLeftColor;
-        if (blc) {
-          originals.push({ el, prop: 'borderLeftColor', old: el.style.borderLeftColor });
-          el.style.borderLeftColor = blc;
-        }
-      }
-      if (el.classList.contains('dialogue-divider')) {
-        const btc = cs.borderTopColor;
-        if (btc) {
-          originals.push({ el, prop: 'borderTopColor', old: el.style.borderTopColor });
-          el.style.borderTopColor = btc;
-        }
-      }
-    });
-
-    // 处理带 inline style color 的 div/span（如封面副标题等）
-    card.querySelectorAll('[style*="color:"]').forEach(el => {
-      if (Array.from(elements).includes(el)) return;
-      const cs = getComputedStyle(el);
-      const color = cs.color;
-      if (color) {
-        originals.push({ el, prop: 'color', old: el.style.color });
-        el.style.color = color;
-      }
-    });
-
-    return originals;
-  }
-
-  async function captureCard(card) {
-    const saved = card.innerHTML;
-    wrapBrackets(card);
-    forceInlineColors(card);
-    await new Promise(r => requestAnimationFrame(r));
-    const canvas = await html2canvas(card, {
-      scale: 3,
-      useCORS: true,
-      allowTaint: true,
-      backgroundColor: undefined,
-      logging: false,
-      removeContainer: true
-    });
-    card.innerHTML = saved;
-    return canvas;
-  }
-
-  async function exportPDF() {
-    const { jsPDF } = window.jspdf;
-    const cards = document.querySelectorAll('.card');
-    const status = document.getElementById('status');
-    status.textContent = '生成中…';
-    const pw = 180, ph = 240; // 3:4
-    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
-    for (let i = 0; i < cards.length; i++) {
-      status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
-      const canvas = await captureCard(cards[i]);
-      const imgData = canvas.toDataURL('image/png');
-      if (i > 0) doc.addPage([pw, ph]);
-      doc.addImage(imgData, 'PNG', 0, 0, pw, ph);
-    }
-    doc.save('[主题].pdf');
-    status.textContent = '完成 ✓';
-    setTimeout(() => { status.textContent = ''; }, 3000);
-  }
-
-  async function exportAll() {
-    const cards = document.querySelectorAll('.card');
-    const status = document.getElementById('status');
-    status.textContent = '生成中…';
-    const zip = new JSZip();
-    for (let i = 0; i < cards.length; i++) {
-      status.textContent = (i + 1) + ' / ' + cards.length;
-      const canvas = await captureCard(cards[i]);
-      const base64 = canvas.toDataURL('image/png').split(',')[1];
-      zip.file(String(i + 1).padStart(2, '0') + '.png', base64, { base64: true });
-    }
-    status.textContent = '打包中…';
-    const blob = await zip.generateAsync({ type: 'blob' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = '[主题]-麦橘知识卡片.zip';
-    link.click();
-    status.textContent = '完成 ✓';
-    setTimeout(() => { status.textContent = ''; }, 3000);
+  function exportPDF() {
+    window.print();
   }
   </script>
 </body>
