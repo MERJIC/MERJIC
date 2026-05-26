@@ -1066,5 +1066,33 @@
   "托兰德": {
     "full": "格里高利·托兰德",
     "en": "Gregg Toland"
+  },
+  "契诃夫": {
+    "full": "安东·契诃夫",
+    "en": "Anton Chekhov"
+  },
+  "希区柯克": {
+    "full": "阿尔弗雷德·希区柯克",
+    "en": "Alfred Hitchcock"
+  },
+  "海明威": {
+    "full": "欧内斯特·海明威",
+    "en": "Ernest Hemingway"
+  },
+  "塔夫特": {
+    "full": "爱德华·塔夫特",
+    "en": "Edward Tufte"
+  },
+  "戈德罗": {
+    "full": "安德烈·戈德罗",
+    "en": "André Gaudreault"
+  },
+  "若斯特": {
+    "full": "弗朗索瓦·若斯特",
+    "en": "François Jost"
+  },
+  "安东尼奥尼": {
+    "full": "米开朗基罗·安东尼奥尼",
+    "en": "Michelangelo Antonioni"
   }
 }
