@@ -163,6 +163,12 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 
 **PDF 导出必须用 html2canvas + jsPDF，不能用 `window.print()`。** 浏览器打印引擎和屏幕渲染引擎不同，颜色、字体、间距都会偏移，只有截图方式才能做到所见即所得。
 
+**html2canvas 颜色精度要求：**
+- `backgroundColor` 必须设为 `undefined`（不是 `null`）——null 会导致背景不渲染，undefined 让 html2canvas 自动读取 CSS 值
+- 导出格式用 **PNG**（不是 JPEG）——JPEG 有损压缩对纯色背景（黑/白/橘）偏色严重，PNG 无损精确
+- 加 `allowTaint: true` 避免跨域字体导致渲染失败
+- 标准参数：`{ scale: 3, useCORS: true, allowTaint: true, backgroundColor: undefined, logging: false }`
+
 标准 HTML 骨架：
 
 ```html
