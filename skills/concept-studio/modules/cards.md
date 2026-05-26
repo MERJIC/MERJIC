@@ -192,7 +192,7 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
   <div class="stack">
     <!-- 卡片列表，每张 <div class="card"> -->
   </div>
-  <div class="hint">点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）<br>或点「导出图片」逐张保存 JPG</div>
+  <div class="hint">点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）<br>或点「导出图片」逐张保存 PNG</div>
   <div class="export-bar">
     <button class="btn btn-o" onclick="exportPDF()">导出 PDF</button>
     <button class="btn" onclick="exportAll()">导出图片</button>
