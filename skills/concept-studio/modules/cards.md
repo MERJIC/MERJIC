@@ -39,13 +39,16 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 | `orange-card` | `skills/report-to-html-pdf/references/orange-card-style.css` | system-ui + ZY LOYALTY（MERJIC品牌水印） | **麦橘品牌默认风格**。奶油白底 + 麦橘橘 #E85D1C，支持故事+圆桌混合内容，发言人名字内联加粗，无列对齐问题，手机直接可读。除非有特殊指定，优先选此风格。 |
 | `merjic-card` | `skills/concept-studio/modules/merjic-card-style.css` | Noto Serif SC + Noto Sans SC + JetBrains Mono + ZY LOYALTY | **麦橘固定版式系统**。三区锚点（抬头/签名/页码绝对定位），内容区硬约束不溢出。适用于寓言故事 + 圆桌讨论（多轮次）+ 尾声三板块组合内容。封面：大标题 + 一句话副标题。内容页（圆桌）：引言引用框 + 第三人称诠释（禁用「简言之」总结框）。内容页（寓言）：纯叙事，无引用框。 |
 | `merjic-swiss` | 内联生成，无外链 CSS | Inter + Noto Sans SC + JetBrains Mono + ZY LOYALTY（仅品牌水印） | **麦橘瑞士风卡片**。竖向 375×500px（3:4），直角无阴影无圆角无渐变。单一强调色 `#e0620a`（MERJIC Orange）。`--ink: #0a0a0a` / `--paper: #fafaf8`。四种卡面：light / dark / accent / grey。全程无衬线。适合寓言故事 + 圆桌讨论混排，小红书首选。 |
+| `merjic-swiss-dark` | `skills/concept-studio/modules/merjic-swiss-dark-card-style.css` | Inter + Noto Sans SC + JetBrains Mono + ZY LOYALTY（品牌水印 9px） | **麦橘瑞士风·黑橙白圆桌专用**。竖向 375×500px（3:4），直角无阴影无圆角无渐变。三种底色：dark(#0A0A0A) / paper(#FAFAF8) / accent(#E0620A)。严格深浅交替，综述位用橘色。人物颜色系统：每位参与者分配固定色，贯穿圆点+竖线+高亮词。黑底白字、白底黑字。封面用钩子问句，不写人名。圆桌讨论/多人对话首选。 |
 
 **自动选择判断逻辑：**
 - 默认 → `orange-card`（麦橘品牌标准卡片）
+- 圆桌讨论/多人对话，明确需要黑橙白风格 → `merjic-swiss-dark`
 - 内容含大量技术术语、AI话题、结构图表、认识论/逻辑分析 → `structured-dark`
 - 内容以故事为主、人文叙事、温暖情感 → `xhs-card`
 - 内容是轻松多人对话、心理/生活/社科类圆桌 → `roundtable-card`
 - 内容是寓言故事 + 圆桌讨论（多轮）+ 尾声的组合，或明确要求固定版式 → `merjic-card`
+- 用户说「瑞士风」「黑橙白」→ `merjic-swiss` 或 `merjic-swiss-dark`
 
 **扩展方式：** 新设计系统出现后，在上方注册表新增一行，CSS 文件放入对应 skill 的 `references/` 目录。skill 核心逻辑不需要改动。
 
@@ -129,7 +132,14 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 - 必须有一句话背景，说明他们为什么出现在这里
 - 例：`Gary Watson · 分析哲学家，首先质疑欲望层级框架`
 
-**圆桌发言人排版规范：**
+**圆桌发言人排版规范（`merjic-swiss-dark` 专用）：**
+- 人名格式：`中文简称 · 英文简称`（发言卡/对话卡），`中文全名  英文全名`（阵容卡）
+- 发言正文：纯中文简称，不出英文
+- 每位发言人分配固定颜色，贯穿圆点+竖线+高亮词
+- 阵容卡圆点用人物专属色，不用灰色/黑色方块
+- 对话卡内两位发言人之间用 dialogue-divider 分隔
+
+**圆桌发言人排版规范（其他风格）：**
 - 人名下方单独一行写英文名，再下一行写一句话介绍
 - 不内联在括号里，不塞进圆圈/浮标，每位发言者格式一致
 - 例：
@@ -282,11 +292,105 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
 - [ ] 直角无阴影无圆角无渐变（`border-radius: 0`，无 `box-shadow`，无 `linear-gradient`）
 - [ ] 封面 `.t-hero` 的 `margin-top: auto` 在 footer 生效——不被内联 `style="margin-top:Xpx"` 覆盖
 
+**`merjic-swiss-dark` 硬性规范（全部必须遵守，无例外）：**
+
+### 底色规则
+- 只有三种底色：`dark`(#0A0A0A) / `paper`(#FAFAF8) / `accent`(#E0620A)。禁止 `grey`，禁止任何其他中间色
+- 严格深浅交替：dark → paper → dark → paper → …
+- 综述卡（轮次综述、最终共识）用 `accent`(橘色)，打断交替节奏
+- 首页（封面）和末页（结尾）必须是 `dark`
+
+### 底色序列模板（18张）
+```
+01 dark    封面/钩子
+02 paper   概念引入
+03 dark    人物阵容（深色撑信息密度）
+04 paper   发言1
+05 dark    发言2
+06 paper   发言3
+07 dark    发言4
+08 paper   发言5
+09 accent  轮次综述1（打断交替）
+10 paper   对话1
+11 dark    对话2
+12 paper   对话3
+13 accent  轮次综述2（打断交替）
+14 paper   对话4
+15 dark    对话5
+16 paper   收束
+17 accent  最终综述（打断交替）
+18 dark    结尾
+```
+
+### 文字颜色规则
+- dark 底 → 白字（rgba(255,255,255,0.82) 正文，#fff 标题）
+- paper 底 → 黑字（#525252 正文，#0a0a0a 标题）
+- accent(橘)底 → 白字（rgba(255,255,255,0.9) 正文，#fff 标题）
+- 禁止在任何底色上出现灰字(#737373)——accent 底上的灰字必须覆盖为白色(0.6~0.8 透明度)
+- paper 卡上禁止出现白色文字——如果改过底色 class，必须同步清理 inline style 中的白色 color
+
+### 人物颜色系统
+- 每位参与者分配固定颜色，生成卡片时一次性确定，贯穿全系列所有卡片
+- 默认色板（可按人物气质调整，但五色必须和谐且有区分度）：
+  - 角色1：#e0620a（橙）
+  - 角色2：#c0392b（红）
+  - 角色3：#f1c40f（金黄，dark 底上用 #d4a500 提亮）
+  - 角色4：#3498db（蓝）
+  - 角色5：#27ae60（绿）
+- 颜色必须出现在以下所有位置：
+  1. 阵容卡的圆点（participant-initial.c1~c5）
+  2. 发言卡/对话卡的 speaker-dot 圆点（.dot-xxx）
+  3. 发言卡的 quote-block 左竖线（.quote-block.xxx）
+  4. 正文中的高亮关键词（.text-xxx）
+- dark 底上自动提亮人物色（确保白底可读）
+- accent(橘)底上人物色降级为白色（橘底上对比度不够）
+
+### 人名格式
+- 阵容卡（人物介绍页）：`中文全名  英文全名`（双空格分隔，不用 `·`）
+- 发言卡/对话卡 speaker-name：`中文简称 · 英文简称`
+- 发言正文内容：纯中文简称，不出英文（如「韦伯的框架」而非「韦伯 · Weber的框架」）
+- 阵容卡中，中文全名和英文全名之间不用点号，用空格
+- 圆点用人物专属色，不用灰色/黑色方块
+
+### 封面（首页）规范
+- 封面不写人名列表
+- 用钩子问句做大标题——直击核心困惑，让读者想翻下去
+- 格式：`<div class="t-hero">一句话钩子<br><span style="color:#ff8040;">关键词高亮</span></div>`
+- 底部只写「N位不同领域的声音，追问同一个问题」（或类似），不列人名
+
+### 品牌水印
+- 字体：ZY LOYALTY（fallback JetBrains Mono）
+- 字号：9px
+- 字间距：0.06em
+- 颜色：paper 底 #737373，dark 底 rgba(255,255,255,0.35)，accent 底 rgba(255,255,255,0.6)
+- 位置：每张卡右下角 card-footer 内
+
+### 人物选择
+- 不限于 scholar-dict 中的学者，拒绝信息茧房
+- 可加入 influencer、公众人物、行业实践者——任何对该议题有独立见解的人
+- scholar-dict 仅用于名字拼写对照，不是人物准入名单
+
+### 排版硬约束
+- 固定宽高 375×500px，不用 aspect-ratio（浏览器兼容性不稳定）
+- 每张卡 2-3 段 t-body 文字，绝不多塞
+- 字重：hero/xl = 200（极细），body = 300，标题禁止用 400 以上
+- 禁止使用 ASCII 图表/frame-box（小卡片上排版不可控）
+- 禁止使用 Noto Serif SC（标题统一用 Noto Sans SC）
+- 对话分隔线：dark 底用 `rgba(255,255,255,0.12)`，paper 底用 `rgba(0,0,0,0.06)`
+
 ---
 
 ## Step 7：输出
 
 文件保存到 `个人总部/output/知识卡片/YYYY-MM-DD-[主题]-cards.html`。
+
+**字体文件**：`个人总部/output/知识卡片/fonts/` 目录下已有所需字体（ZY Loyalty.ttf / Inter / Noto Sans SC / JetBrains Mono）。HTML 中 @font-face 使用相对路径 `fonts/ZY Loyalty.ttf`。
+
+**ZY LOYALTY 字体注意**：
+- 字体文件来源：剪映缓存目录 `/Users/myke/Movies/JianyingPro/User Data/Cache/effect/66322554/1e9b242443a9943a43ccf30604243978/ZY Loyalty.ttf`
+- 该字体是剪映内置字体，版权属字节跳动，跨平台分发（小红书等）存在法律风险
+- 仅用于品牌水印 MERJIC（6个字母），实际追偿概率极低，但风险确实存在
+- 如果缓存被清空，在剪映中重新使用该字体效果即可恢复缓存
 
 告知用户：
 - 浏览器打开，点「导出图片」逐张保存 JPG
