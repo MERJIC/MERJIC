@@ -353,6 +353,12 @@ body {
 .card.dark .brand-mark { color: rgba(255,255,255,0.35); }
 .card.accent .brand-mark { color: rgba(255,255,255,0.6); }
 
+/* ─── html2canvas 颜色修复 ─────────────────────── */
+/* html2canvas 无法可靠解析 CSS 后代选择器（如 .card.dark .t-body），
+   导致 dark/accent 卡上的白色文字被渲染为黑色。
+   解决方案：在 captureCard() 中，截图前用 JS 把计算样式强制写入
+   inline style，截图后还原。具体代码见 cards.md 的 HTML 骨架模板。 */
+
 /* ─── EXPORT UI ─────────────────────────────── */
 .hint {
   color: #555;

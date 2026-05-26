@@ -225,11 +225,75 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
     });
   }
 
+  // html2canvas 无法可靠解析 CSS 后代选择器（如 .card.dark .t-body），
+  // 导致 dark/accent 卡上的白色文字被渲染为黑色。
+  // 解决方案：截图前把计算样式强制写入 inline style，截图后还原。
+  function forceInlineColors(card) {
+    const isDark = card.classList.contains('dark');
+    const isAccent = card.classList.contains('accent');
+    if (!isDark && !isAccent) return null;
+
+    const selectors = '.t-body,.t-body-sm,.t-hero,.t-hero-sm,.t-xl,.t-meta,.speaker-name,.speaker-role,.card-tag,.card-num,.brand-mark,.point-mark,.hr-accent,.quote-block,.dialogue-divider,.accent-text,.text-weber,.text-nietzsche,.text-harari,.text-naval,.text-sen,.participant-name,.participant-desc,.speaker-dot';
+    const elements = card.querySelectorAll(selectors);
+    const originals = [];
+
+    elements.forEach(el => {
+      const cs = getComputedStyle(el);
+      const color = cs.color;
+      if (color) {
+        originals.push({ el, prop: 'color', old: el.style.color });
+        el.style.color = color;
+      }
+      if (el.classList.contains('hr-accent') || el.classList.contains('point-mark') || el.classList.contains('speaker-dot')) {
+        const bg = cs.backgroundColor;
+        if (bg && bg !== 'rgba(0, 0, 0, 0)') {
+          originals.push({ el, prop: 'backgroundColor', old: el.style.backgroundColor });
+          el.style.backgroundColor = bg;
+        }
+      }
+      if (el.classList.contains('quote-block')) {
+        const blc = cs.borderLeftColor;
+        if (blc) {
+          originals.push({ el, prop: 'borderLeftColor', old: el.style.borderLeftColor });
+          el.style.borderLeftColor = blc;
+        }
+      }
+      if (el.classList.contains('dialogue-divider')) {
+        const btc = cs.borderTopColor;
+        if (btc) {
+          originals.push({ el, prop: 'borderTopColor', old: el.style.borderTopColor });
+          el.style.borderTopColor = btc;
+        }
+      }
+    });
+
+    // 处理带 inline style color 的 div/span（如封面副标题等）
+    card.querySelectorAll('[style*="color:"]').forEach(el => {
+      if (Array.from(elements).includes(el)) return;
+      const cs = getComputedStyle(el);
+      const color = cs.color;
+      if (color) {
+        originals.push({ el, prop: 'color', old: el.style.color });
+        el.style.color = color;
+      }
+    });
+
+    return originals;
+  }
+
   async function captureCard(card) {
     const saved = card.innerHTML;
     wrapBrackets(card);
+    forceInlineColors(card);
     await new Promise(r => requestAnimationFrame(r));
-    const canvas = await html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null });
+    const canvas = await html2canvas(card, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: undefined,
+      logging: false,
+      removeContainer: true
+    });
     card.innerHTML = saved;
     return canvas;
   }
@@ -244,9 +308,9 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
     for (let i = 0; i < cards.length; i++) {
       status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
       const canvas = await captureCard(cards[i]);
-      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const imgData = canvas.toDataURL('image/png');
       if (i > 0) doc.addPage([pw, ph]);
-      doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
+      doc.addImage(imgData, 'PNG', 0, 0, pw, ph);
     }
     doc.save('[主题].pdf');
     status.textContent = '完成 ✓';
@@ -261,8 +325,8 @@ description: "将知识内容（哲学概念、圆桌讨论、寓言故事、方
     for (let i = 0; i < cards.length; i++) {
       status.textContent = (i + 1) + ' / ' + cards.length;
       const canvas = await captureCard(cards[i]);
-      const base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
-      zip.file(String(i + 1).padStart(2, '0') + '.jpg', base64, { base64: true });
+      const base64 = canvas.toDataURL('image/png').split(',')[1];
+      zip.file(String(i + 1).padStart(2, '0') + '.png', base64, { base64: true });
     }
     status.textContent = '打包中…';
     const blob = await zip.generateAsync({ type: 'blob' });
