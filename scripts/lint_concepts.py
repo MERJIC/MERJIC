@@ -355,13 +355,31 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
                     "fixable": False,
                 })
             else:
-                # 检查是否有 bullet point
-                has_bullet = bool(re.search(r"^- \*\*", anchor_text, re.MULTILINE))
-                has_numbered = bool(re.search(r"^\d+\.", anchor_text, re.MULTILINE))
-                if not has_bullet:
+                # 检查是否已有 - **粗体标题**： 格式
+                has_bold_bullet = bool(re.search(r"^- \*\*", anchor_text, re.MULTILINE))
+                has_bullet = bool(re.search(r"^- ", anchor_text, re.MULTILINE))
+                if has_bold_bullet:
+                    pass  # 合规
+                elif has_bullet:
+                    # 有 bullet 但没有加粗标题，看能否自动修复
+                    bullets = re.findall(r"^- (.+)$", anchor_text, re.MULTILINE)
+                    has_colon_prefix = any(re.match(r".*?[：:]", b) for b in bullets)
+                    if has_colon_prefix:
+                        issues.append({
+                            "rule": "F07", "concept": concept_name,
+                            "msg": "现实锚点 bullet 缺少粗体标题（可自动加粗冒号前关键词）",
+                            "fixable": True, "auto_fix": "bold_anchor_titles",
+                        })
+                    else:
+                        issues.append({
+                            "rule": "F07", "concept": concept_name,
+                            "msg": "现实锚点 bullet 为纯句子，缺少标题结构",
+                            "fixable": False,
+                        })
+                else:
                     issues.append({
                         "rule": "F07", "concept": concept_name,
-                        "msg": "现实锚点未使用 bullet point 格式（- **标题**: 内容）",
+                        "msg": "现实锚点未使用 bullet point 格式",
                         "fixable": False,
                     })
 
@@ -581,6 +599,34 @@ def fix_issue(content: str, issue: dict) -> str:
         content = re.sub(r"\*\*【([^】]+)】\*\*", r"【\1】", content)
         # 【**人名**】 → 【人名】
         content = re.sub(r"【\*\*([^】]+)\*\*】", r"【\1】", content)
+        return content
+
+    if fix_type == "bold_anchor_titles":
+        # 在现实锚点 section 中，将 - 关键词：描述 → - **关键词**：描述
+        def _bold_bullet_line(match):
+            indent = match.group(1)  # 可能的缩进
+            prefix = match.group(2)  # - 开头
+            rest = match.group(3)    # 冒号前的内容
+            colon = match.group(4)   # ：或:
+            after = match.group(5)   # 冒号后的内容
+            return f"{indent}{prefix} **{rest.strip()}**{colon}{after}"
+
+        # 只处理现实锚点 section
+        anchor_match = re.search(
+            r"(^## 现实锚点\s*\n)(.*?)(?=^## |\Z)",
+            content, re.MULTILINE | re.DOTALL,
+        )
+        if anchor_match:
+            section_header = anchor_match.group(1)
+            section_body = anchor_match.group(2)
+            # 匹配 - 关键词：描述（关键词不含 [] 或 ** 等 markdown 语法）
+            section_body = re.sub(
+                r"^(\s*)(- )([^*\[\n：:]+?)([：:])(.*)$",
+                _bold_bullet_line,
+                section_body,
+                flags=re.MULTILINE,
+            )
+            content = content[:anchor_match.start()] + section_header + section_body + content[anchor_match.end():]
         return content
 
     return content
