@@ -506,6 +506,49 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
             })
             break  # 不重复报告同一文件
 
+    # ── 附加：入口场景格式检测 ──────────────────────────────
+    if "入口场景" in sections:
+        entry_match = re.search(
+            r"^## 入口场景\s*\n(.*?)(?=^## |\Z)",
+            body, re.MULTILINE | re.DOTALL,
+        )
+        if entry_match:
+            entry_text = entry_match.group(1).strip()
+            if not entry_text:
+                issues.append({
+                    "rule": "E01", "concept": concept_name,
+                    "msg": "入口场景内容为空",
+                    "fixable": False,
+                })
+            else:
+                first_line = entry_text.split("\n")[0].strip()
+                # 模式1：开头是「讨论[概念]时」「从[概念]跳跃」「[概念]圆桌中」
+                if re.search(r"^讨论\[?\[?.*?\]?\]?时", first_line):
+                    issues.append({
+                        "rule": "E01", "concept": concept_name,
+                        "msg": f"入口场景以「讨论XX时」开头，应为故事体",
+                        "fixable": False,
+                    })
+                elif re.search(r"^从\[?\[?.*?\]?\]?(跳跃|跨域)", first_line):
+                    issues.append({
+                        "rule": "E01", "concept": concept_name,
+                        "msg": f"入口场景以「从XX跳跃」开头，应为故事体",
+                        "fixable": False,
+                    })
+                elif re.search(r"圆桌中", first_line):
+                    issues.append({
+                        "rule": "E01", "concept": concept_name,
+                        "msg": f"入口场景以「XX圆桌中」开头，应为故事体",
+                        "fixable": False,
+                    })
+                # 模式2：以元描述开头
+                elif re.match(r"^(这个概念|该概念|这个模型|这个理论|这个效应|这个现象|本概念)", first_line):
+                    issues.append({
+                        "rule": "E01", "concept": concept_name,
+                        "msg": f"入口场景以元描述开头（{first_line[:20]}）",
+                        "fixable": False,
+                    })
+
     # ── 附加：source 合规 ────────────────────────────────────
     if fm and "source" in fm:
         src = fm["source"]
@@ -701,6 +744,7 @@ def run_lint(fix: bool = False, target_file: Optional[str] = None) -> None:
         "F11": "圆桌沉淀格式",
         "F12": "中文引号（弯引号）",
         "S01": "否定排比",
+        "E01": "入口场景格式（应为故事体，非跳跃声明/元描述）",
     }
 
     total_fixable = 0
