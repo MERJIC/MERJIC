@@ -1,0 +1,698 @@
+#!/usr/bin/env python3
+"""
+概念库全量格式质检 — lint_concepts.py
+
+对照 page-spec.md 自检清单，逐项检查所有概念页。
+输出按规则分组的报告，标注可自动修复项。
+
+用法：
+  python3 scripts/lint_concepts.py              全量质检（报告）
+  python3 scripts/lint_concepts.py --fix        全量质检 + 自动修复可修复项
+  python3 scripts/lint_concepts.py --file 概念名 只检查单个文件
+  python3 scripts/lint_concepts.py --fix --file 概念名  单文件修复
+"""
+
+import argparse
+import json
+import os
+import re
+import sys
+import time
+from collections import defaultdict
+from typing import Dict, List, Optional
+
+# ── 路径 ──────────────────────────────────────────────────────
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LIB_ROOT = os.path.dirname(SCRIPT_DIR)
+CONCEPT_DIR = os.path.join(LIB_ROOT, "概念页")
+SCHOLAR_DICT_PATH = os.path.join(
+    LIB_ROOT, "skills/concept-studio/modules/scholar-dict.json"
+)
+
+# ── 词汇表白名单 ──────────────────────────────────────────────
+DOMAIN_WHITELIST = [
+    "哲学", "心理学", "经济学", "社会学", "传播学",
+    "管理学", "生物学", "物理学", "人类学", "政治学", "艺术",
+]
+
+DISCIPLINE_WHITELIST = [
+    "伦理学", "行动哲学", "认识论", "心灵哲学", "形而上学",
+    "语言哲学", "科学哲学", "政治哲学", "逻辑学", "美学",
+    "中式哲学", "批判理论", "技术哲学", "存在主义", "现象学", "精神分析",
+    "社会心理学", "认知心理学", "动机心理学", "发展心理学", "临床心理学",
+    "行为经济学", "制度经济学", "信息经济学", "金融学",
+    "社会学", "文化社会学", "组织社会学",
+    "传播学",
+    "组织行为学", "知识管理", "系统思维",
+    "行为生物学", "演化生物学", "控制论",
+    "量子物理", "热力学", "复杂系统", "统计物理",
+    "流行病学",
+    "认知科学", "教育心理学", "人格心理学",
+    "国际关系",
+    "视觉理论", "叙事学", "文学理论", "音乐理论",
+]
+
+PATTERN_WHITELIST = [
+    "悖论", "盲区", "冲突", "渐变", "反转", "循环", "错位", "缺位",
+]
+
+APPLY_WHITELIST = [
+    "自我", "关系", "制度", "创作", "自媒体",
+    "商业", "组织", "决策", "领导", "教育",
+]
+
+SOURCE_WHITELIST = [
+    "寓言故事", "概念跳跃", "对话整理", "阅读沉淀", "圆桌讨论",
+]
+
+FORBIDDEN_FIELDS = {
+    "title", "slug", "created", "related", "updated",
+    "aliases", "name_en", "status", "discipline",
+}
+
+FORBIDDEN_SECTIONS = [
+    "寓言", "关联概念", "相关概念", "衍生问题",
+    "延伸", "拓展",
+]
+
+FORBIDDEN_SECTIONS_PREFIX = ["与", "和"]
+
+PERSON_WHITELIST = [
+    "维特根斯坦", "康德", "庄子", "海德格尔", "弗洛伊德",
+    "卡尼曼", "布迪厄", "福柯", "胡塞尔", "阿伦特",
+]
+
+PERSON_THRESHOLD = 5
+
+REQUIRED_SECTIONS = ["核心机制", "入口场景", "现实锚点", "适用边界"]
+SECTION_ORDER = ["核心机制", "入口场景", "现实锚点", "适用边界", "圆桌沉淀"]
+
+ROUNDTABLE_TAGS = ["陈述", "质疑", "补充", "反驳", "修正", "综合"]
+
+# 否定排比模式
+NEGATION_PAIR_PATTERNS = [
+    r'不是[^，。；\n]+而是',
+    r'不[是在][^，。；\n]+而[是在]',
+    r'不[^，。；\n]{2,20}[^是]而[^，。；\n]+',
+    r'不仅仅[^，。；\n]+更[是还]',
+    r'不只是[^，。；\n]+更是',
+    r'并非[^，。；\n]+而是',
+]
+
+# 肤浅分析结尾词
+SHALLOW_ENDINGS = ["突出", "彰显", "反映", "象征"]
+
+
+def load_scholar_dict() -> dict:
+    """加载学者对照表。"""
+    if not os.path.exists(SCHOLAR_DICT_PATH):
+        return {}
+    with open(SCHOLAR_DICT_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def parse_frontmatter(content: str) -> Optional[dict]:
+    """提取 frontmatter 字典。"""
+    m = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
+    if not m:
+        return None
+    raw = m.group(1)
+    result = {}
+    for line in raw.split("\n"):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        colon_idx = line.find(":")
+        if colon_idx < 0:
+            continue
+        key = line[:colon_idx].strip()
+        val = line[colon_idx + 1:].strip()
+        if val.startswith("[") and val.endswith("]"):
+            items = re.findall(r'[^\[\],\s]+', val)
+            result[key] = items
+        elif val.startswith('"') or val.startswith("'"):
+            result[key] = val.strip('"').strip("'")
+        else:
+            result[key] = val
+    return result
+
+
+def extract_sections(body: str) -> List[str]:
+    """从正文中提取所有 h2 章节名（## XXX）。"""
+    return re.findall(r"^## (.+)$", body, re.MULTILINE)
+
+
+def extract_h1(body: str) -> List[str]:
+    """提取 h1 标题。"""
+    return re.findall(r"^# (.+)$", body, re.MULTILINE)
+
+
+def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dict]:
+    """检查单个概念页，返回问题列表。fix=True 时自动修复可修复项。"""
+    fname = os.path.basename(filepath)
+    concept_name = fname[:-3] if fname.endswith(".md") else fname
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    issues = []
+    fm = parse_frontmatter(content)
+    body = content
+
+    if fm:
+        fm_end = content.find("---", content.find("---") + 3) + 3
+        body = content[fm_end:]
+
+    # ── 1. frontmatter 字段名合规 ────────────────────────────
+    if fm:
+        for key in fm:
+            if key in FORBIDDEN_FIELDS:
+                issues.append({
+                    "rule": "F01", "concept": concept_name,
+                    "msg": f"禁用字段 '{key}'",
+                    "fixable": True, "auto_fix": "remove_field", "detail": key,
+                })
+
+    # ── 2. name 字段格式 ─────────────────────────────────────
+    if fm and "name" in fm:
+        name_val = fm["name"]
+        if not re.search(r"（[^）]+）", name_val):
+            # 检查是否有半角括号
+            if re.search(r"\([^)]+\)", name_val):
+                issues.append({
+                    "rule": "F02", "concept": concept_name,
+                    "msg": f"name 用了半角括号: {name_val}",
+                    "fixable": True, "auto_fix": "fix_name_parens",
+                    "detail": name_val,
+                })
+            else:
+                issues.append({
+                    "rule": "F02", "concept": concept_name,
+                    "msg": f"name 缺少全角括号英文: {name_val}",
+                    "fixable": False,
+                })
+    elif fm and "name" not in fm:
+        issues.append({
+            "rule": "F02", "concept": concept_name,
+            "msg": "缺少 name 字段",
+            "fixable": False,
+        })
+
+    # ── 3. tags 三类必填 + person 可选 ───────────────────────
+    if fm:
+        tags = fm.get("tags", [])
+        if isinstance(tags, str):
+            tags = [tags]
+
+        has_discipline = any(t.startswith("discipline/") for t in tags)
+        has_pattern = any(t.startswith("pattern/") for t in tags)
+        has_apply = any(t.startswith("apply/") for t in tags)
+
+        if not has_discipline:
+            issues.append({
+                "rule": "F03", "concept": concept_name,
+                "msg": "缺少 discipline 标签",
+                "fixable": False,
+            })
+        if not has_pattern:
+            issues.append({
+                "rule": "F03", "concept": concept_name,
+                "msg": "缺少 pattern 标签",
+                "fixable": False,
+            })
+        if not has_apply:
+            issues.append({
+                "rule": "F03", "concept": concept_name,
+                "msg": "缺少 apply 标签",
+                "fixable": False,
+            })
+
+        # 检查 person 标签是否在白名单内
+        for tag in tags:
+            if tag.startswith("person/"):
+                person = tag[len("person/"):]
+                if person not in PERSON_WHITELIST:
+                    issues.append({
+                        "rule": "F03", "concept": concept_name,
+                        "msg": f"person/{person} 不在白名单内",
+                        "fixable": False,
+                    })
+
+        # 检查 discipline 值是否在词汇表内
+        for tag in tags:
+            if tag.startswith("discipline/"):
+                val = tag[len("discipline/"):]
+                if val not in DISCIPLINE_WHITELIST:
+                    issues.append({
+                        "rule": "F03", "concept": concept_name,
+                        "msg": f"discipline/{val} 不在词汇表内",
+                        "fixable": False,
+                    })
+
+        # 检查 pattern 值
+        for tag in tags:
+            if tag.startswith("pattern/"):
+                val = tag[len("pattern/"):]
+                if val not in PATTERN_WHITELIST:
+                    issues.append({
+                        "rule": "F03", "concept": concept_name,
+                        "msg": f"pattern/{val} 不在词汇表内",
+                        "fixable": False,
+                    })
+
+        # 检查 apply 值
+        for tag in tags:
+            if tag.startswith("apply/"):
+                val = tag[len("apply/"):]
+                if val not in APPLY_WHITELIST:
+                    issues.append({
+                        "rule": "F03", "concept": concept_name,
+                        "msg": f"apply/{val} 不在词汇表内",
+                        "fixable": False,
+                    })
+
+        # 检查独立的 discipline 字段（应放在 tags 里）
+        if "discipline" in fm:
+            issues.append({
+                "rule": "F03", "concept": concept_name,
+                "msg": "禁止独立 discipline 字段，应放入 tags",
+                "fixable": True, "auto_fix": "remove_discipline_field",
+            })
+
+    # ── 4. domain 合规 ───────────────────────────────────────
+    if fm and "domain" in fm:
+        domain = fm["domain"]
+        if isinstance(domain, str):
+            domain = [domain]
+        for d in domain:
+            if d not in DOMAIN_WHITELIST:
+                issues.append({
+                    "rule": "F04", "concept": concept_name,
+                    "msg": f"domain '{d}' 不在 11 个顶层值内",
+                    "fixable": False,
+                })
+
+    # ── 5. 正文无 h1 标题 ───────────────────────────────────
+    h1_titles = extract_h1(body)
+    if h1_titles:
+        issues.append({
+            "rule": "F05", "concept": concept_name,
+            "msg": f"正文含 h1 标题: {h1_titles[0]}",
+            "fixable": True, "auto_fix": "remove_h1",
+            "detail": h1_titles[0],
+        })
+
+    # ── 6. 章节结构完整且顺序正确 ───────────────────────────
+    sections = extract_sections(body)
+
+    # 检查必需章节
+    for req in REQUIRED_SECTIONS:
+        if req not in sections:
+            issues.append({
+                "rule": "F06", "concept": concept_name,
+                "msg": f"缺少必需章节: {req}",
+                "fixable": False,
+            })
+
+    # 检查章节顺序
+    present_ordered = [s for s in SECTION_ORDER if s in sections]
+    actual_ordered = [s for s in sections if s in SECTION_ORDER]
+    if present_ordered != actual_ordered:
+        issues.append({
+            "rule": "F06", "concept": concept_name,
+            "msg": f"章节顺序错误: 实际={actual_ordered}, 应为={present_ordered}",
+            "fixable": False,
+        })
+
+    # 检查禁止出现的章节名
+    for sec in sections:
+        if sec in FORBIDDEN_SECTIONS:
+            issues.append({
+                "rule": "F06", "concept": concept_name,
+                "msg": f"禁止章节名: {sec}",
+                "fixable": False,
+            })
+        for prefix in FORBIDDEN_SECTIONS_PREFIX:
+            if sec.startswith(prefix) and ("的关系" in sec or "的区别" in sec):
+                issues.append({
+                    "rule": "F06", "concept": concept_name,
+                    "msg": f"禁止章节名: {sec}",
+                    "fixable": False,
+                })
+
+    # ── 7. 现实锚点使用 bullet point ────────────────────────
+    if "现实锚点" in sections:
+        anchor_match = re.search(
+            r"^## 现实锚点\s*\n(.*?)(?=^## |\Z)",
+            body, re.MULTILINE | re.DOTALL,
+        )
+        if anchor_match:
+            anchor_text = anchor_match.group(1).strip()
+            if not anchor_text:
+                issues.append({
+                    "rule": "F07", "concept": concept_name,
+                    "msg": "现实锚点内容为空",
+                    "fixable": False,
+                })
+            else:
+                # 检查是否有 bullet point
+                has_bullet = bool(re.search(r"^- \*\*", anchor_text, re.MULTILINE))
+                has_numbered = bool(re.search(r"^\d+\.", anchor_text, re.MULTILINE))
+                if not has_bullet:
+                    issues.append({
+                        "rule": "F07", "concept": concept_name,
+                        "msg": "现实锚点未使用 bullet point 格式（- **标题**: 内容）",
+                        "fixable": False,
+                    })
+
+    # ── 8. 概念链接 [[]] ────────────────────────────────────
+    # 检查独立的「相关概念」章节（已在 F06 处理）
+    # 此规则主要靠 F06 的 FORBIDDEN_SECTIONS 覆盖
+
+    # ── 9. 学者名标注合规 ───────────────────────────────────
+    # 检查 scholar-dict.json 中的学者是否在正文中出现时缺少英文括注
+    # （这个检查由 Noosphere 插件处理，这里做轻量级扫描）
+    # 简化：检查正文中是否包含学者全名但没有英文括注的首次出现
+    for key, info in scholar_dict.items():
+        full_name = info["full"]
+        en_name = info["en"]
+        # 在正文中搜索全名出现
+        # 排除 frontmatter 和 wikilinks 中的出现
+        body_clean = re.sub(r"\[\[.*?\]\]", "", body)
+        if re.search(re.escape(full_name), body_clean):
+            # 检查同一行是否有英文括注
+            # 正确格式：全名（English Name）
+            correct_pattern = re.escape(full_name) + r"（" + re.escape(en_name) + r"）"
+            # 也检查 markdown 表格中的分列格式（圆桌嘉宾表）
+            # 简化：只报 if 全名出现但整个文件没有 全名（英文名 的格式
+            if not re.search(correct_pattern, content) and not re.search(
+                re.escape(en_name), body_clean
+            ):
+                # 只在学者第一次出现时检查——如果有圆桌表格包含该英文名则算通过
+                # 这个规则比较复杂，简化为：只报 warning 级别
+                pass  # 让 Noosphere 插件处理精确检查
+
+    # ── 10. 圆桌嘉宾行格式 ──────────────────────────────────
+    if "圆桌沉淀" in sections:
+        rt_match = re.search(
+            r"^## 圆桌沉淀\s*\n(.*?)(?=^## |\Z)",
+            body, re.MULTILINE | re.DOTALL,
+        )
+        if rt_match:
+            rt_text = rt_match.group(1)
+
+            # 检查 MBTI
+            mbti_pattern = r"\b(INFJ|INFP|INTJ|INTP|ISFJ|ISFP|ISTJ|ISTP|ENFJ|ENFP|ENTJ|ENTP|ESFJ|ESFP|ESTJ|ESTP)\b"
+            mbti_matches = re.findall(mbti_pattern, rt_text)
+            if mbti_matches:
+                issues.append({
+                    "rule": "F10", "concept": concept_name,
+                    "msg": f"圆桌嘉宾包含 MBTI: {', '.join(set(mbti_matches))}",
+                    "fixable": True, "auto_fix": "remove_mbti",
+                })
+
+            # 检查「主持人综述」标题
+            if "### 主持人综述" not in rt_text:
+                if "主持人综述" in rt_text:
+                    issues.append({
+                        "rule": "F11", "concept": concept_name,
+                        "msg": "主持人综述标题格式不正确（应为 ### 主持人综述）",
+                        "fixable": False,
+                    })
+                else:
+                    issues.append({
+                        "rule": "F11", "concept": concept_name,
+                        "msg": "圆桌沉淀缺少主持人综述",
+                        "fixable": False,
+                    })
+
+            # 检查「留存洞见」标题
+            if "### 留存洞见" not in rt_text:
+                if "留存洞见" in rt_text:
+                    issues.append({
+                        "rule": "F11", "concept": concept_name,
+                        "msg": "留存洞见标题格式不正确（应为 ### 留存洞见）",
+                        "fixable": False,
+                    })
+                else:
+                    issues.append({
+                        "rule": "F11", "concept": concept_name,
+                        "msg": "圆桌沉淀缺少留存洞见",
+                        "fixable": False,
+                    })
+
+            # 检查 mermaid 代码块
+            if "```mermaid" in rt_text:
+                issues.append({
+                    "rule": "F11", "concept": concept_name,
+                    "msg": "圆桌图表使用了 mermaid 代码块（应使用 ```text）",
+                    "fixable": True, "auto_fix": "mermaid_to_text",
+                })
+
+            # 检查发言格式：粗体发言标签
+            # 错误：【人名】【**标签**】 或 **【人名】**
+            bold_tag_pattern = r"\*\*【[^】]+】\*\*|【\*\*[^】]+\*\*】"
+            if re.search(bold_tag_pattern, rt_text):
+                issues.append({
+                    "rule": "F11", "concept": concept_name,
+                    "msg": "圆桌发言标签不应加粗",
+                    "fixable": True, "auto_fix": "unbold_tags",
+                })
+
+    # ── 12. 中文引号合规 ────────────────────────────────────
+    # 检查弯引号 ""（排除 frontmatter）
+    curly_double = re.findall(r'"([^"]*)"', body)
+    if curly_double:
+        count = len(curly_double)
+        issues.append({
+            "rule": "F12", "concept": concept_name,
+            "msg": f"弯引号 {count} 处",
+            "fixable": True, "auto_fix": "fix_curly_quotes",
+            "detail": count,
+        })
+
+    # 检查弯引号 ''（单引号变体）
+    curly_single_left = len(re.findall(r"'", body))
+    # 不报告单引号，因为在英语人名中会用到
+
+    # ── 附加：否定排比检测 ──────────────────────────────────
+    for pattern in NEGATION_PAIR_PATTERNS:
+        matches = re.findall(pattern, body)
+        if matches:
+            # 取前 3 个例子
+            examples = [m[:50] for m in matches[:3]]
+            issues.append({
+                "rule": "S01", "concept": concept_name,
+                "msg": f"否定排比 {len(matches)} 处: {'; '.join(examples)}",
+                "fixable": False,  # 需要人工改写
+            })
+            break  # 不重复报告同一文件
+
+    # ── 附加：source 合规 ────────────────────────────────────
+    if fm and "source" in fm:
+        src = fm["source"]
+        if src not in SOURCE_WHITELIST:
+            issues.append({
+                "rule": "F01", "concept": concept_name,
+                "msg": f"source '{src}' 不在 5 个合法值内",
+                "fixable": False,
+            })
+
+    return issues
+
+
+def fix_issue(content: str, issue: dict) -> str:
+    """根据 issue 的 auto_fix 类型执行修复。"""
+    fix_type = issue.get("auto_fix")
+    if not fix_type:
+        return content
+
+    if fix_type == "remove_field":
+        field = issue["detail"]
+        lines = content.split("\n")
+        new_lines = []
+        for line in lines:
+            if line.strip().startswith(f"{field}:"):
+                continue
+            new_lines.append(line)
+        return "\n".join(new_lines)
+
+    if fix_type == "fix_name_parens":
+        name_val = issue["detail"]
+        m = re.search(r"\(([^)]+)\)", name_val)
+        if m:
+            en_name = m.group(1)
+            new_name = name_val.replace(f"({en_name})", f"（{en_name}）")
+            return content.replace(f"name: {name_val}", f"name: {new_name}")
+        return content
+
+    if fix_type == "remove_h1":
+        title = issue["detail"]
+        return re.sub(rf"^# {re.escape(title)}\s*\n", "", content, count=1, flags=re.MULTILINE)
+
+    if fix_type == "remove_discipline_field":
+        lines = content.split("\n")
+        new_lines = []
+        for line in lines:
+            if re.match(r"^discipline:", line.strip()):
+                continue
+            new_lines.append(line)
+        return "\n".join(new_lines)
+
+    if fix_type == "fix_curly_quotes":
+        # 替换正文中的弯引号为直角引号
+        fm_end = content.find("---", content.find("---") + 3) + 3
+        if fm_end < 10:
+            return content
+        fm = content[:fm_end]
+        body = content[fm_end:]
+        # 简单的配对替换
+        # " 替换为「或」
+        result = []
+        quote_open = False
+        for ch in body:
+            if ch == "“":  # "
+                result.append("「")  # 「
+                quote_open = True
+            elif ch == "”":  # "
+                result.append("」")  # 」
+                quote_open = False
+            else:
+                result.append(ch)
+        return fm + "".join(result)
+
+    if fix_type == "remove_mbti":
+        mbti_pattern = r"\b(INFJ|INFP|INTJ|INTP|ISFJ|ISFP|ISTJ|ISTP|ENFJ|ENFP|ENTJ|ENTP|ESFJ|ESFP|ESTJ|ESTP)\b"
+        fm_end = content.find("---", content.find("---") + 3) + 3
+        if fm_end < 10:
+            return content
+        fm = content[:fm_end]
+        body = content[fm_end:]
+        body = re.sub(mbti_pattern, "", body)
+        # 清理多余空格
+        body = re.sub(r"  +", " ", body)
+        return fm + body
+
+    if fix_type == "mermaid_to_text":
+        return content.replace("```mermaid", "```text")
+
+    if fix_type == "unbold_tags":
+        # 【**人名**】【**标签**】 → 【人名】【标签】
+        content = re.sub(r"\*\*【([^】]+)】\*\*", r"【\1】", content)
+        # 【**人名**】 → 【人名】
+        content = re.sub(r"【\*\*([^】]+)\*\*】", r"【\1】", content)
+        return content
+
+    return content
+
+
+def run_lint(fix: bool = False, target_file: Optional[str] = None) -> None:
+    """运行全量质检。"""
+    scholar_dict = load_scholar_dict()
+    start = time.time()
+
+    if target_file:
+        # 单文件模式
+        filepath = os.path.join(CONCEPT_DIR, f"{target_file}.md")
+        if not os.path.exists(filepath):
+            print(f"文件不存在: {filepath}")
+            sys.exit(1)
+        files = [(target_file, filepath)]
+    else:
+        files = []
+        for fname in sorted(os.listdir(CONCEPT_DIR)):
+            if not fname.endswith(".md") or fname == "INDEX.md":
+                continue
+            fpath = os.path.join(CONCEPT_DIR, fname)
+            if os.path.isfile(fpath):
+                files.append((fname[:-3], fpath))
+
+    all_issues = []
+    fix_count = 0
+
+    for name, fpath in files:
+        issues = check_file(fpath, scholar_dict, fix=fix)
+        if fix and issues:
+            fixable = [i for i in issues if i.get("fixable")]
+            if fixable:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    content = f.read()
+                for issue in fixable:
+                    content = fix_issue(content, issue)
+                with open(fpath, "w", encoding="utf-8") as f:
+                    f.write(content)
+                fix_count += len(fixable)
+        all_issues.extend(issues)
+
+    elapsed = time.time() - start
+
+    # ── 报告 ────────────────────────────────────────────────
+    print(f"概念库格式质检 — {len(files)} 个概念页, {elapsed:.1f}s")
+    print("=" * 60)
+
+    if not all_issues:
+        print("全部通过，无问题。")
+        if fix:
+            print(f"自动修复: {fix_count} 处")
+        return
+
+    # 按规则分组
+    by_rule = defaultdict(list)
+    for issue in all_issues:
+        by_rule[issue["rule"]].append(issue)
+
+    rule_labels = {
+        "F01": "frontmatter 字段合规（禁用字段/source）",
+        "F02": "name 字段格式",
+        "F03": "tags 合规（discipline/pattern/apply/person）",
+        "F04": "domain 合规",
+        "F05": "正文无 h1 标题",
+        "F06": "章节结构完整且顺序正确",
+        "F07": "现实锚点 bullet point 格式",
+        "F08": "概念链接 [[]]",
+        "F09": "学者名标注",
+        "F10": "圆桌嘉宾行格式",
+        "F11": "圆桌沉淀格式",
+        "F12": "中文引号（弯引号）",
+        "S01": "否定排比",
+    }
+
+    total_fixable = 0
+    total_unfixable = 0
+
+    for rule in sorted(by_rule.keys()):
+        items = by_rule[rule]
+        label = rule_labels.get(rule, rule)
+        fixable_n = sum(1 for i in items if i.get("fixable"))
+        total_fixable += fixable_n
+        total_unfixable += len(items) - fixable_n
+
+        print(f"\n## {rule} — {label} ({len(items)} 处, 可自动修复 {fixable_n})")
+        print("-" * 50)
+        for item in items[:20]:  # 每类最多显示 20 条
+            fix_mark = "🔧" if item.get("fixable") else "  "
+            print(f"  {fix_mark} {item['concept']}: {item['msg']}")
+        if len(items) > 20:
+            print(f"  ... 还有 {len(items) - 20} 条")
+
+    print(f"\n{'=' * 60}")
+    print(f"合计: {len(all_issues)} 处问题")
+    print(f"  可自动修复: {total_fixable}")
+    print(f"  需手动处理: {total_unfixable}")
+
+    if fix:
+        print(f"\n已自动修复: {fix_count} 处")
+    elif total_fixable > 0:
+        print(f"\n提示: 运行 python3 scripts/lint_concepts.py --fix 自动修复 {total_fixable} 处")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="概念库全量格式质检")
+    parser.add_argument("--fix", action="store_true", help="自动修复可修复的问题")
+    parser.add_argument("--file", type=str, help="只检查指定概念（不含 .md 后缀）")
+    args = parser.parse_args()
+    run_lint(fix=args.fix, target_file=args.file)
+
+
+if __name__ == "__main__":
+    main()
