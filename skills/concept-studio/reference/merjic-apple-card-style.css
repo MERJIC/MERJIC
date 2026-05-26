@@ -1,7 +1,7 @@
 /*
  * Apple 版式 — 知识传播卡片
  * 来源：https://github.com/voltagent/awesome-design-md (apple.md)
- * 设计语言：自信精致、大量留白、唯一强调色 Action Blue、无装饰元素
+ * 设计语言：自信精致、大量留白、唯一强调色（橘色 #e0620a）、无装饰元素
  */
 
 /* ─── Design Tokens ──────────────────────────── */
@@ -16,9 +16,9 @@
   --tile-1: #272729;
   --tile-2: #2a2a2c;
   --tile-black: #000000;
-  --primary: #0066cc;
-  --primary-hover: #0071e3;
-  --primary-dark: #2997ff;
+  --primary: #e0620a;
+  --primary-hover: #e8702a;
+  --primary-dark: #ff8040;
   --hairline: #e0e0e0;
   --divider-soft: #f0f0f0;
   --surface-pearl: #fafafc;
@@ -26,6 +26,14 @@
   --mono: "JetBrains Mono", monospace;
   --card-w: 375px;
   --card-h: 500px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ─── Tile (Card) ────────────────────────────── */

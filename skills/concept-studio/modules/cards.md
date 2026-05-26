@@ -70,7 +70,7 @@ description: "将知识内容（圆桌讨论、多视角对话、哲学概念等
 
 | 项目 | 值 |
 |------|-----|
-| CSS | `merjic-swiss-dark-card-style.css` |
+| CSS | `reference/merjic-swiss-dark-card-style.css` |
 | DESIGN.md | 无（原则内联） |
 | 字体 | Inter 200/300 + JetBrains Mono + ZY LOYALTY |
 | 底色 | dark(#0A0A0A) / paper(#FAFAF8) / accent(#E0620A) |
@@ -81,12 +81,14 @@ description: "将知识内容（圆桌讨论、多视角对话、哲学概念等
 
 | 项目 | 值 |
 |------|-----|
-| CSS | `merjic-apple-card-style.css` |
+| CSS | `reference/merjic-apple-card-style.css` |
 | DESIGN.md | `个人总部/skills/design-reference/design-systems/apple.md` |
 | 字体 | Inter 400/600 + Noto Sans SC + JetBrains Mono + ZY LOYALTY |
 | 底色 | white(#FFF) / parchment(#F5F5F7) / dark(#272729) / dark-alt(#2A2A2C) / black(#000) |
-| 强调色 | Action Blue(#0066cc)，唯一交互色 |
-| 特征 | 标题 600 weight + 负字间距。极低密度，每张卡一个核心观点。无人物颜色系统。speaker-label 用 12px uppercase。pill 按钮 border-radius:9999px |
+| 强调色 | 橘色(#E0620A)，浅色版 #FF8040 |
+| 特征 | 标题 600 weight + 负字间距。极低密度，每张卡一个核心观点。无人物颜色系统。speaker-name 12px 中文。pill 按钮 border-radius:9999px |
+| 人名格式 | 阵容卡：`中文全名  英文全名`（双空格）+ 下一行 t-fine 写领域；发言卡：`中文简称 · 领域`；对话卡：`中文简称` |
+| Footer | position: absolute 底部对齐，padding 0 32px 18px，与正文边框齐平 |
 
 ### Claude
 
@@ -103,7 +105,7 @@ description: "将知识内容（圆桌讨论、多视角对话、哲学概念等
 
 | 项目 | 值 |
 |------|-----|
-| CSS | `merjic-xai-cosmic-card-style.css` |
+| CSS | `reference/merjic-xai-cosmic-card-style.css` |
 | DESIGN.md | `个人总部/skills/design-reference/design-systems/xai.md` |
 | 底色 | canvas(#0A0A0A) / canvas-soft(#1A1C20) 双色交替 |
 | 特征 | 全部 400 weight，标题负字距。人物纯色块 8×8px + 固定四色（breeze/twilight/sunset/dusk）。hairline 分割，无阴影。人名与领域紧邻，无分隔符。左上角标签中文 |
