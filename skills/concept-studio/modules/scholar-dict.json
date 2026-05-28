@@ -1130,5 +1130,37 @@
   "格里菲斯": {
     "full": "大卫·格里菲斯",
     "en": "D.W. Griffith"
+  },
+  "匹克特": {
+    "full": "路易吉·匹克特",
+    "en": "Luigi Pirandello"
+  },
+  "马尔克斯": {
+    "full": "加夫列尔·加西亚·马尔克斯",
+    "en": "Gabriel García Márquez"
+  },
+  "卡夫卡": {
+    "full": "弗朗茨·卡夫卡",
+    "en": "Franz Kafka"
+  },
+  "德尔·托罗": {
+    "full": "吉尔莫·德尔·托罗",
+    "en": "Guillermo del Toro"
+  },
+  "冯内古特": {
+    "full": "库尔特·冯内古特",
+    "en": "Kurt Vonnegut"
+  },
+  "麦茨": {
+    "full": "克里斯蒂安·麦茨",
+    "en": "Christian Metz"
+  },
+  "雷德利·斯科特": {
+    "full": "雷德利·斯科特",
+    "en": "Ridley Scott"
+  },
+  "伍迪·艾伦": {
+    "full": "伍迪·艾伦",
+    "en": "Woody Allen"
   }
 }
