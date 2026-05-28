@@ -1,0 +1,26 @@
+{
+  "id": "conv-1779992425283-0n3z6o0zu",
+  "providerId": "claude",
+  "title": "index待处理有2个，解决一下",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779992425285,
+  "updatedAt": 1779992428734,
+  "lastResponseAt": 1779992428527,
+  "sessionId": "62f9598d-cb1a-48d8-94bf-ba21829118fd",
+  "providerState": {
+    "providerSessionId": "62f9598d-cb1a-48d8-94bf-ba21829118fd"
+  },
+  "currentNote": "INDEX.md",
+  "externalContextPaths": [
+    "/Users/myke/Documents/MERJIC/概念库"
+  ],
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
