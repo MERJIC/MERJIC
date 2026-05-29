@@ -506,7 +506,8 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
             })
             break  # 不重复报告同一文件
 
-    # ── 附加：入口场景格式检测 ──────────────────────────────
+    # ── 附加：入口场景质量检测（召回式，宁可多报，人工再筛） ──
+    # E01 格式硬伤（空/元描述/跳跃声明）| E02 匿名占位 | E03 泛指论述开头 | E04 篇幅过短
     if "入口场景" in sections:
         entry_match = re.search(
             r"^## 入口场景\s*\n(.*?)(?=^## |\Z)",
@@ -514,39 +515,70 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
         )
         if entry_match:
             entry_text = entry_match.group(1).strip()
+            src = fm.get("source") if fm else None
+            # 去掉 wikilink 标记后的纯文本，用于数字数和预览
+            plain = re.sub(r"\[\[([^\]]*?)\]\]", r"\1", entry_text)
+            cn_chars = len(re.findall(r"[一-鿿]", plain))
+            entry_preview = re.sub(r"\s+", "", plain)[:40]
+
             if not entry_text:
                 issues.append({
                     "rule": "E01", "concept": concept_name,
                     "msg": "入口场景内容为空",
-                    "fixable": False,
+                    "fixable": False, "source": src, "entry_preview": "",
                 })
             else:
                 first_line = entry_text.split("\n")[0].strip()
-                # 模式1：开头是「讨论[概念]时」「从[概念]跳跃」「[概念]圆桌中」
+                # ── E01：格式硬伤（开头是元描述/跳跃声明/圆桌声明） ──
                 if re.search(r"^讨论\[?\[?.*?\]?\]?时", first_line):
                     issues.append({
                         "rule": "E01", "concept": concept_name,
-                        "msg": f"入口场景以「讨论XX时」开头，应为故事体",
-                        "fixable": False,
+                        "msg": "入口场景以「讨论XX时」开头，应为故事体",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
                     })
                 elif re.search(r"^从\[?\[?.*?\]?\]?(跳跃|跨域)", first_line):
                     issues.append({
                         "rule": "E01", "concept": concept_name,
-                        "msg": f"入口场景以「从XX跳跃」开头，应为故事体",
-                        "fixable": False,
+                        "msg": "入口场景以「从XX跳跃」开头，应为故事体",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
                     })
                 elif re.search(r"圆桌中", first_line):
                     issues.append({
                         "rule": "E01", "concept": concept_name,
-                        "msg": f"入口场景以「XX圆桌中」开头，应为故事体",
-                        "fixable": False,
+                        "msg": "入口场景以「XX圆桌中」开头，应为故事体",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
                     })
-                # 模式2：以元描述开头
                 elif re.match(r"^(这个概念|该概念|这个模型|这个理论|这个效应|这个现象|本概念)", first_line):
                     issues.append({
                         "rule": "E01", "concept": concept_name,
                         "msg": f"入口场景以元描述开头（{first_line[:20]}）",
-                        "fixable": False,
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
+                    })
+
+                # ── E02：匿名占位（缺①具名的人） ──
+                anon = re.findall(r"某人|某位|某个人|一个人|有个人|有人", entry_text)
+                if anon:
+                    issues.append({
+                        "rule": "E02", "concept": concept_name,
+                        "msg": f"匿名占位（{'、'.join(sorted(set(anon)))}），疑缺具名人物",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
+                    })
+
+                # ── E03：泛指/论述开头（是论述不是场景） ──
+                if re.match(r"^(往往|通常|一般来说|一般而言|很多时候|有时候|有时|我们|人们|大家|每当|当我们|在.{0,12}(中|时|里)[，,])", first_line):
+                    issues.append({
+                        "rule": "E03", "concept": concept_name,
+                        "msg": f"泛指/论述开头（{first_line[:20]}）",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
+                    })
+
+                # ── E04：篇幅过短（场景没展开） ──
+                threshold = 200 if src == "寓言故事" else 60
+                if cn_chars < threshold:
+                    issues.append({
+                        "rule": "E04", "concept": concept_name,
+                        "msg": f"篇幅过短（{cn_chars}字 < {threshold}，来源={src}）",
+                        "fixable": False, "source": src, "entry_preview": entry_preview,
                     })
 
     # ── 附加：source 合规 ────────────────────────────────────
