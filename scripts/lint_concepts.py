@@ -556,7 +556,9 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
                     })
 
                 # ── E02：匿名占位（缺①具名的人） ──
-                anon = re.findall(r"某人|某位|某个人|一个人|有个人|有人", entry_text)
+                # 只抓明确的不具名占位词；不含「一个人/有人」——它们大量出现在
+                # 「所有人/没有人」等复合词及合理叙事中，误报率过高
+                anon = re.findall(r"某[人位甲乙君]|某个人|此人(?!们)", entry_text)
                 if anon:
                     issues.append({
                         "rule": "E02", "concept": concept_name,
@@ -573,7 +575,7 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
                     })
 
                 # ── E04：篇幅过短（场景没展开） ──
-                threshold = 200 if src == "寓言故事" else 60
+                threshold = 150 if src == "寓言故事" else 60
                 if cn_chars < threshold:
                     issues.append({
                         "rule": "E04", "concept": concept_name,
@@ -707,7 +709,47 @@ def fix_issue(content: str, issue: dict) -> str:
     return content
 
 
-def run_lint(fix: bool = False, target_file: Optional[str] = None) -> None:
+ENTRY_RULES = ["E01", "E02", "E03", "E04"]
+
+
+def print_entry_report(all_issues: List[dict], n_files: int) -> None:
+    """入口场景候选清单：聚合 E01-E04，按命中信号数降序排列。"""
+    by_concept: Dict[str, dict] = {}
+    for it in all_issues:
+        if it["rule"] not in ENTRY_RULES:
+            continue
+        c = it["concept"]
+        if c not in by_concept:
+            by_concept[c] = {
+                "source": it.get("source"),
+                "preview": it.get("entry_preview", ""),
+                "signals": [],
+            }
+        by_concept[c]["signals"].append(it["rule"])
+
+    rows = sorted(
+        by_concept.items(),
+        key=lambda kv: (-len(set(kv[1]["signals"])), kv[0]),
+    )
+
+    print(f"入口场景候选清单 — 扫描 {n_files} 页，命中 {len(rows)} 页")
+    print("=" * 70)
+    print("命中越多越可疑；这是召回不是判决，最终改不改由人工读了定。\n")
+    by_count: Dict[int, int] = defaultdict(int)
+    for concept, info in rows:
+        sigs = sorted(set(info["signals"]))
+        by_count[len(sigs)] += 1
+        src = info["source"] or "?"
+        print(f"[{len(sigs)}] {concept}（{src}） {'+'.join(sigs)}")
+        print(f"      {info['preview']}…")
+    print(f"\n{'-' * 70}")
+    for n in sorted(by_count.keys(), reverse=True):
+        print(f"  命中 {n} 类信号: {by_count[n]} 页")
+    print(f"  合计候选: {len(rows)} 页")
+
+
+def run_lint(fix: bool = False, target_file: Optional[str] = None,
+             entry_report: bool = False) -> None:
     """运行全量质检。"""
     scholar_dict = load_scholar_dict()
     start = time.time()
@@ -747,6 +789,10 @@ def run_lint(fix: bool = False, target_file: Optional[str] = None) -> None:
 
     elapsed = time.time() - start
 
+    if entry_report:
+        print_entry_report(all_issues, len(files))
+        return
+
     # ── 报告 ────────────────────────────────────────────────
     print(f"概念库格式质检 — {len(files)} 个概念页, {elapsed:.1f}s")
     print("=" * 60)
@@ -776,7 +822,10 @@ def run_lint(fix: bool = False, target_file: Optional[str] = None) -> None:
         "F11": "圆桌沉淀格式",
         "F12": "中文引号（弯引号）",
         "S01": "否定排比",
-        "E01": "入口场景格式（应为故事体，非跳跃声明/元描述）",
+        "E01": "入口场景格式硬伤（空/元描述/跳跃声明开头）",
+        "E02": "入口场景匿名占位（疑缺具名人物）",
+        "E03": "入口场景泛指/论述开头（疑非具体场景）",
+        "E04": "入口场景篇幅过短（场景没展开）",
     }
 
     total_fixable = 0
@@ -812,8 +861,10 @@ def main():
     parser = argparse.ArgumentParser(description="概念库全量格式质检")
     parser.add_argument("--fix", action="store_true", help="自动修复可修复的问题")
     parser.add_argument("--file", type=str, help="只检查指定概念（不含 .md 后缀）")
+    parser.add_argument("--entry-report", action="store_true",
+                        help="只输出入口场景候选清单（按命中信号数排序）")
     args = parser.parse_args()
-    run_lint(fix=args.fix, target_file=args.file)
+    run_lint(fix=args.fix, target_file=args.file, entry_report=args.entry_report)
 
 
 if __name__ == "__main__":
