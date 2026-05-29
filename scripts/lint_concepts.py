@@ -748,6 +748,35 @@ def print_entry_report(all_issues: List[dict], n_files: int) -> None:
     print(f"  合计候选: {len(rows)} 页")
 
 
+def dump_entries(out_path: str) -> None:
+    """导出所有概念页的入口场景全文到一个聚合文件，供人工分批通读筛查。"""
+    blocks = []
+    n = 0
+    for fname in sorted(os.listdir(CONCEPT_DIR)):
+        if not fname.endswith(".md") or fname == "INDEX.md":
+            continue
+        fpath = os.path.join(CONCEPT_DIR, fname)
+        if not os.path.isfile(fpath):
+            continue
+        with open(fpath, "r", encoding="utf-8") as f:
+            content = f.read()
+        fm = parse_frontmatter(content)
+        body = content
+        if fm:
+            body = content[content.find("---", content.find("---") + 3) + 3:]
+        m = re.search(r"^## 入口场景\s*\n(.*?)(?=^## |\Z)", body,
+                      re.MULTILINE | re.DOTALL)
+        entry = m.group(1).strip() if m else "（缺入口场景章节）"
+        src = (fm or {}).get("source", "?")
+        cn = len(re.findall(r"[一-鿿]", re.sub(r"\[\[([^\]]*?)\]\]", r"\1", entry)))
+        concept = fname[:-3]
+        n += 1
+        blocks.append(f"### {concept}　|　来源:{src}　|　{cn}字\n{entry}\n")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(f"# 入口场景全量导出（{n} 页）\n\n" + "\n".join(blocks))
+    print(f"已导出 {n} 页入口场景 → {out_path}")
+
+
 def run_lint(fix: bool = False, target_file: Optional[str] = None,
              entry_report: bool = False) -> None:
     """运行全量质检。"""
@@ -863,7 +892,12 @@ def main():
     parser.add_argument("--file", type=str, help="只检查指定概念（不含 .md 后缀）")
     parser.add_argument("--entry-report", action="store_true",
                         help="只输出入口场景候选清单（按命中信号数排序）")
+    parser.add_argument("--dump-entries", type=str, metavar="OUT",
+                        help="导出所有入口场景全文到指定文件，供分批通读")
     args = parser.parse_args()
+    if args.dump_entries:
+        dump_entries(args.dump_entries)
+        return
     run_lint(fix=args.fix, target_file=args.file, entry_report=args.entry_report)
 
 
