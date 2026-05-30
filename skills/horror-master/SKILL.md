@@ -12,11 +12,24 @@ description: >
 
 ## 核心资源
 
-- 概念→编剧操作映射：本 skill 的 `references/concepts.md`（十三条脉络，114个概念，每个有编剧操作+操作要点）
-- 编剧套路参考库：本 skill 的 `references/patterns.md`（结构性套路+元素型套路+子类型差异+409 tropes索引+反套路策略）
+### 必读（每次调用都加载）
+- **概念层**：`references/concepts.md` — 十三条脉络，114个概念，每个有编剧操作映射
+- **路由索引**：`references/patterns.md` — 模块地图 + 快速导航表
+
+### 按需加载（根据路由定位到具体文件）
+- `references/patterns/pacing.md` — 叙事节奏、硬停点网格、节奏形态
+- `references/patterns/information.md` — 知情权工具箱、四种基础位置、动力学模式、**反转类型目录**
+- `references/patterns/character.md` — 角色设计、威胁设计、开篇与结尾工程方法
+- `references/patterns/elements.md` — 空间/身体/社会/感知/时间元素库
+- `references/patterns/subgenres.md` — 子类型结构差异（怪物片vs鬼片等）
+- `references/patterns/tropes-anti.md` — Tropes速查 + 反套路策略
+- `references/craft-checklist.md` — 自检问题集
+- `references/reddit/twosentence.md` — 100条两句话恐怖故事（灵感种子池）
+- `references/reddit/nosleep.md` — nosleep top 30 全文 + 70条索引（写法参考）
+
+### 外部依赖
 - 概念库（通用概念页）：`/Users/myke/Documents/MERJIC/概念库/概念页/`
-- 概念索引（查重用）：`/Users/myke/Documents/MERJIC/概念库/scripts/concept_lite.json`（如果文件不存在，运行 `python3 /Users/myke/Documents/MERJIC/概念库/scripts/build_index.py` 构建）
-- concept-studio 路径：`/Users/myke/Documents/MERJIC/个人总部/skills/concept-studio/`（模块引用：`modules/hop.md`、`modules/check.md`）
+- concept-studio 路径：`/Users/myke/Documents/MERJIC/个人总部/skills/concept-studio/`
 
 ---
 
@@ -104,8 +117,8 @@ G. 框架总览（看完整概念地图）
 
 ### 查询结构套路
 
-1. 读 `references/patterns.md`
-2. 定位目标套路。匹配优先级：套路名 > 子类型名 > 概念名（反查使用了该概念的套路）
+1. 先读 `references/patterns.md` 路由索引，定位到具体模块文件
+2. 结构节奏 → `patterns/pacing.md` | 信息操控 → `patterns/information.md` | 角色/威胁 → `patterns/character.md`
 3. 返回：
    - 套路的操作方法
    - 对应的概念脉络（解释"为什么有效"）
@@ -114,13 +127,13 @@ G. 框架总览（看完整概念地图）
 
 ### 查询子类型差异
 
-1. 读 `references/patterns.md` 的「三、子类型的结构差异」
+1. 读 `references/patterns/subgenres.md`
 2. 定位目标子类型（怪物片/鬼片/社会恐怖片/家族恐怖片/民俗恐怖片）
 3. 返回该子类型在开场、角色结构、信息模式、中段压力、高潮、结局等维度的差异特征
 
 ### 查询元素套路
 
-1. 读 `references/patterns.md` 的「二、元素型套路」
+1. 读 `references/patterns/elements.md`
 2. 按类别查询：空间/身体/社会结构/信息与感知/时间结构
 3. 返回：套路名 + 认知机制 + 经典用例
 
@@ -244,13 +257,24 @@ G. 框架总览（看完整概念地图）
 
 **Step 0：确认篇幅和格式**
 
-| 篇幅 | 时长/字数 | 格式 |
-|------|----------|------|
-| 长片 | 90-120分钟 | 标准编剧格式（场景标题+动作描述+对白） |
-| 短片 | 10-30分钟 | 文学性剧本（重氛围描写和心理刻画） |
-| 鬼故事 | 500-3000字 | 极简叙事（一个情境，一个转折，一个留白） |
+| 篇幅 | 时长/字数 | 格式 | 结构参考 |
+|------|----------|------|---------|
+| 长片 | 90-120分钟 | 标准编剧格式（场景标题+动作描述+对白） | `pacing.md` 三幕 + `information.md` 幕间切换 |
+| 短片 | 10-30分钟 | 文学性剧本（重氛围描写和心理刻画） | `pacing.md` 单一相变 + `character.md` 开篇结尾 |
+| **5分钟短片** | **~1500字 / 5页剧本** | **极简 beat 结构** | **`information.md` 反转类型目录 + `pacing.md` 5分钟网格** |
+| 鬼故事 | 500-3000字 | 极简叙事（一个情境，一个转折，一个留白） | `information.md` 延迟揭露型 + `character.md` 结尾策略 |
 
 用户没指定时，默认短片。
+
+**Step 0.5：灵感启动（可选）**
+
+用户没有给出具体点子时，从素材池提取种子：
+
+1. **5分钟短片/鬼故事** → 读 `references/reddit/twosentence.md`，按知情权模式筛选或随机抽取一条作为种子
+2. **中等篇幅** → 读 `references/reddit/nosleep.md` top 30 的开头，分析其开篇模式作为起点
+3. 有具体方向但需要填充 → 跳过此步，直接进入 Step 1
+
+种子确定后，告诉用户：「从这个种子出发可以展开成 X 方向的故事，你要走哪个？」
 
 **Step 1：概念选配**
 
@@ -266,12 +290,19 @@ G. 框架总览（看完整概念地图）
 
 **Step 2：结构设计**
 
-根据篇幅和概念选配，设计叙事结构。读 `references/patterns.md` 的结构性套路，选一个基础结构做骨架。
+根据篇幅和概念选配，设计叙事结构。按路由索引定位到具体模块：
+
+- 节奏骨架 → `patterns/pacing.md`（硬停点网格 + 节奏形态）
+- 信息操作 → `patterns/information.md`（知情权指纹 + 反转类型目录）
+- 角色/威胁 → `patterns/character.md`
+- 开篇/结尾 → `patterns/character.md` 的开篇与结尾工程方法
+- 元素填充 → `patterns/elements.md`
 
 | 篇幅 | 结构要点 |
 |------|---------|
 | 长片 | 三幕结构：建置（日常→裂痕）→ 对抗（崩塌→认知失效）→ 解决（压抑回归/开放/崇高）。每幕30-40分钟 |
 | 短片 | 单一情境+一次相变：日常→临界点→崩塌。10-30分钟 |
+| **5分钟短片** | **3-5个 beat，每个 beat = 动作+反应+意义转变。选一种信息不对称主打。整部片子 = 一个 Teaser** |
 | 鬼故事 | 一个锚点+一个留白：正常情境→一件不对的事→蔡格尼克式不闭合。500-3000字 |
 
 输出结构大纲，包含：幕/段划分、每段的核心概念、关键转折点、信息分配策略（观众>角色 / 角色>观众 / 无人知道）。问用户确认。
