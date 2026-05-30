@@ -7,9 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=ZY+Loyalty&display=swap" rel="stylesheet">
 <style>
-/* ─── TOKENS ─────────────────────────────────── */
 :root {
   --paper: #fafaf8;
   --ink: #0a0a0a;
@@ -26,360 +24,105 @@
   --card-w: 375px;
   --card-h: 500px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px 24px 60px; }
+.page-header { color: #444; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 28px; text-align: center; }
+.stack { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1280px; margin: 0 auto; }
 
-body {
-  background: #111;
-  font-family: var(--sans-zh), var(--sans);
-  padding: 32px 24px 60px;
-}
-
-.page-header {
-  color: #444;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  text-align: center;
-}
-
-.stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* ─── CARD ───────────────────────────────────── */
-.card {
-  width: var(--card-w);
-  height: var(--card-h);
-  position: relative;
-  overflow: hidden;
-  background: var(--paper);
-  print-color-adjust: exact;
-  -webkit-print-color-adjust: exact;
-  flex-shrink: 0;
-}
-.card.dark   { background: var(--ink);  color: #fff; }
+.card { width: var(--card-w); height: var(--card-h); position: relative; overflow: hidden; background: var(--paper); print-color-adjust: exact; -webkit-print-color-adjust: exact; flex-shrink: 0; }
+.card.dark { background: var(--ink); color: #fff; }
 .card.accent { background: var(--accent); color: var(--accent-on); }
-
-.card-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 22px 22px 16px;
-}
-
+.card-inner { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 22px 22px 16px; }
 .spacer { flex: 1; }
 
-/* ─── HEADER ─────────────────────────────────── */
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.card-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-helper);
-}
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.card-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-helper); }
 .card.dark .card-tag { color: rgba(255,255,255,0.5); }
 .card.accent .card-tag { color: rgba(255,255,255,0.75); }
-
-.card-num {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: var(--text-helper);
-}
+.card-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--text-helper); }
 .card.dark .card-num { color: rgba(255,255,255,0.4); }
 .card.accent .card-num { color: rgba(255,255,255,0.65); }
 
-/* ─── TYPOGRAPHY ─────────────────────────────── */
-.t-hero {
-  font-family: var(--sans-zh), var(--sans);
-  font-size: 36px;
-  font-weight: 200;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-.t-hero-sm {
-  font-size: 26px;
-  font-weight: 200;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
-.t-xl {
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 1.3;
-}
-.t-body {
-  font-size: 13.5px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
+.t-hero { font-family: var(--sans-zh), var(--sans); font-size: 36px; font-weight: 200; line-height: 1.2; letter-spacing: -0.02em; }
+.t-hero-sm { font-size: 26px; font-weight: 200; line-height: 1.25; letter-spacing: -0.01em; }
+.t-xl { font-size: 20px; font-weight: 200; line-height: 1.3; }
+.t-body { font-size: 13.5px; font-weight: 300; line-height: 1.7; color: var(--text-secondary); }
 .card.dark .t-body { color: rgba(255,255,255,0.82); }
 .card.accent .t-body { color: rgba(255,255,255,0.9); }
-
-.t-body-sm {
-  font-size: 12.5px;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--text-secondary);
-}
+.t-body-sm { font-size: 12.5px; font-weight: 300; line-height: 1.65; color: var(--text-secondary); }
 .card.dark .t-body-sm { color: rgba(255,255,255,0.75); }
 .card.accent .t-body-sm { color: rgba(255,255,255,0.85); }
-
-.t-meta {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--text-helper);
-}
+.t-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--text-helper); }
 .card.dark .t-meta { color: rgba(255,255,255,0.5); }
 .card.accent .t-meta { color: rgba(255,255,255,0.7); }
 
-/* dark/accent hero/xl */
-.card.dark .t-hero,
-.card.dark .t-hero-sm,
-.card.dark .t-xl { color: #fff; }
-.card.accent .t-hero,
-.card.accent .t-hero-sm,
-.card.accent .t-xl { color: #fff; }
-
-/* accent 强制覆盖 helper 色 */
+.card.dark .t-hero, .card.dark .t-hero-sm, .card.dark .t-xl { color: #fff; }
+.card.accent .t-hero, .card.accent .t-hero-sm, .card.accent .t-xl { color: #fff; }
 .card.accent [style*="color:var(--text-helper)"] { color: rgba(255,255,255,0.8) !important; }
 .card.dark [style*="color:var(--text-primary)"] { color: rgba(255,255,255,0.88) !important; }
 .card.accent [style*="color:var(--text-primary)"] { color: rgba(255,255,255,0.92) !important; }
 
-/* ─── 人物颜色系统 ─────────────────────────────── */
 .accent-text { color: var(--accent); }
-.text-weber    { color: #e0620a; }
-.text-dawkins   { color: #3498db; }
-.text-maslow    { color: #d4a500; }
-.text-kropotkin { color: #27ae60; }
-.text-han       { color: #c0392b; }
 
-.card.dark .text-weber    { color: #f59e4b; }
-.card.dark .text-dawkins   { color: #5dade2; }
-.card.dark .text-maslow    { color: #f7dc6f; }
-.card.dark .text-kropotkin { color: #58d68d; }
-.card.dark .text-han       { color: #e74c5e; }
-
-.card.accent .text-weber,
-.card.accent .text-dawkins,
-.card.accent .text-maslow,
-.card.accent .text-kropotkin,
-.card.accent .text-han { color: #fff; }
-
-/* ─── HR / DIVIDER ─────────────────────────────── */
-.hr-accent {
-  width: 36px;
-  height: 2px;
-  background: var(--accent);
-  margin-bottom: 14px;
-}
+.hr-accent { width: 36px; height: 2px; background: var(--accent); margin-bottom: 14px; }
 .card.dark .hr-accent { background: rgba(255,255,255,0.7); }
 .card.accent .hr-accent { background: rgba(255,255,255,0.7); }
 
-.hr-line {
-  width: 100%;
-  height: 1px;
-  background: var(--text-helper);
-  opacity: 0.15;
-  flex-shrink: 0;
-  margin: 8px 0;
-}
+.hr-line { width: 100%; height: 1px; background: var(--text-helper); opacity: 0.15; flex-shrink: 0; margin: 8px 0; }
 .card.dark .hr-line { background: rgba(255,255,255,0.12); }
 .card.accent .hr-line { background: rgba(255,255,255,0.15); }
 
-/* ─── QUOTE BLOCK ─────────────────────────────── */
-.quote-block {
-  border-left: 2px solid var(--accent);
-  padding-left: 14px;
-  margin: 10px 0;
-}
+.quote-block { border-left: 2px solid var(--accent); padding-left: 14px; margin: 10px 0; }
 .card.dark .quote-block { border-left-color: rgba(255,255,255,0.5); }
 .card.accent .quote-block { border-left-color: rgba(255,255,255,0.5); }
 
-/* ─── SPEAKER LABEL ─────────────────────────────── */
-.speaker-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.speaker-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: 5px;
-  flex-shrink: 0;
-  background: var(--accent);
-}
+.speaker-label { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+.speaker-dot { width: 5px; height: 5px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; background: var(--accent); }
 .card.accent .speaker-dot { background: rgba(255,255,255,0.9); }
-
-.dot-dawkins   { background: #3498db; }
-.dot-maslow    { background: #d4a500; }
+.dot-dawkins { background: #3498db; }
+.dot-maslow { background: #d4a500; }
 .dot-kropotkin { background: #27ae60; }
-.dot-han       { background: #c0392b; }
+.dot-han { background: #c0392b; }
 
-.speaker-name {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--text-primary);
-  line-height: 1.3;
-}
+.speaker-name { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-primary); line-height: 1.3; }
 .card.dark .speaker-name { color: rgba(255,255,255,0.9); }
 .card.accent .speaker-name { color: rgba(255,255,255,0.9); }
-
-.speaker-role {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--text-helper);
-  letter-spacing: 0.04em;
-}
+.speaker-role { font-family: var(--mono); font-size: 10px; color: var(--text-helper); letter-spacing: 0.04em; }
 .card.dark .speaker-role { color: rgba(255,255,255,0.5); }
 .card.accent .speaker-role { color: rgba(255,255,255,0.5); }
 
-/* ─── POINT LIST ─────────────────────────────── */
-.point-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.point-list li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-.point-mark {
-  width: 4px;
-  height: 4px;
-  background: var(--accent);
-  margin-top: 7px;
-  flex-shrink: 0;
-}
+.point-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.point-list li { display: flex; gap: 10px; align-items: flex-start; }
+.point-mark { width: 4px; height: 4px; background: var(--accent); margin-top: 7px; flex-shrink: 0; }
 .card.dark .point-mark { background: rgba(255,255,255,0.6); }
 .card.accent .point-mark { background: rgba(255,255,255,0.6); }
 
-/* ─── PARTICIPANT ROW ─────────────────────────── */
-.participant-row {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 9px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-.participant-initial {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-.participant-initial.c1 { background: #3498db; }  /* 道金斯-蓝 */
-.participant-initial.c2 { background: #d4a500; }  /* 马斯洛-金黄 */
-.participant-initial.c3 { background: #27ae60; }  /* 克鲁泡特金-绿 */
-.participant-initial.c4 { background: #c0392b; }  /* 韩炳哲-红 */
+.participant-row { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.participant-initial { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.participant-initial.c1 { background: #3498db; }
+.participant-initial.c2 { background: #d4a500; }
+.participant-initial.c3 { background: #27ae60; }
+.participant-initial.c4 { background: #c0392b; }
+.participant-name { font-size: 12.5px; font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.3; }
+.participant-desc { font-family: var(--mono); font-size: 9.5px; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
 
-.participant-name {
-  font-size: 12.5px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.3;
-}
-.participant-desc {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.03em;
-}
-
-/* ─── SPLIT-2 ─────────────────────────────── */
-.split-2 {
-  display: flex;
-  gap: 14px;
-}
+.split-2 { display: flex; gap: 14px; }
 .split-2 > div { flex: 1; }
 
-/* ─── FOOTER ─────────────────────────────── */
-.card-footer {
-  margin-top: auto;
-  padding-top: 10px;
-  display: flex;
-  align-items: center;
-}
-.brand-mark {
-  font-family: var(--brand), var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  color: var(--text-helper);
-}
+.dialogue-divider { border-top: 1px solid rgba(0,0,0,0.06); padding-top: 12px; margin-top: 12px; }
+.card.dark .dialogue-divider { border-top-color: rgba(255,255,255,0.12); }
+
+.card-footer { margin-top: auto; padding-top: 10px; display: flex; align-items: center; }
+.brand-mark { font-family: var(--brand), var(--mono); font-size: 9px; letter-spacing: 0.06em; color: var(--text-helper); }
 .card.dark .brand-mark { color: rgba(255,255,255,0.35); }
 .card.accent .brand-mark { color: rgba(255,255,255,0.6); }
 
-/* ─── DIALOGUE DIVIDER ────────────────────────── */
-.dialogue-divider {
-  border-top: 1px solid rgba(0,0,0,0.06);
-  padding-top: 10px;
-  margin-top: 10px;
-}
-.card.dark .dialogue-divider { border-top-color: rgba(255,255,255,0.12); }
+.hint { color: #555; font-family: var(--mono); font-size: 11px; text-align: center; margin: 36px auto 14px; line-height: 1.6; }
+.export-bar { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 40px; }
+.btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: white; border: none; padding: 10px 22px; cursor: pointer; }
+.btn-o { background: transparent; border: 1px solid #555; color: #aaa; }
+.export-status { font-family: var(--mono); font-size: 11px; color: #666; }
 
-/* ─── EXPORT UI ─────────────────────────────── */
-.hint {
-  color: #555;
-  font-family: var(--mono);
-  font-size: 11px;
-  text-align: center;
-  margin: 36px auto 14px;
-  line-height: 1.6;
-}
-.export-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-.btn {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  cursor: pointer;
-}
-.btn-o {
-  background: transparent;
-  border: 1px solid #555;
-  color: #aaa;
-}
-.export-status {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: #666;
-}
-
-/* ─── PRINT ─────────────────────────────── */
 @page { size: 375px 500px; margin: 0; }
 @media print {
   body { background: #fff; padding: 0; }
@@ -394,55 +137,55 @@ body {
 
 <div class="stack">
 
-<!-- ===== 01 封面 · dark ===== -->
+<!-- ===== 01 封面 · dark — 钩子 ===== -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
-      <span></span>
+      <span class="card-tag">杰文斯悖论 · 1865</span>
       <span class="card-num">01 / 08</span>
     </div>
-    <div class="card-body" style="flex:1;display:flex;flex-direction:column;">
-      <div class="t-body-sm" style="color:rgba(255,255,255,0.4);">杰文斯悖论 · 1865</div>
-      <div class="t-hero" style="color:#fff; margin-top:14px;">效率越高<span class="accent-text">越忙</span></div>
-      <div class="hr-line" style="margin-top:14px;"></div>
-      <div class="t-body" style="color:rgba(255,255,255,0.6); margin-top:12px;">蒸汽机效率提高后，煤炭总消耗量反而增加了。这个悖论今天正在你的时间上重演。</div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div class="t-hero">AI 帮你省了时间<br>但你比以前<span class="accent-text">更忙</span>了</div>
+      <div class="hr-line" style="margin-top:18px;"></div>
+      <div class="t-body-sm" style="color:rgba(255,255,255,0.5);margin-top:12px;">1865 年，经济学家杰文斯发现：蒸汽机越高效，煤炭消耗越大。这个现象，正在你的每一天重演。</div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 02 核心机制 · paper ===== -->
+<!-- ===== 02 入口场景 · paper — 麦橘的真实案例 ===== -->
 <div class="card">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">核心机制</span>
+      <span class="card-tag">入口场景</span>
       <span class="card-num">02 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-hero-sm">效率改变行为的边界</div>
-    <div class="t-body" style="margin-top:14px; color:var(--text-primary);">效率降低了单位产出的资源需求，让原本不经济的场景变得「划算」——需求总量膨胀，吞噬了单位节约。</div>
-    <div class="hr-line"></div>
-    <div class="t-body-sm" style="color:var(--text-primary);">1865 年杰文斯在《煤炭问题》中提出：蒸汽机热效率每次提高，煤炭消耗不降反升。因为更多行业买得起蒸汽机了。核心不是效率无效——是「值得做的事」变多了。</div>
-    <div class="spacer"></div>
+    <div class="t-xl" style="color:var(--text-primary);"> Claude Code 到手的那天</div>
+    <div class="t-body" style="margin-top:12px;color:var(--text-primary);">终于找到一匹好牛马。以前写个自动化脚本要半天，现在跟它说几句，五分钟出活。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">省下来的时间呢？用来折腾以前根本不值得做的事：重构旧代码、搭知识体系、批量处理数据。投入产出比翻了个儿，以前不会做的事全变成了「值得做」。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">一天下来，花在 Claude 上的时间，比以前手动干活的时间还多。</div>
+    <div class="quote-block" style="margin-top:12px;">
+      <div class="t-body-sm" style="color:var(--accent);">工具越好用，你欠它的活越多。</div>
+    </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 03 入口场景 · dark ===== -->
+<!-- ===== 03 核心机制 · dark — 洗地机讲透 ===== -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">入口场景</span>
+      <span class="card-tag">核心机制</span>
       <span class="card-num">03 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:#fff;">阿坤买了<span style="font-size:13.5px;color:rgba(255,255,255,0.5);font-weight:300;"> 一台洗地机</span></div>
-    <div class="t-body" style="margin-top:10px;">三千块，十分钟，全屋光亮。第一天他站在客厅想：多出来的二十分钟可以干点别的。</div>
-    <div class="t-body" style="margin-top:6px;">第二天鞋柜旁一小块灰——以前会踩过去，现在拿洗地机推了两下。</div>
-    <div class="t-body" style="margin-top:6px;">第四天蹲着研究瓷砖缝里的油渍。下单专用清洁剂。第七天：搬开家具、逐缝刷油渍、擦踢脚线。两小时四十分钟。</div>
-    <div class="quote-block" style="margin-top:12px;">
-      <div class="t-body-sm" style="color:rgba(255,255,255,0.6);">这三千块买来的不是省时间，是新的标准。</div>
-    </div>
+    <div class="t-hero-sm">效率越高<span class="accent-text">消耗越大</span></div>
+    <div class="t-body" style="margin-top:14px;">阿坤买了台洗地机。拖地从 30 分钟缩到 10 分钟。</div>
+    <div class="t-body" style="margin-top:6px;">第二天，他对鞋柜旁一小块灰忍不了了——以前踩过去就完了，现在推两下就干净。然后开始刷瓷砖缝，擦踢脚线，买专用清洁剂。</div>
+    <div class="t-body" style="margin-top:6px;">第七天：搬开家具、逐缝刷油渍、擦踢脚线。耗时两小时四十分钟。他爸说了一句：「以前你一周拖一次不也挺好。」</div>
+    <div class="hr-line" style="margin-top:14px;"></div>
+    <div class="t-body-sm" style="color:rgba(255,255,255,0.5);">效率降低了单位成本，让以前不划算的事变得划算。需求膨胀，把省下来的全部填满，还倒贴。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
@@ -455,23 +198,23 @@ body {
       <span class="card-num">04 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl">同一个悖论<span class="accent-text">三个锚点</span></div>
+    <div class="t-xl" style="color:var(--text-primary);">同一个悖论，<span class="accent-text">三种重演</span></div>
     <ul class="point-list" style="margin-top:14px;">
       <li>
         <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">洗地机</strong>　拖地 30→10 分钟，但开始清洁以前从不注意的缝和踢脚线</div>
+        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">手机通讯</strong>　沟通效率翻了十倍，但花在聊天上的总时间远超写信时代——因为聊得更多、聊的人更多</div>
       </li>
       <li>
         <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">手机通讯</strong>　沟通效率大幅提升，但花在沟通上的总时间远超信件时代</div>
+        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">高速公路</strong>　通勤速度翻了一倍，但人们选择住得更远。通勤距离的增长吃掉了速度提升</div>
       </li>
       <li>
         <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">AI 编程</strong>　写代码快了 5 倍，以前不值得自动化的脚本现在全做了</div>
+        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">AI 编程</strong>　代码写得快了 5 倍，但以前不值得自动化的脚本现在全写了，总工时不降反升</div>
       </li>
     </ul>
     <div class="hr-line"></div>
-    <div class="t-body-sm" style="color:var(--text-primary);">工具越好用，「值得做的事」的清单越长，总负荷重新填满。</div>
+    <div class="t-body-sm" style="color:var(--text-primary);">工具越好用，「值得做的事」清单越长，总负荷重新填满。每次都一样。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
@@ -484,19 +227,19 @@ body {
       <span class="card-num">05 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:#fff;">三个限定条件</div>
+    <div class="t-xl">三个限定条件</div>
     <ul class="point-list" style="margin-top:14px;">
       <li>
         <div class="point-mark"></div>
-        <div class="t-body">需求必须有弹性——每天只能吃三顿饭，效率提升确实减少总消耗</div>
+        <div class="t-body">需求必须有弹性。如果需求有硬上限——一天只能吃三顿饭——效率提升确实会减少总消耗。时间和注意力没有上限</div>
       </li>
       <li>
         <div class="point-mark"></div>
-        <div class="t-body">资源尚未饱和——所有可行场景已被覆盖时，效率才有真正的节约</div>
+        <div class="t-body">资源尚未饱和。所有可行场景都被覆盖之后，效率才有真正的节约</div>
       </li>
       <li>
         <div class="point-mark"></div>
-        <div class="t-body" style="color:#fff;">悖论说的是总量反弹，不是效率无价值——产出确实增加了，只是没有转化为闲暇</div>
+        <div class="t-body" style="color:#fff;">悖论说的是总量反弹，不是「效率没用」。产出确实增加了——只是没有变成闲暇，变成了更多产出</div>
       </li>
     </ul>
     <div class="spacer"></div>
@@ -504,72 +247,91 @@ body {
   </div>
 </div>
 
-<!-- ===== 06 结构镜像 · dark ===== -->
+<!-- ===== 06 圆桌·分化 · dark ===== -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">结构镜像</span>
+      <span class="card-tag">圆桌 · 分化</span>
       <span class="card-num">06 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:#fff;">杰文斯 vs 预防悖论</div>
-    <div class="split-2" style="margin-top:14px;">
-      <div>
-        <div class="t-body-sm" style="color:var(--accent);">杰文斯悖论</div>
-        <div class="t-body-sm" style="margin-top:6px;">个体优化 → 整体恶化</div>
-        <div class="t-body" style="margin-top:8px;">我更高效了，所有人一起更高效，总负荷膨胀</div>
+    <div class="t-xl">AI 面前，人为什么<span class="accent-text">分成了两拨</span></div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-dawkins"></div>
+        <div>
+          <div class="speaker-name">道金斯</div>
+          <div class="speaker-role">分化的是策略，不是人</div>
+        </div>
       </div>
-      <div>
-        <div class="t-body-sm" style="color:rgba(255,255,255,0.5);">预防悖论</div>
-        <div class="t-body-sm" style="margin-top:6px;">个体理性放弃 → 整体恶化</div>
-        <div class="t-body" style="margin-top:8px;">我打了疫苗保护自己，但所有人打疫苗才能消灭疾病</div>
-      </div>
+      <div class="t-body-sm">高频开发和低频消耗都有稳定的生态位。问题出在第三种人：想高频开发但跑不动，又没法安心搭便车。</div>
     </div>
-    <div class="hr-line" style="margin-top:14px;"></div>
-    <div class="t-body-sm" style="color:rgba(255,255,255,0.6);">两个方向，同一个结构：个体层和群体层的最优解不一致。</div>
+    <div class="dialogue-divider"></div>
+    <div>
+      <div class="speaker-label">
+        <div class="speaker-dot dot-maslow"></div>
+        <div>
+          <div class="speaker-name">马斯洛</div>
+          <div class="speaker-role">需求阶梯在哪里封顶</div>
+        </div>
+      </div>
+      <div class="t-body-sm">膨胀者是被激活了成长需求，AI 让自我实现的门槛降低，需求像弹簧一样扩张。摆烂者的需求阶梯在安全感那里就封顶了，再往上没有驱力。</div>
+    </div>
+    <div class="dialogue-divider"></div>
+    <div>
+      <div class="speaker-label">
+        <div class="speaker-dot dot-han"></div>
+        <div>
+          <div class="speaker-name">韩炳哲</div>
+          <div class="speaker-role">同一种病的两个症状</div>
+        </div>
+      </div>
+      <div class="t-body-sm">一个停不下来——AI 越好用越无法停，停下来等于「浪费」工具的潜力。另一个起不来——反正跑不赢，不如不跑。两个都被同一个系统抽干了。</div>
+    </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 07 圆桌洞见 · paper ===== -->
+<!-- ===== 07 圆桌·调节 · paper ===== -->
 <div class="card">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">圆桌沉淀</span>
+      <span class="card-tag">圆桌 · 调节</span>
       <span class="card-num">07 / 08</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:var(--text-primary);">AI 面前，人分成了<span class="accent-text">两拨</span></div>
-    <div class="speaker-label" style="margin-top:12px;">
-      <div class="speaker-dot dot-dawkins"></div>
-      <div>
-        <div class="speaker-name" style="color:var(--text-primary);">道金斯</div>
-        <div class="speaker-role">策略分化——高频开发与低频消耗都有稳定生态位</div>
+    <div class="t-xl" style="color:var(--text-primary);">知道了，<span class="accent-text">然后呢</span></div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-maslow"></div>
+        <div>
+          <div class="speaker-name" style="color:var(--text-primary);">马斯洛</div>
+          <div class="speaker-role">不是砍需求，是排序</div>
+        </div>
       </div>
+      <div class="t-body-sm" style="color:var(--text-primary);">AI 同时降低了所有需求层级的门槛，安全感、归属感、自我实现全在叫你。你被多层需求同时拉扯。让低层真正满足，再放高层进来。</div>
     </div>
-    <div class="hr-line"></div>
-    <div class="speaker-label">
-      <div class="speaker-dot dot-maslow"></div>
-      <div>
-        <div class="speaker-name" style="color:var(--text-primary);">马斯洛</div>
-        <div class="speaker-role">需求阶梯封顶的人摆烂，弹簧扩张的人膨胀</div>
+    <div class="dialogue-divider"></div>
+    <div>
+      <div class="speaker-label">
+        <div class="speaker-dot dot-dawkins"></div>
+        <div>
+          <div class="speaker-name" style="color:var(--text-primary);">道金斯</div>
+          <div class="speaker-role">制造边际收益为零</div>
+        </div>
       </div>
+      <div class="t-body-sm" style="color:var(--text-primary);">狩猎采集者每天只干三到五小时——不是热爱闲暇，是打再多猎也存不住。现代人忙，是因为 AI 永远能给你更多产出。给自己设硬上限，让「再做一轮」无处存放。</div>
     </div>
-    <div class="hr-line"></div>
-    <div class="speaker-label">
-      <div class="speaker-dot dot-kropotkin"></div>
-      <div>
-        <div class="speaker-name" style="color:var(--text-primary);">克鲁泡特金</div>
-        <div class="speaker-role">分化是分工的前兆，摆烂者等待信号编入协作</div>
+    <div class="dialogue-divider"></div>
+    <div>
+      <div class="speaker-label">
+        <div class="speaker-dot dot-kropotkin"></div>
+        <div>
+          <div class="speaker-name" style="color:var(--text-primary);">克鲁泡特金</div>
+          <div class="speaker-role">把扩张变成公共品</div>
+        </div>
       </div>
-    </div>
-    <div class="hr-line"></div>
-    <div class="speaker-label">
-      <div class="speaker-dot dot-han"></div>
-      <div>
-        <div class="speaker-name" style="color:var(--text-primary);">韩炳哲</div>
-        <div class="speaker-role">膨胀是绩效强迫的躁狂相，摆烂是抑郁相——同一种病</div>
-      </div>
+      <div class="t-body-sm" style="color:var(--text-primary);">一个人设闹钟靠不住。把你用 AI 开发出的能力变成「蜜源舞蹈」——让别人能跟上来。你的扩张就不是自我剥削，是集体资产。</div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
@@ -582,10 +344,10 @@ body {
       <span></span>
       <span class="card-num">08 / 08</span>
     </div>
-    <div class="card-body" style="flex:1;display:flex;flex-direction:column;">
-      <div class="t-hero" style="color:#fff;font-size:32px;">效率释放需求<br>需求<span class="accent-text">吞噬</span>效率</div>
-      <div class="t-body" style="color:rgba(255,255,255,0.6);margin-top:14px;">杰文斯在 1865 年看懂了煤。你今天看懂了自己的时间了吗？</div>
-      <div class="hr-line" style="margin-top:14px;"></div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div class="t-hero" style="font-size:34px;">效率释放需求<br>需求<span class="accent-text">吞噬</span>效率</div>
+      <div class="t-body" style="margin-top:16px;">杰文斯在 1865 年看懂了煤。你今天看懂了自己的时间吗？</div>
+      <div class="hr-line" style="margin-top:16px;"></div>
       <div class="split-2">
         <div>
           <div class="t-meta" style="color:rgba(255,255,255,0.4);">内功</div>
@@ -596,6 +358,8 @@ body {
           <div class="t-body-sm" style="color:rgba(255,255,255,0.8);margin-top:6px;">制造边际收益为零<br>把扩张变成公共品</div>
         </div>
       </div>
+      <div class="hr-line" style="margin-top:14px;"></div>
+      <div class="t-body-sm" style="color:rgba(255,255,255,0.4);">核心未解：你到底是「停不下来」还是「不想停」？前者需要结构，后者需要内省。</div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
@@ -612,27 +376,26 @@ body {
   <span class="export-status" id="status"></span>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 async function exportPDF() {
-  const cards = document.querySelectorAll('.card');
-  const status = document.getElementById('status');
+  var cards = document.querySelectorAll('.card');
+  var status = document.getElementById('status');
   status.textContent = '生成中…';
-  const pw = 180, ph = 240;
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
-
-  for (let i = 0; i < cards.length; i++) {
+  var pw = 180, ph = 240;
+  var jsPDF = window.jspdf.jsPDF;
+  var doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
+  for (var i = 0; i < cards.length; i++) {
     status.textContent = (i + 1) + ' / ' + cards.length;
-    const canvas = await html2canvas(cards[i], {
-      scale: 3,
-      useCORS: true,
-      backgroundColor: null,
+    var canvas = await html2canvas(cards[i], {
+      scale: 3, useCORS: true, backgroundColor: null,
       onclone: function(doc) {
         doc.querySelectorAll('.t-body').forEach(function(el) { el.style.lineHeight = '1.85'; });
         doc.querySelectorAll('.t-body-sm').forEach(function(el) { el.style.lineHeight = '1.8'; });
       }
     });
-    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    var imgData = canvas.toDataURL('image/jpeg', 0.95);
     if (i > 0) doc.addPage([pw, ph]);
     doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
   }
@@ -641,7 +404,5 @@ async function exportPDF() {
   setTimeout(function() { status.textContent = ''; }, 3000);
 }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>
