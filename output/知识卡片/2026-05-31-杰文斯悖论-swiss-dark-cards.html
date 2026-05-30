@@ -531,17 +531,52 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 </div>
 
 <div class="hint">
-  浏览器打开 → Cmd/Ctrl+P → 另存为 PDF（每卡一页）
+  点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）<br>
+  或点「导出图片 ZIP」将全部卡片打包（01.jpg / 02.jpg …）
 </div>
 
 <div class="export-bar">
-  <button class="btn" onclick="exportPDF()">导出 PDF</button>
+  <button class="btn btn-o" onclick="exportPDF()">导出 PDF</button>
+  <button class="btn" onclick="exportAll()">导出图片 ZIP</button>
   <span class="export-status" id="status"></span>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
+
+function wrapBrackets(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+  nodes.forEach(node => {
+    if (!/[「」]/.test(node.textContent)) return;
+    const frag = document.createDocumentFragment();
+    node.textContent.split(/(「|」)/).forEach(part => {
+      if (part === '「' || part === '」') {
+        const s = document.createElement('span');
+        s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
+        s.textContent = part;
+        frag.appendChild(s);
+      } else if (part) {
+        frag.appendChild(document.createTextNode(part));
+      }
+    });
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+
+async function captureCard(card) {
+  const saved = card.innerHTML;
+  wrapBrackets(card);
+  await new Promise(r => requestAnimationFrame(r));
+  const canvas = await html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null });
+  card.innerHTML = saved;
+  return canvas;
+}
+
 async function exportPDF() {
   var cards = document.querySelectorAll('.card');
   var status = document.getElementById('status');
@@ -550,19 +585,34 @@ async function exportPDF() {
   var jsPDF = window.jspdf.jsPDF;
   var doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
   for (var i = 0; i < cards.length; i++) {
-    status.textContent = (i + 1) + ' / ' + cards.length;
-    var canvas = await html2canvas(cards[i], {
-      scale: 3, useCORS: true, backgroundColor: null,
-      onclone: function(doc) {
-        doc.querySelectorAll('.t-body').forEach(function(el) { el.style.lineHeight = '1.85'; });
-        doc.querySelectorAll('.t-body-sm').forEach(function(el) { el.style.lineHeight = '1.8'; });
-      }
-    });
+    status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
+    var canvas = await captureCard(cards[i]);
     var imgData = canvas.toDataURL('image/jpeg', 0.95);
     if (i > 0) doc.addPage([pw, ph]);
     doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
   }
   doc.save('杰文斯悖论-swiss-dark.pdf');
+  status.textContent = '完成 ✓';
+  setTimeout(function() { status.textContent = ''; }, 3000);
+}
+
+async function exportAll() {
+  var cards = document.querySelectorAll('.card');
+  var status = document.getElementById('status');
+  status.textContent = '生成中…';
+  var zip = new JSZip();
+  for (var i = 0; i < cards.length; i++) {
+    status.textContent = (i + 1) + ' / ' + cards.length;
+    var canvas = await captureCard(cards[i]);
+    var base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
+    zip.file(String(i + 1).padStart(2, '0') + '.jpg', base64, { base64: true });
+  }
+  status.textContent = '打包中…';
+  var blob = await zip.generateAsync({ type: 'blob' });
+  var link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = '杰文斯悖论-swiss-dark-卡片.zip';
+  link.click();
   status.textContent = '完成 ✓';
   setTimeout(function() { status.textContent = ''; }, 3000);
 }
