@@ -117,6 +117,19 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 .card.dark .brand-mark { color: rgba(255,255,255,0.35); }
 .card.accent .brand-mark { color: rgba(255,255,255,0.6); }
 
+/* ─── 核心机制图示 ─── */
+.mechanism-diagram { margin: 14px 0; padding: 16px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+.card.paper .mechanism-diagram { background: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.06); }
+.mech-step { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.mech-step:last-child { margin-bottom: 0; }
+.mech-label { font-family: var(--mono); font-size: 10.5px; font-weight: 400; white-space: nowrap; min-width: 72px; color: rgba(255,255,255,0.55); }
+.card.paper .mech-label { color: rgba(0,0,0,0.45); }
+.mech-arrow { font-size: 16px; color: var(--accent); flex-shrink: 0; }
+.mech-value { font-size: 12.5px; font-weight: 300; line-height: 1.5; color: rgba(255,255,255,0.85); }
+.card.paper .mech-value { color: var(--text-secondary); }
+.mech-result { margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.15); }
+.card.paper .mech-result { border-top-color: rgba(0,0,0,0.1); }
+
 .hint { color: #555; font-family: var(--mono); font-size: 11px; text-align: center; margin: 36px auto 14px; line-height: 1.6; }
 .export-bar { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 40px; }
 .btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: white; border: none; padding: 10px 22px; cursor: pointer; }
@@ -133,175 +146,318 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 </style>
 </head>
 <body>
-<div class="page-header">杰文斯悖论 · Swiss Dark · 08 张</div>
+<div class="page-header">杰文斯悖论 · Swiss Dark · 14 张</div>
 
 <div class="stack">
 
-<!-- ===== 01 封面 · dark — 钩子 ===== -->
+<!-- ═══════════════ 01 封面 · dark — 钩子 ═══════════════ -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
       <span class="card-tag">杰文斯悖论 · 1865</span>
-      <span class="card-num">01 / 08</span>
+      <span class="card-num">01 / 14</span>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
       <div class="t-hero">AI 帮你省了时间<br>但你比以前<span class="accent-text">更忙</span>了</div>
       <div class="hr-line" style="margin-top:18px;"></div>
-      <div class="t-body-sm" style="color:rgba(255,255,255,0.5);margin-top:12px;">1865 年，经济学家杰文斯发现：蒸汽机越高效，煤炭消耗越大。这个现象，正在你的每一天重演。</div>
+      <div class="t-body-sm" style="color:rgba(255,255,255,0.5);margin-top:12px;">1865 年，经济学家杰文斯发现蒸汽机越高效，煤炭消耗越大。这个现象，正在你的每一天重演。</div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 02 入口场景 · paper — 麦橘的真实案例 ===== -->
+<!-- ═══════════════ 02 入口场景 · paper — 麦橘的真实案例 ═══════════════ -->
 <div class="card">
   <div class="card-inner">
     <div class="card-header">
       <span class="card-tag">入口场景</span>
-      <span class="card-num">02 / 08</span>
+      <span class="card-num">02 / 14</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:var(--text-primary);"> Claude Code 到手的那天</div>
-    <div class="t-body" style="margin-top:12px;color:var(--text-primary);">终于找到一匹好牛马。以前写个自动化脚本要半天，现在跟它说几句，五分钟出活。</div>
-    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">省下来的时间呢？用来折腾以前根本不值得做的事：重构旧代码、搭知识体系、批量处理数据。投入产出比翻了个儿，以前不会做的事全变成了「值得做」。</div>
-    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">一天下来，花在 Claude 上的时间，比以前手动干活的时间还多。</div>
+    <div class="t-xl" style="color:var(--text-primary);">麦橘和 Claude Code 的那几天</div>
+    <div class="t-body" style="margin-top:12px;color:var(--text-primary);">终于找到一匹好牛马。以前写个自动化脚本要折腾半天，现在跟 Claude Code 说几句，五分钟出活。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">省下来的时间呢？用来干以前根本不值得做的事：重构旧代码、搭知识体系、批量处理数据、写以前懒得写的文档。投入产出比翻了个儿，以前不会做的事全变成了「值得做」。</div>
     <div class="quote-block" style="margin-top:12px;">
-      <div class="t-body-sm" style="color:var(--accent);">工具越好用，你欠它的活越多。</div>
+      <div class="t-body-sm" style="color:var(--accent);">一天下来花在 AI 上的时间，比以前手动干活的时间还多。</div>
     </div>
+    <div class="t-body" style="margin-top:10px;color:var(--text-primary);">不是工具不好用。恰恰是因为太好用了，「值得做的事」的边界被推远了。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 03 核心机制 · dark — 洗地机讲透 ===== -->
+<!-- ═══════════════ 03 核心机制 · dark — 一句话 + 图示 ═══════════════ -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
       <span class="card-tag">核心机制</span>
-      <span class="card-num">03 / 08</span>
+      <span class="card-num">03 / 14</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-hero-sm">效率越高<span class="accent-text">消耗越大</span></div>
-    <div class="t-body" style="margin-top:14px;">阿坤买了台洗地机。拖地从 30 分钟缩到 10 分钟。</div>
-    <div class="t-body" style="margin-top:6px;">第二天，他对鞋柜旁一小块灰忍不了了——以前踩过去就完了，现在推两下就干净。然后开始刷瓷砖缝，擦踢脚线，买专用清洁剂。</div>
-    <div class="t-body" style="margin-top:6px;">第七天：搬开家具、逐缝刷油渍、擦踢脚线。耗时两小时四十分钟。他爸说了一句：「以前你一周拖一次不也挺好。」</div>
-    <div class="hr-line" style="margin-top:14px;"></div>
-    <div class="t-body-sm" style="color:rgba(255,255,255,0.5);">效率降低了单位成本，让以前不划算的事变得划算。需求膨胀，把省下来的全部填满，还倒贴。</div>
+    <div class="t-hero-sm">效率降低了<span class="accent-text">单位成本</span><br>需求膨胀了<span class="accent-text">总消耗</span></div>
+
+    <div class="mechanism-diagram">
+      <div class="mech-step">
+        <span class="mech-label">效率提升</span>
+        <span class="mech-arrow">→</span>
+        <span class="mech-value">单位产出消耗的资源变少</span>
+      </div>
+      <div class="mech-step">
+        <span class="mech-label">成本下降</span>
+        <span class="mech-arrow">→</span>
+        <span class="mech-value">以前不划算的事变得划算</span>
+      </div>
+      <div class="mech-step">
+        <span class="mech-label">边界外移</span>
+        <span class="mech-arrow">→</span>
+        <span class="mech-value">「值得做的事」清单变长</span>
+      </div>
+      <div class="mech-result">
+        <div class="mech-step">
+          <span class="mech-label" style="color:var(--accent);">结果</span>
+          <span class="mech-arrow">→</span>
+          <span class="mech-value" style="color:rgba(255,255,255,0.95);">省下来的被新需求填满，还倒贴</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-body-sm" style="color:rgba(255,255,255,0.5);">1865 年杰文斯观察的是煤炭和蒸汽机。今天这个机制在时间、注意力、算力上反复重演。关键不在于「效率有没有用」，而在于你面对的需求有没有上限。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 04 现实锚点 · paper ===== -->
+<!-- ═══════════════ 04 现实锚点 · paper — 手机通讯 ═══════════════ -->
 <div class="card">
   <div class="card-inner">
     <div class="card-header">
       <span class="card-tag">现实锚点</span>
-      <span class="card-num">04 / 08</span>
+      <span class="card-num">04 / 14</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl" style="color:var(--text-primary);">同一个悖论，<span class="accent-text">三种重演</span></div>
-    <ul class="point-list" style="margin-top:14px;">
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">手机通讯</strong>　沟通效率翻了十倍，但花在聊天上的总时间远超写信时代——因为聊得更多、聊的人更多</div>
-      </li>
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">高速公路</strong>　通勤速度翻了一倍，但人们选择住得更远。通勤距离的增长吃掉了速度提升</div>
-      </li>
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:400;">AI 编程</strong>　代码写得快了 5 倍，但以前不值得自动化的脚本现在全写了，总工时不降反升</div>
-      </li>
-    </ul>
-    <div class="hr-line"></div>
-    <div class="t-body-sm" style="color:var(--text-primary);">工具越好用，「值得做的事」清单越长，总负荷重新填满。每次都一样。</div>
+    <div class="t-xl" style="color:var(--text-primary);">手机让沟通<span class="accent-text">快了十倍</span>，但……</div>
+    <div class="t-body" style="margin-top:14px;color:var(--text-primary);">写信时代，一封信来回一周，你只会写给真正重要的人。内容经过斟酌，每句话都有分量。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">现在呢？微信发一条三秒，于是你开始群聊、朋友圈评论、工作消息秒回、睡前刷一圈。沟通的「单价」降到了几乎为零，所以沟通的「总量」爆炸式增长。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">你花在「沟通」上的总时间，远超写信时代。不是因为事情更多了，而是因为每次沟通太便宜了，便宜到你不再思考「这件事值不值得说」。</div>
+    <div class="quote-block" style="margin-top:12px;">
+      <div class="t-body-sm" style="color:var(--text-secondary);">效率越高，筛选门槛越低，噪音越大。</div>
+    </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 05 适用边界 · accent ===== -->
-<div class="card accent">
+<!-- ═══════════════ 05 现实锚点 · paper — 高速公路 ═══════════════ -->
+<div class="card">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">适用边界</span>
-      <span class="card-num">05 / 08</span>
+      <span class="card-tag">现实锚点</span>
+      <span class="card-num">05 / 14</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl">三个限定条件</div>
-    <ul class="point-list" style="margin-top:14px;">
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body">需求必须有弹性。如果需求有硬上限——一天只能吃三顿饭——效率提升确实会减少总消耗。时间和注意力没有上限</div>
-      </li>
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body">资源尚未饱和。所有可行场景都被覆盖之后，效率才有真正的节约</div>
-      </li>
-      <li>
-        <div class="point-mark"></div>
-        <div class="t-body" style="color:#fff;">悖论说的是总量反弹，不是「效率没用」。产出确实增加了——只是没有变成闲暇，变成了更多产出</div>
-      </li>
-    </ul>
-    <div class="spacer"></div>
+    <div class="t-xl" style="color:var(--text-primary);">高速公路修通了<br>通勤时间<span class="accent-text">没减少</span></div>
+    <div class="t-body" style="margin-top:14px;color:var(--text-primary);">城市边缘修了一条高速，通勤速度翻倍。按照直觉，大家应该每天多睡一小时才对。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">实际发生的事：人们发现住远一点也来得及，于是搬到了更远的郊区。房价更低、房子更大，通勤距离从 20 公里拉到了 50 公里。速度的提升被距离的增长精确抵消。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">这个现象在交通规划里有个名字叫「诱导需求」（Induced Demand）——本质就是杰文斯悖论在道路上的重演。路越好，开车的人越多；开得越快，住得越远。</div>
+    <div class="hr-line"></div>
+    <div class="t-body-sm" style="color:var(--text-secondary);">每一次技术升级都承诺「帮你省时间」，但省下来的时间从来不会被存进银行。它会被立刻消费掉——消费在以前因为「太远」「太贵」「太慢」而被放弃的选择上。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 06 圆桌·分化 · dark ===== -->
+<!-- ═══════════════ 06 圆桌阵容 · dark ═══════════════ -->
 <div class="card dark">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">圆桌 · 分化</span>
-      <span class="card-num">06 / 08</span>
+      <span class="card-tag">圆桌</span>
+      <span class="card-num">06 / 14</span>
     </div>
     <div class="hr-accent"></div>
-    <div class="t-xl">AI 面前，人为什么<span class="accent-text">分成了两拨</span></div>
-    <div style="margin-top:14px;">
+    <div class="t-xl">AI 面前人为什么<span class="accent-text">分成了两拨</span></div>
+    <div class="t-body-sm" style="margin-top:14px;color:rgba(255,255,255,0.5);">四个人，四个视角，讨论同一个问题：</div>
+
+    <div class="participant-row">
+      <div class="participant-initial c1"></div>
+      <div>
+        <div class="participant-name">理查德·道金斯</div>
+        <div class="participant-desc">进化生物学家 · 《自私的基因》作者</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c2"></div>
+      <div>
+        <div class="participant-name">亚伯拉罕·马斯洛</div>
+        <div class="participant-desc">人本主义心理学家 · 需求层次理论提出者</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c3"></div>
+      <div>
+        <div class="participant-name">彼得·克鲁泡特金</div>
+        <div class="participant-desc">无政府主义者 / 地理学家 · 《互助论》作者</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c4"></div>
+      <div>
+        <div class="participant-name">韩炳哲</div>
+        <div class="participant-desc">哲学家 · 《倦怠社会》《透明社会》作者</div>
+      </div>
+    </div>
+
+    <div class="t-body-sm" style="color:rgba(255,255,255,0.4);margin-top:10px;">触发问题：AI 时代，人为什么会分化为「需求膨胀型」和「甩手摆烂型」？这种分化意味着什么？怎么应对？</div>
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 07 圆桌·道金斯 · paper ═══════════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">圆桌 · 分化是什么</span>
+      <span class="card-num">07 / 14</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div style="margin-top:4px;">
       <div class="speaker-label">
         <div class="speaker-dot dot-dawkins"></div>
         <div>
-          <div class="speaker-name">道金斯</div>
-          <div class="speaker-role">分化的是策略，不是人</div>
+          <div class="speaker-name" style="color:var(--text-primary);">道金斯</div>
+          <div class="speaker-role">进化生物学家</div>
         </div>
       </div>
-      <div class="t-body-sm">高频开发和低频消耗都有稳定的生态位。问题出在第三种人：想高频开发但跑不动，又没法安心搭便车。</div>
     </div>
-    <div class="dialogue-divider"></div>
-    <div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);">分化的基本单位不是「人」，是<strong style="font-weight:500;">策略</strong>。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">进化不关心个体的感受，它筛选的是可复制的策略。当一个环境里出现新资源——比如 AI——总会分化出两种策略共存：</div>
+    <ul class="point-list" style="margin-top:10px;">
+      <li>
+        <div class="point-mark" style="background:#3498db;"></div>
+        <div class="t-body-sm" style="color:var(--text-primary);"><strong style="font-weight:500;">高频开发策略</strong>——对新资源最大化利用，不断扩张使用范围和深度。这就是你们说的「需求膨胀型」</div>
+      </li>
+      <li>
+        <div class="point-mark" style="background:#3498db;"></div>
+        <div class="t-body-sm" style="color:var(--text-primary);"><strong style="font-weight:500;">低频消耗策略</strong>——等待他人开拓后搭便车，用最少的投入获取足够的收益。这就是「甩手摆烂型」</div>
+      </li>
+    </ul>
+    <div class="t-body" style="margin-top:10px;color:var(--text-primary);">这两种策略在博弈论里都有稳定的生态位，没有谁比谁「更优」。就像猎豹和鬣狗——一个靠速度捕猎，一个靠抢夺，都能活下去。</div>
+    <div class="quote-block" style="margin-top:10px;border-left-color:#3498db;">
+      <div class="t-body-sm" style="color:var(--text-primary);">真正痛苦的不是分化本身，而是第三种人：想高频开发但跑不动，又没法安心低频消耗。卡在中间的人最多。</div>
+    </div>
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 08 圆桌·马斯洛 · paper ═══════════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">圆桌 · 分化是什么</span>
+      <span class="card-num">08 / 14</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div style="margin-top:4px;">
       <div class="speaker-label">
         <div class="speaker-dot dot-maslow"></div>
         <div>
-          <div class="speaker-name">马斯洛</div>
-          <div class="speaker-role">需求阶梯在哪里封顶</div>
+          <div class="speaker-name" style="color:var(--text-primary);">马斯洛</div>
+          <div class="speaker-role">人本主义心理学家</div>
         </div>
       </div>
-      <div class="t-body-sm">膨胀者是被激活了成长需求，AI 让自我实现的门槛降低，需求像弹簧一样扩张。摆烂者的需求阶梯在安全感那里就封顶了，再往上没有驱力。</div>
     </div>
-    <div class="dialogue-divider"></div>
-    <div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);">道金斯说策略，我同意。但策略的根源在<strong style="font-weight:500;">需求结构</strong>。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">不是所有人面对同一个资源做出不同选择——而是他们想要的东西根本不一样。</div>
+    <div class="hr-line" style="margin:12px 0;"></div>
+    <div class="t-body" style="color:var(--text-primary);"><strong style="font-weight:500;color:var(--accent);">膨胀者</strong>的成长需求被激活了。AI 让自我实现的门槛大幅降低——以前写一本书要三年，现在 AI 辅助下可能三个月出框架。他们的需求像弹簧一样扩张：做完 A 想到 B，做完 B 看到 C，永远有下一个「值得做」的事。</div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);"><strong style="font-weight:500;color:var(--text-secondary);">摆烂者</strong>的需求阶梯在安全感和归属感那里就封顶了。再往上走是自我实现，但他们没有内在驱力去够那个层级。AI 对他们来说只是又一个可以不动的理由——「反正我不需要那些东西」。</div>
+    <div class="quote-block" style="margin-top:10px;border-left-color:#d4a500;">
+      <div class="t-body-sm" style="color:var(--text-primary);">膨胀和摆烂的区别，在于你的需求阶梯在哪里封顶。有人封顶在温饱，有人封顶在尊严，有人根本没有天花板。</div>
+    </div>
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 09 圆桌·克鲁泡特金 · paper ═══════════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">圆桌 · 分化是什么</span>
+      <span class="card-num">09 / 14</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div style="margin-top:4px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-kropotkin"></div>
+        <div>
+          <div class="speaker-name" style="color:var(--text-primary);">克鲁泡特金</div>
+          <div class="speaker-role">无政府主义者 / 地理学家</div>
+        </div>
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);">两位都在说分化，好像两类人是两个物种。<strong style="font-weight:500;">我不同意这个前提。</strong></div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">你们观察到的现象——有人拼命用 AI 扩张，有人躺平——这不是进化分化，这是<strong style="font-weight:500;">社会分工的前兆</strong>。</div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);">在自然界，蜂群里的探索蜂和留守蜂不是两个品种。它们是同一种生物，根据信息素浓度切换的角色。探索蜂飞出去找蜜源，留守蜂守巢维护。哪只蜂扮演哪个角色，取决于环境和时机，不是写在基因里的宿命。</div>
+    <div class="t-body" style="margin-top:8px;color:var(--text-primary);">人类也一样。所谓「摆烂者」，可能只是等待信号的人。等膨胀者探明了路径、降低了风险、建立了基础设施，他们会跟上来——不是因为他们变了，而是因为条件成熟了。</div>
+    <div class="quote-block" style="margin-top:10px;border-left-color:#27ae60;">
+      <div class="t-body-sm" style="color:var(--text-primary);">不要把时序差异当成物种差异。先动者和后动者是同一种群里的不同角色，不是两个物种。</div>
+    </div>
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 10 圆桌·韩炳哲 · dark — 反驳 ═══════════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">圆桌 · 分化是什么</span>
+      <span class="card-num">10 / 14</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div style="margin-top:4px;">
       <div class="speaker-label">
         <div class="speaker-dot dot-han"></div>
         <div>
           <div class="speaker-name">韩炳哲</div>
-          <div class="speaker-role">同一种病的两个症状</div>
+          <div class="speaker-role">哲学家</div>
         </div>
       </div>
-      <div class="t-body-sm">一个停不下来——AI 越好用越无法停，停下来等于「浪费」工具的潜力。另一个起不来——反正跑不赢，不如不跑。两个都被同一个系统抽干了。</div>
+    </div>
+    <div class="t-body" style="margin-top:8px;">你们三个人都在给这种现象找合理性——进化策略、需求层级、社会分工——好像这两种状态都是<strong style="font-weight:400;color:#fff;">「正常的」</strong>。</div>
+    <div class="t-body" style="margin-top:8px;">我要说的是：<strong style="font-weight:400;color:#fff;">膨胀和摆烂是同一种病的两个症状。</strong></div>
+    <div class="hr-line" style="margin:12px 0;"></div>
+    <div class="t-body"><strong style="font-weight:400;color:var(--accent);">膨胀者</strong>不是在「自我实现」。他是在绩效逻辑的强迫下不停运转——AI 越好用，他越无法停下来，因为停下来就意味着「浪费」了工具的潜力。他不是想要更多，他是<strong style="font-weight:400;color:#fff;">不敢停下来</strong>。</div>
+    <div class="t-body" style="margin-top:8px;"><strong style="font-weight:400;color:rgba(255,255,255,0.65);">摆烂者</strong>也不是「等待信号」。他是在同一种绩效逻辑面前直接放弃了——反正跑不赢，不如不跑。他不是不想参与，他是<strong style="font-weight:400;color:#fff;">被系统判定为不合格后选择了退出</strong>。</div>
+    <div class="quote-block" style="margin-top:10px;border-left-color:#c0392b;">
+      <div class="t-body-sm">膨胀是绩效强迫的躁狂相，摆烂是绩效放弃的抑郁相。两者都被同一个系统抽干了——区别只在反应模式，不在病因。</div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 07 圆桌·调节 · paper ===== -->
+<!-- ═══════════════ 11 圆桌·调节·韩+马 · paper ═══════════════ -->
 <div class="card">
   <div class="card-inner">
     <div class="card-header">
-      <span class="card-tag">圆桌 · 调节</span>
-      <span class="card-num">07 / 08</span>
+      <span class="card-tag">圆桌 · 怎么调节</span>
+      <span class="card-num">11 / 14</span>
     </div>
     <div class="hr-accent"></div>
     <div class="t-xl" style="color:var(--text-primary);">知道了，<span class="accent-text">然后呢</span></div>
+
+    <!-- 韩炳哲 -->
     <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-han"></div>
+        <div>
+          <div class="speaker-name" style="color:var(--text-primary);">韩炳哲</div>
+          <div class="speaker-role">先别急着「解决」</div>
+        </div>
+      </div>
+      <div class="t-body" style="color:var(--text-primary);">你们说的「怎么调节」，隐含了一个前提：忙是个需要修的问题，闲是目标。</div>
+      <div class="t-body" style="margin-top:6px;color:var(--text-primary);">真正的问题不是太忙，是你失去了<strong style="font-weight:500;">「不忙」的能力</strong>。当代人的疲惫不是因为外部压迫，而是自我剥削——你自己对自己说「再做一个」「再来一轮」。AI 不是你的老板，你是你自己的老板，而且你比你任何一个老板都狠。</div>
+      <div class="t-body-sm" style="margin-top:6px;color:var(--text-secondary);">所以「调节」这个词本身就暴露了问题——你把生活当成了一个需要优化的项目。</div>
+    </div>
+
+    <div class="dialogue-divider"></div>
+
+    <!-- 马斯洛 -->
+    <div>
       <div class="speaker-label">
         <div class="speaker-dot dot-maslow"></div>
         <div>
@@ -309,58 +465,101 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
           <div class="speaker-role">不是砍需求，是排序</div>
         </div>
       </div>
-      <div class="t-body-sm" style="color:var(--text-primary);">AI 同时降低了所有需求层级的门槛，安全感、归属感、自我实现全在叫你。你被多层需求同时拉扯。让低层真正满足，再放高层进来。</div>
+      <div class="t-body" style="color:var(--text-primary);">韩炳哲说了症状，我说机制。你为什么停不下来？因为你的需求层级被 AI <strong style="font-weight:500;">扰乱了</strong>。</div>
+      <div class="t-body" style="margin-top:6px;color:var(--text-primary);">正常情况下人的需求是逐层满足、逐层上升的——安全感够了才追求归属，归属够了才追求自我实现。但 AI 同时降低了所有层级的门槛，你的需求不是逐层上升，是同时爆炸：数据备份（安全感）、社区分享（归属感）、创作项目（自我实现）全都在叫你。</div>
+      <div class="t-body-sm" style="margin-top:6px;color:var(--text-secondary);">你不是「太忙」，你是被多层需求同时拉扯。调节的方向不是砍需求，是把它们排好序，让低层的先真正吃饱。</div>
     </div>
-    <div class="dialogue-divider"></div>
-    <div>
+
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 12 圆桌·调节·道+克 · paper ═══════════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">圆桌 · 怎么调节</span>
+      <span class="card-num">12 / 14</span>
+    </div>
+    <div class="hr-accent"></div>
+
+    <!-- 道金斯 -->
+    <div style="margin-top:4px;">
       <div class="speaker-label">
         <div class="speaker-dot dot-dawkins"></div>
         <div>
           <div class="speaker-name" style="color:var(--text-primary);">道金斯</div>
-          <div class="speaker-role">制造边际收益为零</div>
+          <div class="speaker-role">制造边际收益为零的条件</div>
         </div>
       </div>
-      <div class="t-body-sm" style="color:var(--text-primary);">狩猎采集者每天只干三到五小时——不是热爱闲暇，是打再多猎也存不住。现代人忙，是因为 AI 永远能给你更多产出。给自己设硬上限，让「再做一轮」无处存放。</div>
+      <div class="t-body" style="color:var(--text-primary);">两位都在谈心理，我换个角度。从进化上看，「闲」从来不是人类的自然状态。</div>
+      <div class="t-body" style="margin-top:6px;color:var(--text-primary);">狩猎采集者每天只工作三到五小时，不是因为热爱闲暇，是因为更多劳动的边际收益为零——打再多猎物也存不住。现代人忙，根本原因是技术让劳动的边际收益<strong style="font-weight:500;">永远不为零</strong>——AI 永远能给你更多产出，你永远有理由再做一轮。</div>
+      <div class="t-body-sm" style="margin-top:6px;color:var(--text-secondary);">所以「调节」的关键不是修心理，是人为制造边际收益为零的条件——给自己设定硬性上限，让「再做一轮」的产出无处存放。比如：六点之后不碰电脑。这不是自律，这是给自己造一个「存不住猎物」的环境。</div>
     </div>
+
     <div class="dialogue-divider"></div>
+
+    <!-- 克鲁泡特金 -->
     <div>
       <div class="speaker-label">
         <div class="speaker-dot dot-kropotkin"></div>
         <div>
           <div class="speaker-name" style="color:var(--text-primary);">克鲁泡特金</div>
-          <div class="speaker-role">把扩张变成公共品</div>
+          <div class="speaker-role">把个人扩张变成公共品</div>
         </div>
       </div>
-      <div class="t-body-sm" style="color:var(--text-primary);">一个人设闹钟靠不住。把你用 AI 开发出的能力变成「蜜源舞蹈」——让别人能跟上来。你的扩张就不是自我剥削，是集体资产。</div>
+      <div class="t-body" style="color:var(--text-primary);">道金斯说的方案听着像自我囚禁。你们三个人的方案都是个体方案——排序、设限、断舍离。但人是社会动物，个体自律在进化上是脆弱的策略。</div>
+      <div class="t-body" style="margin-top:6px;color:var(--text-primary);">真正可持续的调节不是一个人设闹钟，是找到一群人形成<strong style="font-weight:500;">互赖结构</strong>。蜂群不是靠每只蜂自律来分配劳动的，是靠信息素和舞蹈——你找到蜜源，跳舞告诉同伴，大家一起采。</div>
+      <div class="t-body-sm" style="margin-top:6px;color:var(--text-secondary);">你需要的是把你用 AI 开发出的能力变成「蜜源舞蹈」——让别人能跟上来，你的扩张就不是自我剥削，而是集体资产。摆烂者也就不再是摆烂，是等待编入的协作者。</div>
+    </div>
+
+    <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 13 收束 · dark ═══════════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">收束</span>
+      <span class="card-num">13 / 14</span>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div class="t-hero" style="font-size:32px;">效率释放需求<br>需求<span class="accent-text">吞噬</span>效率</div>
+      <div class="hr-line" style="margin-top:18px;"></div>
+      <div class="t-body" style="margin-top:14px;">杰文斯在 1865 年看懂了煤。你今天看懂了自己的时间吗？</div>
+      <div class="split-2" style="margin-top:16px;">
+        <div>
+          <div class="t-meta" style="color:rgba(255,255,255,0.4);">内功方向</div>
+          <div class="t-body-sm" style="color:rgba(255,255,255,0.6);margin-top:6px;">恢复「不忙」的能力<br>给多层需求排好序</div>
+        </div>
+        <div>
+          <div class="t-meta" style="color:var(--accent);">结构方向</div>
+          <div class="t-body-sm" style="color:rgba(255,255,255,0.8);margin-top:6px;">制造边际收益为零<br>把扩张变成公共品</div>
+        </div>
+      </div>
     </div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
 
-<!-- ===== 08 收束 · dark ===== -->
-<div class="card dark">
+<!-- ═══════════════ 14 尾声 · paper ═══════════════ -->
+<div class="card">
   <div class="card-inner">
     <div class="card-header">
-      <span></span>
-      <span class="card-num">08 / 08</span>
+      <span class="card-tag">尾声</span>
+      <span class="card-num">14 / 14</span>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-      <div class="t-hero" style="font-size:34px;">效率释放需求<br>需求<span class="accent-text">吞噬</span>效率</div>
-      <div class="t-body" style="margin-top:16px;">杰文斯在 1865 年看懂了煤。你今天看懂了自己的时间吗？</div>
-      <div class="hr-line" style="margin-top:16px;"></div>
-      <div class="split-2">
-        <div>
-          <div class="t-meta" style="color:rgba(255,255,255,0.4);">内功</div>
-          <div class="t-body-sm" style="color:rgba(255,255,255,0.6);margin-top:6px;">恢复闲的能力<br>给需求排序</div>
-        </div>
-        <div>
-          <div class="t-meta" style="color:var(--accent);">结构</div>
-          <div class="t-body-sm" style="color:rgba(255,255,255,0.8);margin-top:6px;">制造边际收益为零<br>把扩张变成公共品</div>
-        </div>
-      </div>
-      <div class="hr-line" style="margin-top:14px;"></div>
-      <div class="t-body-sm" style="color:rgba(255,255,255,0.4);">核心未解：你到底是「停不下来」还是「不想停」？前者需要结构，后者需要内省。</div>
+    <div class="hr-accent"></div>
+    <div class="t-xl" style="color:var(--text-primary);">最后一个问题</div>
+    <div class="t-body" style="margin-top:14px;color:var(--text-primary);">两轮讨论结束，留下一个没解开的张力：</div>
+    <div class="quote-block" style="margin-top:12px;">
+      <div class="t-body" style="color:var(--text-primary);">你到底是<strong style="font-weight:500;">「停不下来」</strong>还是<strong style="font-weight:500;">「不想停」</strong>？</div>
     </div>
+    <div class="t-body" style="margin-top:12px;color:var(--text-primary);">如果是前者——你被结构裹挟了，需要像道金斯和克鲁泡特金说的那样改环境、建互赖关系。</div>
+    <div class="t-body" style="margin-top:6px;color:var(--text-primary);">如果是后者——你在享受这种忙碌，只是嘴上抱怨累，那韩炳哲的话就是给你的一面镜子：你剥削的不是别人，是你自己。</div>
+    <div class="hr-line" style="margin:14px 0;"></div>
+    <div class="t-body-sm" style="color:var(--text-secondary);">答案决定了你的调节方向。而且这个答案可能会变——今天你是前者，明天你可能变成后者。重要的不是选边站，是时不时问自己一句。</div>
     <div class="card-footer"><span class="brand-mark">MERJIC</span></div>
   </div>
 </div>
