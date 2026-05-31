@@ -602,9 +602,32 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
     });
   }
 
+  function wrapBookTitles(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(node) {
+      if (!/[《》]/.test(node.textContent)) return;
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(《|》)/).forEach(function(part) {
+        if (part === '《' || part === '》') {
+          var s = document.createElement('span');
+          s.style.cssText = 'display:inline-block;padding:0 1.5px;letter-spacing:0;';
+          s.textContent = part;
+          frag.appendChild(s);
+        } else if (part) {
+          frag.appendChild(document.createTextNode(part));
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   function captureCard(card) {
     var saved = card.innerHTML;
     wrapBrackets(card);
+    wrapBookTitles(card);
     return new Promise(function(resolve) {
       requestAnimationFrame(function() {
         html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null }).then(function(canvas) {
@@ -676,6 +699,10 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
       }, 300);
     }
   };
+
+  // 页面加载时也处理一次书名号和括号间距
+  wrapBrackets(document.body);
+  wrapBookTitles(document.body);
 })();
 </script>
 </body>
