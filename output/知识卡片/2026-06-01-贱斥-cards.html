@@ -58,6 +58,7 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 .dark .t-hero, .dark .t-hero-sm, .dark .t-xl { color: #fff; }
 .accent-text { color: var(--accent); }
 .dark .accent-text { color: #f59e4b; }
+.accent-light { color: #f59e4b; font-weight: 400; }
 
 .hr-accent { width: 36px; height: 2px; background: var(--accent); margin-bottom: 14px; }
 .dark .hr-accent { background: rgba(255,255,255,0.7); }
@@ -185,7 +186,7 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
     <div class="hr-accent"></div>
     <div class="t-xl" style="color:#fff;">你把它推出去，它还要回来</div>
     <div class="t-body" style="margin-top:12px;">
-      核心悖论：<span style="color:#f59e4b;font-weight:400;">被排斥物对边界构成持续威胁</span>——它不被允许进入主体的世界，但它的存在本身就证明了边界的脆弱性。
+      核心悖论：<span class="accent-light">被排斥物对边界构成持续威胁</span>——它不被允许进入主体的世界，但它的存在本身就证明了边界的脆弱性。
     </div>
     <div class="quote-block" style="margin-top:12px;">
       <div class="t-body-sm" style="color:rgba(255,255,255,0.7);">
@@ -278,7 +279,7 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
         真正的原因：那个东西<span class="text-kristeva">卡在两个分类之间</span>。尸体曾经是人，正在变成物——大脑不知道该把它放哪一边。
       </div>
     </div>
-    <div class="quote-block" style="margin-top:10px;border-left-color:#e0620a;">
+    <div class="quote-block" style="margin-top:10px;">
       <div class="t-body-sm">贱斥触及的是「我」和「非我」的界线。它不是普通情绪，是一次微型崩溃。你觉得「我」完整有边界，贱斥物告诉你：不是的。</div>
     </div>
     <div class="t-body" style="margin-top:8px;">每一次「推出去」都是在重建「我」。被推开的东西越让你恶心，说明它越威胁到这个定义。</div>
@@ -364,16 +365,16 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
       <div class="t-hero-sm" style="color:#fff;">四条路，同一个路口</div>
       <div class="hr-line" style="margin-top:14px;"></div>
       <div class="t-body" style="color:rgba(255,255,255,0.82);margin-top:12px;">
-        <span style="color:#f59e4b;">克里斯蒂娃：</span>维持「我是谁」→ 推出去
+        <span class="accent-light">克里斯蒂娃：</span>维持「我是谁」→ 推出去
       </div>
       <div class="t-body" style="color:rgba(255,255,255,0.82);margin-top:3px;">
-        <span style="color:#58d68d;">道格拉斯：</span>文化执法 → 教出来的
+        <span class="text-douglas">道格拉斯：</span>文化执法 → 教出来的
       </div>
       <div class="t-body" style="color:rgba(255,255,255,0.82);margin-top:3px;">
-        <span style="color:#e74c5e;">巴塔耶：</span>秩序崩塌 → 太大了
+        <span class="text-bataille">巴塔耶：</span>秩序崩塌 → 太大了
       </div>
       <div class="t-body" style="color:rgba(255,255,255,0.82);margin-top:3px;">
-        <span style="color:#5dade2;">弗洛伊德：</span>怕散架 → 和妈妈分开了
+        <span class="text-freud">弗洛伊德：</span>怕散架 → 和妈妈分开了
       </div>
       <div class="hr-line" style="margin-top:14px;"></div>
       <div class="t-xl" style="color:#fff;margin-top:12px;">下一轮：克服贱斥，<br>是进化还是麻木？</div>
@@ -488,7 +489,7 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
       <div class="hr-line" style="margin-top:16px;"></div>
 
       <div class="t-body" style="color:rgba(255,255,255,0.82);margin-top:16px;">
-        <span style="color:#f59e4b;font-weight:400;">整合型</span> — 医学生消化了「人体就是物质」这个真象，把尸体重新归类为不可贱斥之物
+        <span class="accent-light">整合型</span> — 医学生消化了「人体就是物质」这个真象，把尸体重新归类为不可贱斥之物
       </div>
       <div class="t-meta" style="color:rgba(255,255,255,0.35);margin-top:2px;">克里斯蒂娃 · 进化</div>
 
@@ -578,77 +579,104 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-
-function wrapBrackets(root) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-  const nodes = [];
-  let n;
-  while ((n = walker.nextNode())) nodes.push(n);
-  nodes.forEach(node => {
-    if (!/[「」]/.test(node.textContent)) return;
-    const frag = document.createDocumentFragment();
-    node.textContent.split(/(「|」)/forEach(part => {
-      if (part === '「' || part === '」') {
-        const s = document.createElement('span');
-        s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
-        s.textContent = part;
-        frag.appendChild(s);
-      } else if (part) {
-        frag.appendChild(document.createTextNode(part));
-      }
+(function(){
+  function wrapBrackets(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(node) {
+      if (!/[「」]/.test(node.textContent)) return;
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(「|」)/).forEach(function(part) {
+        if (part === '「' || part === '」') {
+          var s = document.createElement('span');
+          s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
+          s.textContent = part;
+          frag.appendChild(s);
+        } else if (part) {
+          frag.appendChild(document.createTextNode(part));
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
     });
-    node.parentNode.replaceChild(frag, node);
-  });
-}
-
-async function captureCard(card) {
-  const saved = card.innerHTML;
-  wrapBrackets(card);
-  await new Promise(r => requestAnimationFrame(r));
-  const canvas = await html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null });
-  card.innerHTML = saved;
-  return canvas;
-}
-
-async function exportPDF() {
-  var cards = document.querySelectorAll('.card');
-  var status = document.getElementById('status');
-  status.textContent = '生成中…';
-  var pw = 180, ph = 240;
-  var jsPDF = window.jspdf.jsPDF;
-  var doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
-  for (var i = 0; i < cards.length; i++) {
-    status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
-    var canvas = await captureCard(cards[i]);
-    var imgData = canvas.toDataURL('image/jpeg', 0.95);
-    if (i > 0) doc.addPage([pw, ph]);
-    doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
   }
-  doc.save('贱斥-abjection-swiss-dark.pdf');
-  status.textContent = '完成 ✓';
-  setTimeout(function () { status.textContent = ''; }, 3000);
-}
 
-async function exportAll() {
-  var cards = document.querySelectorAll('.card');
-  var status = document.getElementById('status');
-  status.textContent = '生成中…';
-  var zip = new JSZip();
-  for (var i = 0; i < cards.length; i++) {
-    status.textContent = (i + 1) + ' / ' + cards.length;
-    var canvas = await captureCard(cards[i]);
-    var base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
-    zip.file(String(i + 1).padStart(2, '0') + '.jpg', base64, { base64: true });
+  function captureCard(card) {
+    var saved = card.innerHTML;
+    wrapBrackets(card);
+    return new Promise(function(resolve) {
+      requestAnimationFrame(function() {
+        html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null }).then(function(canvas) {
+          card.innerHTML = saved;
+          resolve(canvas);
+        });
+      });
+    });
   }
-  status.textContent = '打包中…';
-  var blob = await zip.generateAsync({ type: 'blob' });
-  var link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = '贱斥-abjection-swiss-dark-卡片.zip';
-  link.click();
-  status.textContent = '完成 ✓';
-  setTimeout(function () { status.textContent = ''; }, 3000);
-}
+
+  window.exportPDF = function() {
+    window.print();
+  };
+
+  window.exportAll = function() {
+    var cards = document.querySelectorAll('.card');
+    var status = document.getElementById('status');
+    status.textContent = '加载依赖…';
+
+    function checkLibs() {
+      return typeof html2canvas !== 'undefined' && typeof JSZip !== 'undefined' && typeof window.jspdf !== 'undefined';
+    }
+
+    function doExport() {
+      status.textContent = '生成中：0 / ' + cards.length;
+      var zip = new JSZip();
+      var idx = 0;
+
+      function next() {
+        if (idx >= cards.length) {
+          status.textContent = '打包中…';
+          zip.generateAsync({ type: 'blob' }).then(function(blob) {
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = '贱斥-abjection-swiss-dark-卡片.zip';
+            link.click();
+            status.textContent = '完成 ✓';
+            setTimeout(function() { status.textContent = ''; }, 3000);
+          });
+          return;
+        }
+        status.textContent = '生成中：' + (idx + 1) + ' / ' + cards.length;
+        captureCard(cards[idx]).then(function(canvas) {
+          var base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
+          var name = String(idx + 1);
+          while (name.length < 2) name = '0' + name;
+          zip.file(name + '.jpg', base64, { base64: true });
+          idx++;
+          next();
+        });
+      }
+      next();
+    }
+
+    if (checkLibs()) {
+      doExport();
+    } else {
+      var retry = 0;
+      var timer = setInterval(function() {
+        retry++;
+        if (checkLibs() || retry > 20) {
+          clearInterval(timer);
+          if (checkLibs()) {
+            doExport();
+          } else {
+            status.textContent = 'CDN 加载失败，请检查网络后刷新';
+          }
+        }
+      }, 300);
+    }
+  };
+})();
 </script>
 </body>
 </html>
