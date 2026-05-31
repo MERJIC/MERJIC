@@ -283,6 +283,7 @@ tags: [discipline/行为经济学, pattern/循环, apply/商业]
 1. **frontmatter 字段名合规**：所有字段名在模板列表内（name / domain / date / source / tags），无禁用字段
 2. **name 字段格式**：`中文名（English Name）`，括号是中文全角括号，英文首字母大写
 3. **tags 三类必填且在词汇表内 + person 可选**：`tags` 数组包含 `discipline/`、`pattern/`、`apply/` 三类前缀，值全在上方词汇表内。`person/` 为可选附加层，仅当正文实质性引用的学者在白名单内时才标注（白名单及准入门槛见上方 person 说明）。禁止单独使用 `discipline:` 字段——所有 discipline 必须放进 `tags` 数组
+   - **tag 顺序固定为：discipline → pattern → apply → person**。同类别内部多个标签按需排列，不强制字母序。lint 会检测并自动修复顺序错误
 4. **domain 合规**：数组格式，学科名在 11 个顶层固定值内
 5. **正文无 h1 标题**：文件名即标题，正文从 `## h2` 开始
 6. **章节结构完整且顺序正确**：核心机制 → 入口场景 → 现实锚点 → 适用边界 →（圆桌沉淀，可选）。无非标准章节名

@@ -279,6 +279,31 @@ def check_file(filepath: str, scholar_dict: dict, fix: bool = False) -> List[dic
                 "fixable": True, "auto_fix": "remove_discipline_field",
             })
 
+        # 检查 tags 顺序：discipline → pattern → apply → person
+        tag_order_prefixes = ["discipline/", "pattern/", "apply/", "person/"]
+        order_violation = False
+        max_seen_idx = -1
+        for tag in tags:
+            for idx, prefix in enumerate(tag_order_prefixes):
+                if tag.startswith(prefix):
+                    if idx < max_seen_idx:
+                        order_violation = True
+                    max_seen_idx = max(max_seen_idx, idx)
+                    break
+        if order_violation:
+            # 重排：按 discipline/pattern/apply/person 分组，保持各组内部原有顺序
+            reordered = []
+            for prefix in tag_order_prefixes:
+                for t in tags:
+                    if t.startswith(prefix):
+                        reordered.append(t)
+            issues.append({
+                "rule": "F03", "concept": concept_name,
+                "msg": f"tags 顺序应为 discipline → pattern → apply → person",
+                "fixable": True, "auto_fix": "reorder_tags",
+                "_reordered_tags": reordered,
+            })
+
     # ── 4. domain 合规 ───────────────────────────────────────
     if fm and "domain" in fm:
         domain = fm["domain"]
@@ -704,6 +729,20 @@ def fix_issue(content: str, issue: dict) -> str:
                 flags=re.MULTILINE,
             )
             content = content[:anchor_match.start()] + section_header + section_body + content[anchor_match.end():]
+        return content
+
+    if fix_type == "reorder_tags":
+        reordered = issue.get("_reordered_tags")
+        if reordered:
+            tags_str = ", ".join(reordered)
+            new_tags_line = f"tags: [{tags_str}]"
+            content = re.sub(
+                r"^tags:.*$",
+                new_tags_line,
+                content,
+                count=1,
+                flags=re.MULTILINE,
+            )
         return content
 
     return content
