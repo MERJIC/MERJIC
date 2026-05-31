@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375">
+<title>贱斥 · 知识卡片</title>
+<style>
+@font-face {
+  font-family: 'ZY LOYALTY';
+  src: url('fonts/ZY Loyalty.ttf') format('truetype');
+}
+:root {
+  --paper: #fafaf8;
+  --ink: #0a0a0a;
+  --accent: #e0620a;
+  --grey-3: #737373;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-helper: #737373;
+  --sans: "Inter", "Helvetica Neue", Helvetica, system-ui, sans-serif;
+  --sans-zh: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --mono: "JetBrains Mono", "IBM Plex Mono", "Consolas", monospace;
+  --card-w: 375px;
+  --card-h: 500px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #111;
+  font-family: var(--sans-zh), var(--sans);
+  padding: 32px 24px 60px;
+}
+.page-header {
+  color: #444;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.card {
+  width: var(--card-w);
+  height: var(--card-h);
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  flex-shrink: 0;
+}
+.card.dark   { background: var(--ink);  color: #fff; }
+.card.accent { background: var(--accent); color: #fff; }
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 16px;
+}
+.spacer { flex: 1; }
+
+/* header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.card-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-helper);
+}
+.dark .card-tag { color: rgba(255,255,255,0.5); }
+.accent .card-tag { color: rgba(255,255,255,0.75); }
+.card-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--text-helper);
+}
+.dark .card-num { color: rgba(255,255,255,0.4); }
+.accent .card-num { color: rgba(255,255,255,0.65); }
+
+/* typography */
+.t-hero {
+  font-family: var(--sans-zh), var(--sans);
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.t-hero-sm {
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.t-xl {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.3;
+}
+.t-body {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.dark .t-body { color: rgba(255,255,255,0.82); }
+.accent .t-body { color: rgba(255,255,255,0.9); }
+
+.t-body-sm {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.dark .t-body-sm { color: rgba(255,255,255,0.75); }
+.accent .t-body-sm { color: rgba(255,255,255,0.85); }
+
+.t-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-helper);
+}
+.dark .t-meta { color: rgba(255,255,255,0.5); }
+.accent .t-meta { color: rgba(255,255,255,0.7); }
+.accent [style*="color:var(--text-helper)"] { color: rgba(255,255,255,0.8) !important; }
+
+/* 人物颜色系统 */
+.text-kristeva   { color: #e0620a; }
+.text-douglas    { color: #27ae60; }
+.text-bataille    { color: #c0392b; }
+.text-freud       { color: #3498db; }
+
+.dark .text-kristeva   { color: #f59e4b; }
+.dark .text-douglas    { color: #58d68d; }
+.dark .text-bataille    { color: #e74c5e; }
+.dark .text-freud       { color: #5dade2; }
+
+.accent .text-kristeva,
+.accent .text-douglas,
+.accent .text-bataille,
+.accent .text-freud { color: #fff; }
+
+/* hr */
+.hr-accent {
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 14px;
+}
+.dark .hr-accent { background: rgba(255,255,255,0.7); }
+.accent .hr-accent { background: rgba(255,255,255,0.7); }
+
+/* quote block */
+.quote-block {
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+  margin: 10px 0;
+}
+.dark .quote-block { border-left-color: rgba(255,255,255,0.5); }
+.accent .quote-block { border-left-color: rgba(255,255,255,0.5); }
+
+/* speaker label */
+.speaker-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.speaker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.accent .speaker-dot { background: rgba(255,255,255,0.9); }
+.dot-kristeva   { background: #e0620a; }
+.dot-douglas    { background: #27ae60; }
+.dot-bataille    { background: #c0392b; }
+.dot-freud       { background: #3498db; }
+
+.speaker-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.dark .speaker-name { color: rgba(255,255,255,0.9); }
+.dark [style*="color:var(--text-primary)"] { color: rgba(255,255,255,0.88) !important; }
+.accent [style*="color:var(--text-primary)"] { color: rgba(255,255,255,0.92) !important; }
+
+.dark .t-hero,
+.dark .t-hero-sm,
+.dark .t-xl { color: #fff; }
+.accent .t-hero,
+.accent .t-hero-sm,
+.accent .t-xl { color: #fff; }
+
+.speaker-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-helper);
+  letter-spacing: 0.04em;
+}
+.dark .speaker-role { color: rgba(255,255,255,0.5); }
+.accent .speaker-role { color: rgba(255,255,255,0.5); }
+
+/* point list */
+.point-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.point-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.point-mark {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.dark .point-mark { background: rgba(255,255,255,0.6); }
+.accent .point-mark { background: rgba(255,255,255,0.6); }
+
+/* participant row (阵容卡) */
+.participant-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.participant-initial {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.participant-initial.c1 { background: #e0620a; }
+.participant-initial.c2 { background: #27ae60; }
+.participant-initial.c3 { background: #c0392b; }
+.participant-initial.c4 { background: #3498db; }
+
+.participant-name {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.3;
+}
+.participant-desc {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.03em;
+}
+
+/* dialogue divider */
+.dialogue-divider {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.dark .dialogue-divider { border-top-color: rgba(255,255,255,0.12); }
+
+/* footer */
+.card-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.brand-mark {
+  font-family: 'ZY LOYALTY', var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--text-helper);
+}
+.dark .brand-mark { color: rgba(255,255,255,0.35); }
+.accent .brand-mark { color: rgba(255,255,255,0.6); }
+
+/* tag pill */
+.tag-pill {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  color: var(--text-helper);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.dark .tag-pill { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
+
+/* export UI */
+.hint {
+  color: #555;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-align: center;
+  margin: 36px auto 14px;
+  line-height: 1.6;
+}
+.export-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  cursor: pointer;
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .stack { gap: 0; }
+  .page-header, .hint, .export-bar { display: none; }
+  .card { page-break-after: always; margin: 0; }
+  @page { size: 375px 500px; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">Abjection · Knowledge Cards</div>
+<div class="stack">
+
+<!-- ═══════════ 01 封面 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Abjection</span>
+      <span class="card-num">01 / 12</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="t-hero">那些让你恶心<br>却又甩不掉的<br>东西，<br>到底在替谁说话？</div>
+    <div class="spacer"></div>
+    <div class="card-footer">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 02 概念定义 ═══════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Definition</span>
+      <span class="card-num">02 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl">贱斥 · Abjection</div>
+    <div style="margin-top:12px;">
+      <span class="tag-pill">精神分析</span>
+      <span class="tag-pill">美学</span>
+      <span class="tag-pill">自我</span>
+      <span class="tag-pill">创作</span>
+    </div>
+    <div class="t-body" style="margin-top:14px;">
+      克里斯蒂娃在《恐怖的权力》（1980）中提出：主体面对那些<span style="color:var(--accent);font-weight:400;">既不完全属于客体、也不完全属于自身</span>的东西时产生的排斥反应。
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      尸体、排泄物、腐烂的食物、开放的伤口——这些东西让人恶心，不是因为它们「有毒」或「有菌」，而是因为它们模糊了<span style="color:var(--accent);font-weight:400;">「我」和「非我」的边界</span>。
+    </div>
+    <div class="spacer"></div>
+    <div class="card-footer">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 03 核心悖论 + 入口场景 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Paradox</span>
+      <span class="card-num">03 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl" style="color:#fff;">你把它推出去，它还要回来</div>
+    <div class="t-body" style="margin-top:14px;">
+      贱斥的核心悖论：<span style="color:#f59e4b;font-weight:400;">被排斥物对边界构成持续威胁</span>——它不被允许进入主体的世界，但它的存在本身就证明了边界的脆弱性。
+    </div>
+    <div class="quote-block" style="margin-top:14px;">
+      <div class="t-body-sm" style="color:rgba(255,255,255,0.7);">
+        主体性正是在反复排斥贱斥物的过程中被维持的。「我」之所以是「我」，靠的是不断把那些模糊边界的东西赶出去。
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:14px;">
+      张姐在厨房收拾鱼二十年，划开鱼腹内脏滑出来她不觉得恶心。但今天鱼肚子里有一团带毛的东西，像一颗没成型的头——她手抖了，整条鱼掉进水池，血水往下滴，觉得自己的皮肤也变成了一层可以划开的东西。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 04 现实锚点 ═══════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Anchors</span>
+      <span class="card-num">04 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl">贱斥在现实中长什么样？</div>
+    <ul class="point-list" style="margin-top:14px;">
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm">
+          <span style="color:var(--accent);font-weight:400;">尸体与哀悼：</span>曾经是人，正在变成物。葬礼仪式化处理正是为了管理贱斥反应
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm">
+          <span style="color:var(--accent);font-weight:400;">伤口与医疗：</span>看到自己的内部暴露在外，第一反应是回避——「我」的内部不该在外面
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm">
+          <span style="color:var(--accent);font-weight:400;">食物禁忌：</span>腐败食物引发本能恶心——「曾经的食物」和「有害异物」之间的模糊地带
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm">
+          <span style="color:var(--accent);font-weight:400;">身体恐怖叙事：</span>《变蝇人》《毛骨悚然》中身体异变引发的恶心，底层是贱斥在运作
+        </div>
+      </li>
+    </ul>
+    <div class="t-body-sm" style="margin-top:14px;color:var(--text-helper);">
+      不是所有恶心都是贱斥。纯粹的审美不适够不上——贱斥必须涉及对主体性的威胁。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 05 阵容 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Panel</span>
+      <span class="card-num">05 / 12</span>
+    </div>
+    <div class="t-xl" style="color:#fff;margin-bottom:18px;">圆桌阵容</div>
+
+    <div class="participant-row" style="border-top:none;padding-top:0;">
+      <div class="participant-initial c1"></div>
+      <div>
+        <div class="participant-name">朱莉娅·克里斯蒂娃  Julia Kristeva</div>
+        <div class="participant-desc">哲学家 / 精神分析学家</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c2"></div>
+      <div>
+        <div class="participant-name">玛丽·道格拉斯  Mary Douglas</div>
+        <div class="participant-desc">人类学家</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c3"></div>
+      <div>
+        <div class="participant-name">乔治·巴塔耶  Georges Bataille</div>
+        <div class="participant-desc">哲学家 / 文学家</div>
+      </div>
+    </div>
+    <div class="participant-row">
+      <div class="participant-initial c4"></div>
+      <div>
+        <div class="participant-name">西格蒙德·弗洛伊德  Sigmund Freud</div>
+        <div class="participant-desc">精神分析创始人</div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="card-footer">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 06 克里斯蒂娃 ═══════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Kristeva</span>
+      <span class="card-num">06 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl">你恶心，是在拼命维持「我是谁」</div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-kristeva"></div>
+        <div><span class="speaker-name text-kristeva">克里斯蒂娃</span></div>
+      </div>
+      <div class="t-body">
+        让你恶心的不是物理属性。穿上防护服面对一具尸体，照样不舒服。<br><br>
+        真正的原因：那个东西<span class="text-kristeva">卡在两个分类之间</span>。尸体曾经是人，正在变成物——大脑不知道该把它放哪一边。
+      </div>
+    </div>
+    <div class="quote-block kristeva" style="margin-top:12px;">
+      <div class="t-body-sm">
+        贱斥触及的是「我」和「非我」的界线。它不是普通情绪，是一次微型崩溃。你觉得「我」完整有边界，贱斥物告诉你：不是的。
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      每一次「推出去」——扭过头、洗掉手、把画面赶出脑海——都是在重建「我」。被推开的东西越让你恶心，说明它越威胁到这个定义。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 07 道格拉斯 ═══════════ -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Douglas</span>
+      <span class="card-num">07 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl">你的恶心，是文化借你的胃在执法</div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-douglas"></div>
+        <div><span class="speaker-name text-douglas">道格拉斯</span></div>
+      </div>
+      <div class="t-body">
+        有些地方的人吃虫子吃得开心。你给他们看长了霉的芝士——法国人当宝贝的——他们可能直接吐出来。<br><br>
+        虫子不恶心，芝士也不恶心。<span class="text-douglas">是「放错了位置」才恶心。</span>
+      </div>
+    </div>
+    <div class="quote-block" style="margin-top:12px;border-left-color:#27ae60;">
+      <div class="t-body-sm">
+        脏 = 放错了位置的东西。泥土在地上不脏，抹到脸上就脏了。口水在嘴里不脏，吐到别人碗里就脏了。
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      每个社会都有一套隐形分类系统，从小教你，教到你意识不到它的存在。你以为粪便天然脏——其实从两三岁开始就被训练出来的反应。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 08 巴塔耶 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Bataille</span>
+      <span class="card-num">08 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl" style="color:#fff;">解释本身，就是对贱斥的背叛</div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-bataille"></div>
+        <div><span class="speaker-name text-bataille">巴塔耶</span></div>
+      </div>
+      <div class="t-body">
+        你们都在把贱斥变得可以理解——主体维护机制、文化分类执法。一旦说「哦原来因为边界模糊」，你就已经驯化了它。<br><br>
+        从一个想吐的人变成了写论文的人。<span class="text-bataille">论文不会让人想吐。</span>
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      贱斥之所以强大，是因为它触碰到了<span class="text-bataille">过量</span>。死亡不可控，腐烂不可控，排泄不可控。这些东西提醒你：你以为自己是生活的主人，其实你不是。有一个比你大得多的东西在运转。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 09 弗洛伊德 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Freud</span>
+      <span class="card-num">09 / 12</span>
+    </div>
+    <div class="hr-accent"></div>
+    <div class="t-xl" style="color:#fff;">你恶心的每样东西都在说同一句话</div>
+    <div style="margin-top:14px;">
+      <div class="speaker-label">
+        <div class="speaker-dot dot-freud"></div>
+        <div><span class="speaker-name text-freud">弗洛伊德</span></div>
+      </div>
+      <div class="t-body">
+        边界、分类、过量——归根结底一件事：<span class="text-freud">害怕散架。</span>
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      婴儿时不觉得自己和妈妈是两个人。然后发现妈妈会走开——这是人类第一次贱斥体验。「曾经属于我的东西不再属于我了。」
+    </div>
+    <div class="quote-block" style="margin-top:12px;border-left-color:#3498db;">
+      <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+        排泄物为什么恶心？曾经是你身体的一部分，现在排出来了——就是你身体层面的「妈妈」。尸体为什么恶心？触发了对「人变成非人」的恐惧，终极版是对自己死亡的恐惧。
+      </div>
+    </div>
+    <div class="t-body" style="margin-top:10px;">
+      所有贱斥，追到最后都是<span class="text-freud">身体完整性的焦虑</span>。
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 10 综述 ═══════════ -->
+<div class="card accent">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Synthesis</span>
+      <span class="card-num">10 / 12</span>
+    </div>
+    <div class="t-hero-sm" style="margin-bottom:18px;">四条路，同一个路口</div>
+    <div class="t-body">
+      <span class="text-kristeva">克里斯蒂娃：</span>维持「我是谁」→ 推出去
+    </div>
+    <div class="t-body" style="margin-top:6px;">
+      <span class="text-douglas">道格拉斯：</span>文化执法 → 教出来的
+    </div>
+    <div class="t-body" style="margin-top:6px;">
+      <span class="text-bataille">巴塔耶：</span>秩序崩塌 → 太大了
+    </div>
+    <div class="t-body" style="margin-top:6px;">
+      <span class="text-freud">弗洛伊德：</span>怕散架 → 和妈妈分开了
+    </div>
+    <div class="spacer"></div>
+    <div class="hr-accent"></div>
+    <div class="t-body-sm" style="margin-top:10px;">
+      共识：贱斥永远关于「曾经属于我、又被我推开的东西」
+    </div>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 11 五种姿态 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Response</span>
+      <span class="card-num">11 / 12</span>
+    </div>
+    <div class="t-xl" style="color:#fff;margin-bottom:14px;">面对贱斥物的五种姿态</div>
+    <ul class="point-list">
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          <span style="color:#f59e4b;font-weight:400;">整合型</span> — 把贱斥物重新归类为「不可贱斥之物」，真正消化了真象 ✅ 进化
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          <span style="color:#f59e4b;font-weight:400;">切割型</span> — 建立心理防火墙，工作一个模式下班另一个 ⚠️ 有风险
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          <span style="color:#58d68d;font-weight:400;">中性化</span> — 从来没被教过要把那个东西当恶心 ✅ 健康
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          <span style="color:#e74c5e;font-weight:400;">追求型</span> — 主动寻求贱斥体验，用它证明自己还活着 ✅ 存在论适应
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          <span style="color:#5dade2;font-weight:400;">缺失型</span> — 完全没有贱斥反应，主体边界感知出了故障 ❌ 病理信号
+        </div>
+      </li>
+    </ul>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 12 洞见收尾 ═══════════ -->
+<div class="card dark">
+  <div class="card-inner">
+    <div class="card-header">
+      <span class="card-tag">Insight</span>
+      <span class="card-num">12 / 12</span>
+    </div>
+    <div class="t-hero-sm" style="color:#fff;margin-bottom:16px;">你最忍不住要看的东西，<br>恰好是你最恶心的</div>
+    <ul class="point-list" style="margin-top:8px;">
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          排斥强度 = 吸引强度。断裂点既是危险的又是迷人的——像站在悬崖边上
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          恶心是一张「暂勿接近」封条——封锁的不是危险本身，是你面对它的能力还不够
+        </div>
+      </li>
+      <li>
+        <div class="point-mark"></div>
+        <div class="t-body-sm" style="color:rgba(255,255,255,0.75);">
+          贱斥可用于个人成长与艺术变革，但用于大规模社会动员（把某群体定义为贱斥物）时理性退场——几乎总以悲剧收场
+        </div>
+      </li>
+    </ul>
+    <div class="card-footer" style="margin-top:auto;padding-top:10px;">
+      <span class="brand-mark">MERJIC</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- end stack -->
+
+<div class="hint">
+  浏览器打开此文件 → 按 Cmd+P → 选「另存为 PDF」→ 每张卡片自动一页
+</div>
+<div class="export-bar">
+  <button class="btn" onclick="window.print()">导出 PDF</button>
+</div>
+
+</body>
+</html>

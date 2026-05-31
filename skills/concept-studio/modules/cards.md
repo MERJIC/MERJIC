@@ -64,7 +64,7 @@ description: "将知识内容（圆桌讨论、多视角对话、哲学概念等
 | 尺寸 | 375×500px（3:4，小红书标准） |
 | 品牌水印 | ZY LOYALTY，9px，0.06em |
 | PDF 导出 | `window.print()`（html2canvas 在深色背景上有不可修复的颜色 bug） |
-| 输出路径 | `个人总部/output/知识卡片/YYYY-MM-DD-[主题]-cards.html` |
+| 输出路径 | `output/知识卡片/YYYY-MM-DD-[主题]-cards.html` |
 
 ### 黑橙白
 
@@ -178,7 +178,7 @@ description: "将知识内容（圆桌讨论、多视角对话、哲学概念等
 3. 从 DESIGN.md 的设计语言出发编排卡片，不套其他版式的原则
 4. 内容（圆桌讨论文本）不变，呈现方式随版式变化
 5. 导出统一用 `window.print()`
-6. 文件保存到 `个人总部/output/知识卡片/YYYY-MM-DD-[主题]-cards.html`
+6. 文件保存到 `output/知识卡片/YYYY-MM-DD-[主题]-cards.html`
 
 告知用户：
 - 浏览器打开 → 点「导出 PDF」→ 打印对话框选「另存为 PDF」
