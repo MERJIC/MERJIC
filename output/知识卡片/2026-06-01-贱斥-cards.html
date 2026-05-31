@@ -116,6 +116,8 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 .hint { color: #555; font-family: var(--mono); font-size: 11px; text-align: center; margin: 36px auto 14px; line-height: 1.6; }
 .export-bar { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 40px; }
 .btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: white; border: none; padding: 10px 22px; cursor: pointer; }
+.btn-o { background: transparent; border: 1px solid #555; color: #aaa; }
+.export-status { font-family: var(--mono); font-size: 11px; color: #666; }
 
 @media print {
   body { background: white; padding: 0; }
@@ -549,7 +551,7 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
         问自己三个问题：<br><br>
         我到底在排斥什么？<br>
         这个东西威胁了我对自己的哪个定义？<br>
-        我的 culture 是在替我做判断，还是我真的无法承受？
+        我的文化是在替我做判断，还是我真的无法承受？
       </div>
       <div class="hr-line" style="margin-top:16px;"></div>
       <div class="t-body-sm" style="color:rgba(255,255,255,0.45);margin-top:10px;">
@@ -563,11 +565,90 @@ body { background: #111; font-family: var(--sans-zh), var(--sans); padding: 32px
 </div><!-- end stack -->
 
 <div class="hint">
-  浏览器打开此文件 → 按 Cmd+P → 选「另存为 PDF」→ 每张卡片自动一页
+  点「导出 PDF」保存整份 PDF（每卡一页，所见即所得）<br>
+  或点「导出图片 ZIP」将全部卡片打包（01.jpg / 02.jpg …）
 </div>
 <div class="export-bar">
-  <button class="btn" onclick="window.print()">导出 PDF</button>
+  <button class="btn btn-o" onclick="exportPDF()">导出 PDF</button>
+  <button class="btn" onclick="exportAll()">导出图片 ZIP</button>
+  <span class="export-status" id="status"></span>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+
+function wrapBrackets(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+  nodes.forEach(node => {
+    if (!/[「」]/.test(node.textContent)) return;
+    const frag = document.createDocumentFragment();
+    node.textContent.split(/(「|」)/forEach(part => {
+      if (part === '「' || part === '」') {
+        const s = document.createElement('span');
+        s.style.cssText = 'display:inline-block;padding:0 2px;letter-spacing:0;';
+        s.textContent = part;
+        frag.appendChild(s);
+      } else if (part) {
+        frag.appendChild(document.createTextNode(part));
+      }
+    });
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+
+async function captureCard(card) {
+  const saved = card.innerHTML;
+  wrapBrackets(card);
+  await new Promise(r => requestAnimationFrame(r));
+  const canvas = await html2canvas(card, { scale: 3, useCORS: true, backgroundColor: null });
+  card.innerHTML = saved;
+  return canvas;
+}
+
+async function exportPDF() {
+  var cards = document.querySelectorAll('.card');
+  var status = document.getElementById('status');
+  status.textContent = '生成中…';
+  var pw = 180, ph = 240;
+  var jsPDF = window.jspdf.jsPDF;
+  var doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pw, ph] });
+  for (var i = 0; i < cards.length; i++) {
+    status.textContent = 'PDF: ' + (i + 1) + ' / ' + cards.length;
+    var canvas = await captureCard(cards[i]);
+    var imgData = canvas.toDataURL('image/jpeg', 0.95);
+    if (i > 0) doc.addPage([pw, ph]);
+    doc.addImage(imgData, 'JPEG', 0, 0, pw, ph);
+  }
+  doc.save('贱斥-abjection-swiss-dark.pdf');
+  status.textContent = '完成 ✓';
+  setTimeout(function () { status.textContent = ''; }, 3000);
+}
+
+async function exportAll() {
+  var cards = document.querySelectorAll('.card');
+  var status = document.getElementById('status');
+  status.textContent = '生成中…';
+  var zip = new JSZip();
+  for (var i = 0; i < cards.length; i++) {
+    status.textContent = (i + 1) + ' / ' + cards.length;
+    var canvas = await captureCard(cards[i]);
+    var base64 = canvas.toDataURL('image/jpeg', 0.92).split(',')[1];
+    zip.file(String(i + 1).padStart(2, '0') + '.jpg', base64, { base64: true });
+  }
+  status.textContent = '打包中…';
+  var blob = await zip.generateAsync({ type: 'blob' });
+  var link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = '贱斥-abjection-swiss-dark-卡片.zip';
+  link.click();
+  status.textContent = '完成 ✓';
+  setTimeout(function () { status.textContent = ''; }, 3000);
+}
+</script>
 </body>
 </html>
